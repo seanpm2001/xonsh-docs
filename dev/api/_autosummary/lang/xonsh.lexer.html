@@ -360,7 +360,7 @@
 <p>Written using a hybrid of <code class="docutils literal notranslate"><span class="pre">tokenize</span></code> and PLY.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="xonsh.lexer.Lexer">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xonsh.lexer.</span></span><span class="sig-name descname"><span class="pre">Lexer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tolerant</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/lexer.html#Lexer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.lexer.Lexer" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xonsh.lexer.</span></span><span class="sig-name descname"><span class="pre">Lexer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tolerant</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pymode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/lexer.html#Lexer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.lexer.Lexer" title="Link to this definition">#</a></dt>
 <dd><p>Implements a lexer for the xonsh language.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Attributes<span class="colon">:</span></dt>
@@ -373,6 +373,8 @@
 </dd>
 <dt><strong>tolerant</strong><span class="classifier">bool</span></dt><dd><p>Tokenize without extra checks (e.g. paren matching).
 When True, ERRORTOKEN contains the erroneous string instead of an error msg.</p>
+</dd>
+<dt><strong>pymode</strong><span class="classifier">bool</span></dt><dd><p>Start the lexer in Python mode.</p>
 </dd>
 </dl>
 </dd>
@@ -421,7 +423,7 @@ tokens.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.lexer.get_tokens">
-<span class="sig-prename descclassname"><span class="pre">xonsh.lexer.</span></span><span class="sig-name descname"><span class="pre">get_tokens</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tolerant</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/lexer.html#get_tokens"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.lexer.get_tokens" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.lexer.</span></span><span class="sig-name descname"><span class="pre">get_tokens</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tolerant</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pymode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tokenize_ioredirects</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/lexer.html#get_tokens"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.lexer.get_tokens" title="Link to this definition">#</a></dt>
 <dd><p>Given a string containing xonsh code, generates a stream of relevant PLY
 tokens using <code class="docutils literal notranslate"><span class="pre">handle_token</span></code>.</p>
 </dd></dl>
