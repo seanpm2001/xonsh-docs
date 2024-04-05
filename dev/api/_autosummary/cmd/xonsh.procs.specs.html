@@ -426,6 +426,11 @@ was received.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="xonsh.procs.specs.SubprocSpec.get_command_str">
+<span class="sig-name descname"><span class="pre">get_command_str</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/procs/specs.html#SubprocSpec.get_command_str"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.procs.specs.SubprocSpec.get_command_str" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="xonsh.procs.specs.SubprocSpec.prep_env_subproc">
 <span class="sig-name descname"><span class="pre">prep_env_subproc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/procs/specs.html#SubprocSpec.prep_env_subproc"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.procs.specs.SubprocSpec.prep_env_subproc" title="Link to this definition">#</a></dt>
 <dd><p>Prepares the environment to use in the subprocess.</p>
@@ -435,18 +440,6 @@ was received.</p>
 <dt class="sig sig-object py" id="xonsh.procs.specs.SubprocSpec.prep_preexec_fn">
 <span class="sig-name descname"><span class="pre">prep_preexec_fn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kwargs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pipeline_group</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/procs/specs.html#SubprocSpec.prep_preexec_fn"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.procs.specs.SubprocSpec.prep_preexec_fn" title="Link to this definition">#</a></dt>
 <dd><p>Prepares the ‘preexec_fn’ keyword argument</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="xonsh.procs.specs.SubprocSpec.redirect_leading">
-<span class="sig-name descname"><span class="pre">redirect_leading</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/procs/specs.html#SubprocSpec.redirect_leading"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.procs.specs.SubprocSpec.redirect_leading" title="Link to this definition">#</a></dt>
-<dd><p>Manage leading redirects such as with ‘&lt; input.txt COMMAND’.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="xonsh.procs.specs.SubprocSpec.redirect_trailing">
-<span class="sig-name descname"><span class="pre">redirect_trailing</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/procs/specs.html#SubprocSpec.redirect_trailing"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.procs.specs.SubprocSpec.redirect_trailing" title="Link to this definition">#</a></dt>
-<dd><p>Manages trailing redirects.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -477,6 +470,12 @@ was received.</p>
 <dt class="sig sig-object py" id="xonsh.procs.specs.SubprocSpec.resolve_executable_commands">
 <span class="sig-name descname"><span class="pre">resolve_executable_commands</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/procs/specs.html#SubprocSpec.resolve_executable_commands"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.procs.specs.SubprocSpec.resolve_executable_commands" title="Link to this definition">#</a></dt>
 <dd><p>Resolve command executables, if applicable.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xonsh.procs.specs.SubprocSpec.resolve_redirects">
+<span class="sig-name descname"><span class="pre">resolve_redirects</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/procs/specs.html#SubprocSpec.resolve_redirects"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.procs.specs.SubprocSpec.resolve_redirects" title="Link to this definition">#</a></dt>
+<dd><p>Manages redirects.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -637,15 +636,15 @@ a special connecting character.  For example:</p>
 <li><a class="reference internal" href="#">xonsh.procs.specs</a><ul>
 <li><a class="reference internal" href="#xonsh.procs.specs.SubprocSpec"><code class="docutils literal notranslate"><span class="pre">SubprocSpec</span></code></a><ul>
 <li><a class="reference internal" href="#xonsh.procs.specs.SubprocSpec.build"><code class="docutils literal notranslate"><span class="pre">SubprocSpec.build()</span></code></a></li>
+<li><a class="reference internal" href="#xonsh.procs.specs.SubprocSpec.get_command_str"><code class="docutils literal notranslate"><span class="pre">SubprocSpec.get_command_str()</span></code></a></li>
 <li><a class="reference internal" href="#xonsh.procs.specs.SubprocSpec.prep_env_subproc"><code class="docutils literal notranslate"><span class="pre">SubprocSpec.prep_env_subproc()</span></code></a></li>
 <li><a class="reference internal" href="#xonsh.procs.specs.SubprocSpec.prep_preexec_fn"><code class="docutils literal notranslate"><span class="pre">SubprocSpec.prep_preexec_fn()</span></code></a></li>
-<li><a class="reference internal" href="#xonsh.procs.specs.SubprocSpec.redirect_leading"><code class="docutils literal notranslate"><span class="pre">SubprocSpec.redirect_leading()</span></code></a></li>
-<li><a class="reference internal" href="#xonsh.procs.specs.SubprocSpec.redirect_trailing"><code class="docutils literal notranslate"><span class="pre">SubprocSpec.redirect_trailing()</span></code></a></li>
 <li><a class="reference internal" href="#xonsh.procs.specs.SubprocSpec.resolve_alias"><code class="docutils literal notranslate"><span class="pre">SubprocSpec.resolve_alias()</span></code></a></li>
 <li><a class="reference internal" href="#xonsh.procs.specs.SubprocSpec.resolve_alias_cls"><code class="docutils literal notranslate"><span class="pre">SubprocSpec.resolve_alias_cls()</span></code></a></li>
 <li><a class="reference internal" href="#xonsh.procs.specs.SubprocSpec.resolve_auto_cd"><code class="docutils literal notranslate"><span class="pre">SubprocSpec.resolve_auto_cd()</span></code></a></li>
 <li><a class="reference internal" href="#xonsh.procs.specs.SubprocSpec.resolve_binary_loc"><code class="docutils literal notranslate"><span class="pre">SubprocSpec.resolve_binary_loc()</span></code></a></li>
 <li><a class="reference internal" href="#xonsh.procs.specs.SubprocSpec.resolve_executable_commands"><code class="docutils literal notranslate"><span class="pre">SubprocSpec.resolve_executable_commands()</span></code></a></li>
+<li><a class="reference internal" href="#xonsh.procs.specs.SubprocSpec.resolve_redirects"><code class="docutils literal notranslate"><span class="pre">SubprocSpec.resolve_redirects()</span></code></a></li>
 <li><a class="reference internal" href="#xonsh.procs.specs.SubprocSpec.resolve_stack"><code class="docutils literal notranslate"><span class="pre">SubprocSpec.resolve_stack()</span></code></a></li>
 <li><a class="reference internal" href="#xonsh.procs.specs.SubprocSpec.run"><code class="docutils literal notranslate"><span class="pre">SubprocSpec.run()</span></code></a></li>
 <li><a class="reference internal" href="#xonsh.procs.specs.SubprocSpec.kwnames"><code class="docutils literal notranslate"><span class="pre">SubprocSpec.kwnames</span></code></a></li>

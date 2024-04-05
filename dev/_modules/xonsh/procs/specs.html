@@ -525,10 +525,6 @@
     <span class="k">return</span> <span class="nb">frozenset</span><span class="p">({</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">o</span><span class="si">}</span><span class="s2">&gt;</span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">_REDIR_ERR</span> <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">_REDIR_OUT</span> <span class="k">if</span> <span class="n">o</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">})</span>
 
 
-<span class="k">def</span> <span class="nf">_is_redirect</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="n">_REDIR_REGEX</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-
 <div class="viewcode-block" id="safe_open">
 <a class="viewcode-back" href="../../../api/_autosummary/cmd/xonsh.procs.specs.html#xonsh.procs.specs.safe_open">[docs]</a>
 <span class="k">def</span> <span class="nf">safe_open</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">buffering</span><span class="o">=-</span><span class="mi">1</span><span class="p">):</span>
@@ -768,7 +764,7 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="n">safe_close</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
             <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Multiple inputs for stdin for </span><span class="si">{0!r}</span><span class="s2">&quot;</span>
-            <span class="n">msg</span> <span class="o">=</span> <span class="n">msg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">))</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="n">msg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_command_str</span><span class="p">())</span>
             <span class="k">raise</span> <span class="n">xt</span><span class="o">.</span><span class="n">XonshError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
 
     <span class="nd">@property</span>
@@ -784,7 +780,7 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="n">safe_close</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
             <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Multiple redirections for stdout for </span><span class="si">{0!r}</span><span class="s2">&quot;</span>
-            <span class="n">msg</span> <span class="o">=</span> <span class="n">msg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">))</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="n">msg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_command_str</span><span class="p">())</span>
             <span class="k">raise</span> <span class="n">xt</span><span class="o">.</span><span class="n">XonshError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
 
     <span class="nd">@property</span>
@@ -800,8 +796,16 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="n">safe_close</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
             <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;Multiple redirections for stderr for </span><span class="si">{0!r}</span><span class="s2">&quot;</span>
-            <span class="n">msg</span> <span class="o">=</span> <span class="n">msg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">))</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="n">msg</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_command_str</span><span class="p">())</span>
             <span class="k">raise</span> <span class="n">xt</span><span class="o">.</span><span class="n">XonshError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+<div class="viewcode-block" id="SubprocSpec.get_command_str">
+<a class="viewcode-back" href="../../../api/_autosummary/cmd/xonsh.procs.specs.html#xonsh.procs.specs.SubprocSpec.get_command_str">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_command_str</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+            <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span> <span class="k">else</span> <span class="n">arg</span> <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span>
+        <span class="p">)</span></div>
+
 
     <span class="c1">#</span>
     <span class="c1"># Execution methods</span>
@@ -957,8 +961,7 @@
         <span class="n">spec</span> <span class="o">=</span> <span class="n">kls</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="bp">cls</span><span class="o">=</span><span class="bp">cls</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="c1"># modifications that alter cmds must come after creating instance</span>
         <span class="c1"># perform initial redirects</span>
-        <span class="n">spec</span><span class="o">.</span><span class="n">redirect_leading</span><span class="p">()</span>
-        <span class="n">spec</span><span class="o">.</span><span class="n">redirect_trailing</span><span class="p">()</span>
+        <span class="n">spec</span><span class="o">.</span><span class="n">resolve_redirects</span><span class="p">()</span>
         <span class="c1"># apply aliases</span>
         <span class="n">spec</span><span class="o">.</span><span class="n">resolve_alias</span><span class="p">()</span>
         <span class="n">spec</span><span class="o">.</span><span class="n">resolve_binary_loc</span><span class="p">()</span>
@@ -969,31 +972,18 @@
         <span class="k">return</span> <span class="n">spec</span></div>
 
 
-<div class="viewcode-block" id="SubprocSpec.redirect_leading">
-<a class="viewcode-back" href="../../../api/_autosummary/cmd/xonsh.procs.specs.html#xonsh.procs.specs.SubprocSpec.redirect_leading">[docs]</a>
-    <span class="k">def</span> <span class="nf">redirect_leading</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Manage leading redirects such as with &#39;&lt; input.txt COMMAND&#39;.&quot;&quot;&quot;</span>
-        <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cmd</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">3</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">cmd</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;&lt;&quot;</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">stdin</span> <span class="o">=</span> <span class="n">safe_open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cmd</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">cmd</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cmd</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span></div>
-
-
-<div class="viewcode-block" id="SubprocSpec.redirect_trailing">
-<a class="viewcode-back" href="../../../api/_autosummary/cmd/xonsh.procs.specs.html#xonsh.procs.specs.SubprocSpec.redirect_trailing">[docs]</a>
-    <span class="k">def</span> <span class="nf">redirect_trailing</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Manages trailing redirects.&quot;&quot;&quot;</span>
-        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-            <span class="n">cmd</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cmd</span>
-            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">3</span> <span class="ow">and</span> <span class="n">_is_redirect</span><span class="p">(</span><span class="n">cmd</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]):</span>
-                <span class="n">streams</span> <span class="o">=</span> <span class="n">_redirect_streams</span><span class="p">(</span><span class="n">cmd</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="n">cmd</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<div class="viewcode-block" id="SubprocSpec.resolve_redirects">
+<a class="viewcode-back" href="../../../api/_autosummary/cmd/xonsh.procs.specs.html#xonsh.procs.specs.SubprocSpec.resolve_redirects">[docs]</a>
+    <span class="k">def</span> <span class="nf">resolve_redirects</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Manages redirects.&quot;&quot;&quot;</span>
+        <span class="n">new_cmd</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cmd</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+                <span class="n">streams</span> <span class="o">=</span> <span class="n">_redirect_streams</span><span class="p">(</span><span class="o">*</span><span class="n">c</span><span class="p">)</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">stdin</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">stdout</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">stderr</span> <span class="o">=</span> <span class="n">streams</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">cmd</span> <span class="o">=</span> <span class="n">cmd</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
-            <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">_is_redirect</span><span class="p">(</span><span class="n">cmd</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]):</span>
-                <span class="n">streams</span> <span class="o">=</span> <span class="n">_redirect_streams</span><span class="p">(</span><span class="n">cmd</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">stdin</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">stdout</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">stderr</span> <span class="o">=</span> <span class="n">streams</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">cmd</span> <span class="o">=</span> <span class="n">cmd</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="k">break</span></div>
+                <span class="n">new_cmd</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cmd</span> <span class="o">=</span> <span class="n">new_cmd</span></div>
 
 
 <div class="viewcode-block" id="SubprocSpec.resolve_alias">
@@ -1063,8 +1053,7 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">cmd</span> <span class="o">=</span> <span class="n">alias</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">cmd</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
             <span class="c1"># resolve any redirects the aliases may have applied</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">redirect_leading</span><span class="p">()</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">redirect_trailing</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">resolve_redirects</span><span class="p">()</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">binary_loc</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span>
         <span class="k">try</span><span class="p">:</span>
