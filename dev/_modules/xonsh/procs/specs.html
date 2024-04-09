@@ -609,6 +609,17 @@
     <span class="k">return</span> <span class="n">stdin</span><span class="p">,</span> <span class="n">stdout</span><span class="p">,</span> <span class="n">stderr</span>
 
 
+<span class="k">def</span> <span class="nf">_flatten_cmd_redirects</span><span class="p">(</span><span class="n">cmd</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Transforms a command like [&#39;ls&#39;, (&#39;&gt;&#39;, &#39;/dev/null&#39;)] into [&#39;ls&#39;, &#39;&gt;&#39;, &#39;/dev/null&#39;].&quot;&quot;&quot;</span>
+    <span class="n">new_cmd</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">cmd</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+            <span class="n">new_cmd</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">new_cmd</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">new_cmd</span>
+
+
 <div class="viewcode-block" id="default_signal_pauser">
 <a class="viewcode-back" href="../../../api/_autosummary/cmd/xonsh.procs.specs.html#xonsh.procs.specs.default_signal_pauser">[docs]</a>
 <span class="k">def</span> <span class="nf">default_signal_pauser</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
@@ -719,7 +730,7 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">env</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="c1"># pure attrs</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="n">_flatten_cmd_redirects</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">alias</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">alias_name</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">alias_stack</span> <span class="o">=</span> <span class="n">XSH</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;__ALIAS_STACK&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
@@ -802,9 +813,7 @@
 <div class="viewcode-block" id="SubprocSpec.get_command_str">
 <a class="viewcode-back" href="../../../api/_autosummary/cmd/xonsh.procs.specs.html#xonsh.procs.specs.SubprocSpec.get_command_str">[docs]</a>
     <span class="k">def</span> <span class="nf">get_command_str</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
-            <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span> <span class="k">else</span> <span class="n">arg</span> <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span>
-        <span class="p">)</span></div>
+        <span class="k">return</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">arg</span> <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">)</span></div>
 
 
     <span class="c1">#</span>
@@ -1292,6 +1301,9 @@
             <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;TRACE SUBPROC: </span><span class="si">{</span><span class="n">cmds</span><span class="si">}</span><span class="s2">, captured=</span><span class="si">{</span><span class="n">captured</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
 
     <span class="n">specs</span> <span class="o">=</span> <span class="n">cmds_to_specs</span><span class="p">(</span><span class="n">cmds</span><span class="p">,</span> <span class="n">captured</span><span class="o">=</span><span class="n">captured</span><span class="p">,</span> <span class="n">envs</span><span class="o">=</span><span class="n">envs</span><span class="p">)</span>
+    <span class="n">cmds</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">_flatten_cmd_redirects</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="k">else</span> <span class="n">cmd</span> <span class="k">for</span> <span class="n">cmd</span> <span class="ow">in</span> <span class="n">cmds</span>
+    <span class="p">]</span>
     <span class="k">if</span> <span class="n">_should_set_title</span><span class="p">():</span>
         <span class="c1"># context manager updates the command information that gets</span>
         <span class="c1"># accessed by CurrentJobField when setting the terminal&#39;s title</span>
