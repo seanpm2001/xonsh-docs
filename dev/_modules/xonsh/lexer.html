@@ -665,7 +665,11 @@
     <span class="n">matcher</span> <span class="o">=</span> <span class="p">(</span>
         <span class="s2">&quot;)&quot;</span>
         <span class="k">if</span> <span class="n">tok</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;(&quot;</span><span class="p">)</span>
-        <span class="k">else</span> <span class="s2">&quot;}&quot;</span> <span class="k">if</span> <span class="n">tok</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;{&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="s2">&quot;]&quot;</span> <span class="k">if</span> <span class="n">tok</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;[&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="k">else</span> <span class="s2">&quot;}&quot;</span>
+        <span class="k">if</span> <span class="n">tok</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;{&quot;</span><span class="p">)</span>
+        <span class="k">else</span> <span class="s2">&quot;]&quot;</span>
+        <span class="k">if</span> <span class="n">tok</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;[&quot;</span><span class="p">)</span>
+        <span class="k">else</span> <span class="kc">None</span>
     <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_inner_handler</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">token</span><span class="p">):</span>

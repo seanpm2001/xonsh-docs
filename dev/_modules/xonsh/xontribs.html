@@ -766,7 +766,11 @@
     <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;xonsh.xontribs&quot;</span>
     <span class="n">entries</span> <span class="o">=</span> <span class="n">metadata</span><span class="o">.</span><span class="n">entry_points</span><span class="p">()</span>
     <span class="c1"># for some reason, on CI (win py3.8) atleast, returns dict</span>
-    <span class="n">group</span> <span class="o">=</span> <span class="n">entries</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">group</span><span class="o">=</span><span class="n">name</span><span class="p">)</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">entries</span><span class="p">,</span> <span class="s2">&quot;select&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="n">entries</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="p">[])</span>  <span class="c1"># type: ignore</span>
+    <span class="n">group</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">entries</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">group</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">entries</span><span class="p">,</span> <span class="s2">&quot;select&quot;</span><span class="p">)</span>
+        <span class="k">else</span> <span class="n">entries</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="p">[])</span>  <span class="c1"># type: ignore</span>
+    <span class="p">)</span>
     <span class="k">yield from</span> <span class="n">group</span>
 
 

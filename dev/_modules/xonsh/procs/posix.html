@@ -709,9 +709,9 @@
             <span class="k">return</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="n">mode</span> <span class="o">=</span> <span class="n">xli</span><span class="o">.</span><span class="n">termios</span><span class="o">.</span><span class="n">tcgetattr</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># only makes sense for stdin</span>
-            <span class="n">mode</span><span class="p">[</span><span class="n">xp</span><span class="o">.</span><span class="n">CC</span><span class="p">][</span>
-                <span class="n">xli</span><span class="o">.</span><span class="n">termios</span><span class="o">.</span><span class="n">VSUSP</span>
-            <span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tc_cc_vsusp</span>  <span class="c1"># set ^Z (ie SIGSTOP) to original</span>
+            <span class="n">mode</span><span class="p">[</span><span class="n">xp</span><span class="o">.</span><span class="n">CC</span><span class="p">][</span><span class="n">xli</span><span class="o">.</span><span class="n">termios</span><span class="o">.</span><span class="n">VSUSP</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_tc_cc_vsusp</span>
+            <span class="p">)</span>  <span class="c1"># set ^Z (ie SIGSTOP) to original</span>
             <span class="c1"># this usually doesn&#39;t work in interactive mode,</span>
             <span class="c1"># but we should try it anyway.</span>
             <span class="n">xli</span><span class="o">.</span><span class="n">termios</span><span class="o">.</span><span class="n">tcsetattr</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">xli</span><span class="o">.</span><span class="n">termios</span><span class="o">.</span><span class="n">TCSANOW</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span>

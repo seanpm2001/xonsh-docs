@@ -2474,7 +2474,9 @@
     <span class="n">y</span> <span class="o">=</span> <span class="p">(</span>
         <span class="s2">&quot;default&quot;</span>
         <span class="k">if</span> <span class="n">y</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;xonsh&quot;</span><span class="p">,</span> <span class="s2">&quot;none&quot;</span><span class="p">,</span> <span class="s2">&quot;def&quot;</span><span class="p">)</span>
-        <span class="k">else</span> <span class="s2">&quot;menu-complete&quot;</span> <span class="k">if</span> <span class="n">y</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;m&quot;</span><span class="p">,</span> <span class="s2">&quot;menu&quot;</span><span class="p">,</span> <span class="s2">&quot;menu-completion&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="n">y</span>
+        <span class="k">else</span> <span class="s2">&quot;menu-complete&quot;</span>
+        <span class="k">if</span> <span class="n">y</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;m&quot;</span><span class="p">,</span> <span class="s2">&quot;menu&quot;</span><span class="p">,</span> <span class="s2">&quot;menu-completion&quot;</span><span class="p">)</span>
+        <span class="k">else</span> <span class="n">y</span>
     <span class="p">)</span>
     <span class="k">if</span> <span class="n">y</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">CANONIC_COMPLETION_MODES</span><span class="p">:</span>
         <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
