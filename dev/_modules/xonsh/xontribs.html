@@ -730,7 +730,7 @@
 
 <div class="viewcode-block" id="xontribs_list">
 <a class="viewcode-back" href="../../api/_autosummary/helpers/xonsh.xontribs.html#xonsh.xontribs.xontribs_list">[docs]</a>
-<span class="k">def</span> <span class="nf">xontribs_list</span><span class="p">(</span><span class="n">to_json</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">xontribs_list</span><span class="p">(</span><span class="n">to_json</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">_stdout</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;List installed xontribs and show whether they are loaded or not</span>
 
 <span class="sd">    Parameters</span>
@@ -741,7 +741,7 @@
     <span class="n">data</span> <span class="o">=</span> <span class="n">xontrib_data</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">to_json</span><span class="p">:</span>
         <span class="n">s</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">s</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">nname</span> <span class="o">=</span> <span class="nb">max</span><span class="p">([</span><span class="mi">6</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data</span><span class="p">])</span>
         <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
@@ -756,7 +756,7 @@
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="si">{RED}</span><span class="s2">not-loaded</span><span class="si">{RESET}</span><span class="s2">&quot;</span>
             <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
-        <span class="n">print_color</span><span class="p">(</span><span class="n">s</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span></div>
+        <span class="n">print_color</span><span class="p">(</span><span class="n">s</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">file</span><span class="o">=</span><span class="n">_stdout</span><span class="p">)</span></div>
 
 
 
