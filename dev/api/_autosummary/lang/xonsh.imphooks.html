@@ -5,11 +5,11 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="xonsh.built_ins" href="../cmd/xonsh.built_ins.html" /><link rel="prev" title="xonsh.execer" href="xonsh.execer.html" />
 
-    <link rel="shortcut icon" href="../../../_static/magic_conch.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
+    <link rel="shortcut icon" href="../../../_static/magic_conch.ico"/><!-- Generated with Sphinx 7.3.5 and Furo 2024.01.29 -->
         <title>xonsh.imphooks - xonsh 0.15.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=135e06be" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=fd3f3429" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=c8b63bf6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=36a5483c" />
     
@@ -355,23 +355,23 @@
         </div>
         <article role="main">
           <section id="module-xonsh.imphooks">
-<span id="xonsh-imphooks"></span><h1>xonsh.imphooks<a class="headerlink" href="#module-xonsh.imphooks" title="Link to this heading">#</a></h1>
+<span id="xonsh-imphooks"></span><h1>xonsh.imphooks<a class="headerlink" href="#module-xonsh.imphooks" title="Link to this heading">¶</a></h1>
 <p>Import hooks for importing xonsh source files.</p>
 <p>This module registers the hooks it defines when it is imported.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="xonsh.imphooks.XonshImportEventHook">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xonsh.imphooks.</span></span><span class="sig-name descname"><span class="pre">XonshImportEventHook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/imphooks.html#XonshImportEventHook"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.imphooks.XonshImportEventHook" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xonsh.imphooks.</span></span><span class="sig-name descname"><span class="pre">XonshImportEventHook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/imphooks.html#XonshImportEventHook"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.imphooks.XonshImportEventHook" title="Link to this definition">¶</a></dt>
 <dd><p>Implements the import hook for firing xonsh events on import.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.imphooks.XonshImportEventHook.append_stack">
-<span class="sig-name descname"><span class="pre">append_stack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fullname</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/imphooks.html#XonshImportEventHook.append_stack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.imphooks.XonshImportEventHook.append_stack" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">append_stack</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fullname</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/imphooks.html#XonshImportEventHook.append_stack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.imphooks.XonshImportEventHook.append_stack" title="Link to this definition">¶</a></dt>
 <dd><p>A context manager for appending and then removing a name from the
 fullname stack.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.imphooks.XonshImportEventHook.find_module">
-<span class="sig-name descname"><span class="pre">find_module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fullname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.imphooks.XonshImportEventHook.find_module" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">find_module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fullname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.imphooks.XonshImportEventHook.find_module" title="Link to this definition">¶</a></dt>
 <dd><p>Return a loader for the module.</p>
 <p>If no module is found, return None.  The fullname is a str and
 the path is a list of strings or None.</p>
@@ -382,13 +382,13 @@ functionality is provided for this method.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.imphooks.XonshImportEventHook.find_spec">
-<span class="sig-name descname"><span class="pre">find_spec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fullname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/imphooks.html#XonshImportEventHook.find_spec"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.imphooks.XonshImportEventHook.find_spec" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">find_spec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fullname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/imphooks.html#XonshImportEventHook.find_spec"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.imphooks.XonshImportEventHook.find_spec" title="Link to this definition">¶</a></dt>
 <dd><p>Finds the spec for a xonsh module if it exists.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.imphooks.XonshImportEventHook.invalidate_caches">
-<span class="sig-name descname"><span class="pre">invalidate_caches</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.imphooks.XonshImportEventHook.invalidate_caches" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">invalidate_caches</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.imphooks.XonshImportEventHook.invalidate_caches" title="Link to this definition">¶</a></dt>
 <dd><p>An optional method for clearing the finder’s cache, if any.
 This method is used by importlib.invalidate_caches().</p>
 </dd></dl>
@@ -397,24 +397,24 @@ This method is used by importlib.invalidate_caches().</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="xonsh.imphooks.XonshImportEventLoader">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xonsh.imphooks.</span></span><span class="sig-name descname"><span class="pre">XonshImportEventLoader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loader</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/imphooks.html#XonshImportEventLoader"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.imphooks.XonshImportEventLoader" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xonsh.imphooks.</span></span><span class="sig-name descname"><span class="pre">XonshImportEventLoader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loader</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/imphooks.html#XonshImportEventLoader"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.imphooks.XonshImportEventLoader" title="Link to this definition">¶</a></dt>
 <dd><p>A class that dispatches loader calls to another loader and fires relevant
 xonsh events.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.imphooks.XonshImportEventLoader.create_module">
-<span class="sig-name descname"><span class="pre">create_module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spec</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/imphooks.html#XonshImportEventLoader.create_module"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.imphooks.XonshImportEventLoader.create_module" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">create_module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spec</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/imphooks.html#XonshImportEventLoader.create_module"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.imphooks.XonshImportEventLoader.create_module" title="Link to this definition">¶</a></dt>
 <dd><p>Creates and returns the module object.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.imphooks.XonshImportEventLoader.exec_module">
-<span class="sig-name descname"><span class="pre">exec_module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/imphooks.html#XonshImportEventLoader.exec_module"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.imphooks.XonshImportEventLoader.exec_module" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">exec_module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/imphooks.html#XonshImportEventLoader.exec_module"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.imphooks.XonshImportEventLoader.exec_module" title="Link to this definition">¶</a></dt>
 <dd><p>Executes the module in its own namespace.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.imphooks.XonshImportEventLoader.load_module">
-<span class="sig-name descname"><span class="pre">load_module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fullname</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.imphooks.XonshImportEventLoader.load_module" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">load_module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fullname</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.imphooks.XonshImportEventLoader.load_module" title="Link to this definition">¶</a></dt>
 <dd><p>Return the loaded module.</p>
 <p>The module must be added to sys.modules and have import-related
 attributes set properly.  The fullname is a str.</p>
@@ -426,7 +426,7 @@ functionality for this method.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.imphooks.XonshImportEventLoader.module_repr">
-<span class="sig-name descname"><span class="pre">module_repr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.imphooks.XonshImportEventLoader.module_repr" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">module_repr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.imphooks.XonshImportEventLoader.module_repr" title="Link to this definition">¶</a></dt>
 <dd><p>Return a module’s repr.</p>
 <p>Used by the module type when the method does not raise
 NotImplementedError.</p>
@@ -437,23 +437,23 @@ NotImplementedError.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="xonsh.imphooks.XonshImportHook">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xonsh.imphooks.</span></span><span class="sig-name descname"><span class="pre">XonshImportHook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">execer</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/imphooks.html#XonshImportHook"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.imphooks.XonshImportHook" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xonsh.imphooks.</span></span><span class="sig-name descname"><span class="pre">XonshImportHook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">execer</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/imphooks.html#XonshImportHook"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.imphooks.XonshImportHook" title="Link to this definition">¶</a></dt>
 <dd><p>Implements the import hook for xonsh source files.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.imphooks.XonshImportHook.create_module">
-<span class="sig-name descname"><span class="pre">create_module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spec</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/imphooks.html#XonshImportHook.create_module"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.imphooks.XonshImportHook.create_module" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">create_module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spec</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/imphooks.html#XonshImportHook.create_module"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.imphooks.XonshImportHook.create_module" title="Link to this definition">¶</a></dt>
 <dd><p>Create a xonsh module with the appropriate attributes.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.imphooks.XonshImportHook.exec_module">
-<span class="sig-name descname"><span class="pre">exec_module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.imphooks.XonshImportHook.exec_module" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">exec_module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.imphooks.XonshImportHook.exec_module" title="Link to this definition">¶</a></dt>
 <dd><p>Execute the module.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.imphooks.XonshImportHook.find_module">
-<span class="sig-name descname"><span class="pre">find_module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fullname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.imphooks.XonshImportHook.find_module" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">find_module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fullname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.imphooks.XonshImportHook.find_module" title="Link to this definition">¶</a></dt>
 <dd><p>Return a loader for the module.</p>
 <p>If no module is found, return None.  The fullname is a str and
 the path is a list of strings or None.</p>
@@ -464,57 +464,57 @@ functionality is provided for this method.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.imphooks.XonshImportHook.find_spec">
-<span class="sig-name descname"><span class="pre">find_spec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fullname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/imphooks.html#XonshImportHook.find_spec"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.imphooks.XonshImportHook.find_spec" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">find_spec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fullname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/imphooks.html#XonshImportHook.find_spec"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.imphooks.XonshImportHook.find_spec" title="Link to this definition">¶</a></dt>
 <dd><p>Finds the spec for a xonsh module if it exists.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.imphooks.XonshImportHook.get_code">
-<span class="sig-name descname"><span class="pre">get_code</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fullname</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/imphooks.html#XonshImportHook.get_code"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.imphooks.XonshImportHook.get_code" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_code</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fullname</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/imphooks.html#XonshImportHook.get_code"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.imphooks.XonshImportHook.get_code" title="Link to this definition">¶</a></dt>
 <dd><p>Gets the code object for a xonsh file.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.imphooks.XonshImportHook.get_data">
-<span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/imphooks.html#XonshImportHook.get_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.imphooks.XonshImportHook.get_data" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/imphooks.html#XonshImportHook.get_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.imphooks.XonshImportHook.get_data" title="Link to this definition">¶</a></dt>
 <dd><p>Gets the bytes for a path.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.imphooks.XonshImportHook.get_filename">
-<span class="sig-name descname"><span class="pre">get_filename</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fullname</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/imphooks.html#XonshImportHook.get_filename"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.imphooks.XonshImportHook.get_filename" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_filename</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fullname</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/imphooks.html#XonshImportHook.get_filename"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.imphooks.XonshImportHook.get_filename" title="Link to this definition">¶</a></dt>
 <dd><p>Returns the filename for a module’s fullname.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.imphooks.XonshImportHook.get_source">
-<span class="sig-name descname"><span class="pre">get_source</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fullname</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/imphooks.html#XonshImportHook.get_source"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.imphooks.XonshImportHook.get_source" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_source</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fullname</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/imphooks.html#XonshImportHook.get_source"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.imphooks.XonshImportHook.get_source" title="Link to this definition">¶</a></dt>
 <dd><p>Concrete implementation of InspectLoader.get_source.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.imphooks.XonshImportHook.invalidate_caches">
-<span class="sig-name descname"><span class="pre">invalidate_caches</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.imphooks.XonshImportHook.invalidate_caches" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">invalidate_caches</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.imphooks.XonshImportHook.invalidate_caches" title="Link to this definition">¶</a></dt>
 <dd><p>An optional method for clearing the finder’s cache, if any.
 This method is used by importlib.invalidate_caches().</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.imphooks.XonshImportHook.is_package">
-<span class="sig-name descname"><span class="pre">is_package</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fullname</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.imphooks.XonshImportHook.is_package" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">is_package</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fullname</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.imphooks.XonshImportHook.is_package" title="Link to this definition">¶</a></dt>
 <dd><p>Concrete implementation of InspectLoader.is_package by checking if
 the path returned by get_filename has a filename of ‘__init__.py’.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.imphooks.XonshImportHook.load_module">
-<span class="sig-name descname"><span class="pre">load_module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fullname</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.imphooks.XonshImportHook.load_module" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">load_module</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fullname</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.imphooks.XonshImportHook.load_module" title="Link to this definition">¶</a></dt>
 <dd><p>This method is deprecated.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.imphooks.XonshImportHook.module_repr">
-<span class="sig-name descname"><span class="pre">module_repr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.imphooks.XonshImportHook.module_repr" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">module_repr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.imphooks.XonshImportHook.module_repr" title="Link to this definition">¶</a></dt>
 <dd><p>Return a module’s repr.</p>
 <p>Used by the module type when the method does not raise
 NotImplementedError.</p>
@@ -523,13 +523,13 @@ NotImplementedError.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.imphooks.XonshImportHook.path_mtime">
-<span class="sig-name descname"><span class="pre">path_mtime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.imphooks.XonshImportHook.path_mtime" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">path_mtime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.imphooks.XonshImportHook.path_mtime" title="Link to this definition">¶</a></dt>
 <dd><p>Return the (int) modification time for the path (str).</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.imphooks.XonshImportHook.path_stats">
-<span class="sig-name descname"><span class="pre">path_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.imphooks.XonshImportHook.path_stats" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">path_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.imphooks.XonshImportHook.path_stats" title="Link to this definition">¶</a></dt>
 <dd><p>Return a metadata dict for the source pointed to by the path (str).
 Possible keys:
 - ‘mtime’ (mandatory) is the numeric timestamp of last source</p>
@@ -543,7 +543,7 @@ Possible keys:
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.imphooks.XonshImportHook.set_data">
-<span class="sig-name descname"><span class="pre">set_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.imphooks.XonshImportHook.set_data" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">set_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.imphooks.XonshImportHook.set_data" title="Link to this definition">¶</a></dt>
 <dd><p>Write the bytes to the path (if possible).</p>
 <p>Accepts a str path and data as bytes.</p>
 <p>Any needed intermediary directories are to be created. If for some
@@ -553,7 +553,7 @@ silently.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.imphooks.XonshImportHook.source_to_code">
-<span class="sig-name descname"><span class="pre">source_to_code</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_optimize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.imphooks.XonshImportHook.source_to_code" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">source_to_code</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_optimize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.imphooks.XonshImportHook.source_to_code" title="Link to this definition">¶</a></dt>
 <dd><p>Return the code object compiled from source.</p>
 <p>The ‘data’ argument can be any object type that compile() supports.</p>
 </dd></dl>
@@ -562,7 +562,7 @@ silently.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.imphooks.find_source_encoding">
-<span class="sig-prename descclassname"><span class="pre">xonsh.imphooks.</span></span><span class="sig-name descname"><span class="pre">find_source_encoding</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/imphooks.html#find_source_encoding"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.imphooks.find_source_encoding" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.imphooks.</span></span><span class="sig-name descname"><span class="pre">find_source_encoding</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/imphooks.html#find_source_encoding"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.imphooks.find_source_encoding" title="Link to this definition">¶</a></dt>
 <dd><p>Finds the source encoding given bytes representing a file by checking
 a special comment at either the first or second line of the source file.
 <a class="reference external" href="https://docs.python.org/3/howto/unicode.html#unicode-literals-in-python-source-code">https://docs.python.org/3/howto/unicode.html#unicode-literals-in-python-source-code</a>
@@ -574,7 +574,7 @@ and is otherwise the same as UTF-8
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.imphooks.install_hook">
-<span class="sig-prename descclassname"><span class="pre">xonsh.imphooks.</span></span><span class="sig-name descname"><span class="pre">install_hook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">execer=&lt;object</span> <span class="pre">object&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.imphooks.install_hook" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.imphooks.</span></span><span class="sig-name descname"><span class="pre">install_hook</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">execer=&lt;object</span> <span class="pre">object&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.imphooks.install_hook" title="Link to this definition">¶</a></dt>
 <dd><p>Install Xonsh import hooks in <code class="docutils literal notranslate"><span class="pre">sys.meta_path</span></code> in order for <code class="docutils literal notranslate"><span class="pre">.xsh</span></code> files
 to be importable and import events to be fired.</p>
 <p>Can safely be called many times, will be no-op if xonsh import hooks are
@@ -583,7 +583,7 @@ already present.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.imphooks.install_import_hooks">
-<span class="sig-prename descclassname"><span class="pre">xonsh.imphooks.</span></span><span class="sig-name descname"><span class="pre">install_import_hooks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">execer=&lt;object</span> <span class="pre">object&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/imphooks.html#install_import_hooks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.imphooks.install_import_hooks" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.imphooks.</span></span><span class="sig-name descname"><span class="pre">install_import_hooks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">execer=&lt;object</span> <span class="pre">object&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/imphooks.html#install_import_hooks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.imphooks.install_import_hooks" title="Link to this definition">¶</a></dt>
 <dd><p>Install Xonsh import hooks in <code class="docutils literal notranslate"><span class="pre">sys.meta_path</span></code> in order for <code class="docutils literal notranslate"><span class="pre">.xsh</span></code> files
 to be importable and import events to be fired.</p>
 <p>Can safely be called many times, will be no-op if xonsh import hooks are
@@ -696,7 +696,7 @@ already present.</p>
     </aside>
   </div>
 </div><script src="../../../_static/documentation_options.js?v=4befc426"></script>
-    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/scripts/furo.js?v=32e29ea5"></script>
     <script src="../../../_static/runthis-client.min.js?v=ad2a40d9"></script>

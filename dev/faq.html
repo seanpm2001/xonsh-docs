@@ -5,11 +5,11 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Wishlist &amp; To-Dos" href="todo.html" /><link rel="prev" title="Xonsh Change Log" href="changelog.html" />
 
-    <link rel="shortcut icon" href="_static/magic_conch.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
+    <link rel="shortcut icon" href="_static/magic_conch.ico"/><!-- Generated with Sphinx 7.3.5 and Furo 2024.01.29 -->
         <title>Frequently Asked Questions - xonsh 0.15.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
-    <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=fd3f3429" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css?v=c8b63bf6" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
     
@@ -355,10 +355,10 @@
         </div>
         <article role="main">
           <section id="frequently-asked-questions">
-<h1>Frequently Asked Questions<a class="headerlink" href="#frequently-asked-questions" title="Link to this heading">#</a></h1>
+<h1>Frequently Asked Questions<a class="headerlink" href="#frequently-asked-questions" title="Link to this heading">¶</a></h1>
 <p>Ok, so, maybe no one actually asked them.</p>
 <section id="why-xonsh">
-<h2>1. Why xonsh?<a class="headerlink" href="#why-xonsh" title="Link to this heading">#</a></h2>
+<h2>1. Why xonsh?<a class="headerlink" href="#why-xonsh" title="Link to this heading">¶</a></h2>
 <p>The idea for xonsh first struck while I was reviewing the Bash chapter
 (written by my co-author <a class="reference external" href="http://katyhuff.github.io/">Katy Huff</a>)
 of <a class="reference external" href="http://physics.codes/">Effective Computation in Physics</a>. In the book,
@@ -379,7 +379,7 @@ that hard…”</p>
 <p>And thus, <a class="reference external" href="http://exofrills.org">again</a>, I entered the danger zone.</p>
 </section>
 <section id="why-not-another-exotic-shell-such-as-fish">
-<h2>2. Why not another exotic shell, such as <code class="docutils literal notranslate"><span class="pre">fish</span></code>?<a class="headerlink" href="#why-not-another-exotic-shell-such-as-fish" title="Link to this heading">#</a></h2>
+<h2>2. Why not another exotic shell, such as <code class="docutils literal notranslate"><span class="pre">fish</span></code>?<a class="headerlink" href="#why-not-another-exotic-shell-such-as-fish" title="Link to this heading">¶</a></h2>
 <p>While many other alternative shells have an amazing suite of features
 as well as much improved syntax of traditional options, none of them
 are quite as beautiful as Python.  In xonsh, you get the best of all possible
@@ -387,7 +387,7 @@ worlds. A syntax that already fits your brain and any features that you
 desire.</p>
 </section>
 <section id="why-not-just-use-the-ipython-command-line-interface">
-<h2>3. Why not just use the IPython command line interface?<a class="headerlink" href="#why-not-just-use-the-ipython-command-line-interface" title="Link to this heading">#</a></h2>
+<h2>3. Why not just use the IPython command line interface?<a class="headerlink" href="#why-not-just-use-the-ipython-command-line-interface" title="Link to this heading">¶</a></h2>
 <p>There are two serious drawbacks to this approach - though, believe me, I have
 tried it.</p>
 <p>The first is that typing <code class="docutils literal notranslate"><span class="pre">!</span></code> before every subprocess command is
@@ -399,7 +399,7 @@ would probably end up being annoying, though not nearly as jarring.</p>
 does not work. This is a deal breaker for day-to-day use.</p>
 </section>
 <section id="so-how-does-this-all-work">
-<h2>4. So how does this all work?<a class="headerlink" href="#so-how-does-this-all-work" title="Link to this heading">#</a></h2>
+<h2>4. So how does this all work?<a class="headerlink" href="#so-how-does-this-all-work" title="Link to this heading">¶</a></h2>
 <p>We use <a class="reference external" href="http://www.dabeaz.com/ply/ply.html">PLY</a> to tokenize and parse
 xonsh code. This is heavily inspired by how <a class="reference external" href="https://github.com/eliben/pycparser">pycparser</a>
 used this PLY. From our parser, we construct an abstract syntax tree (AST)
@@ -433,14 +433,14 @@ meant for humans.  If ambiguity remains or exactness is required, simply
 manually use the <code class="docutils literal notranslate"><span class="pre">![]</span></code>, <code class="docutils literal notranslate"><span class="pre">!()</span></code>, <code class="docutils literal notranslate"><span class="pre">$[]</span></code> or <code class="docutils literal notranslate"><span class="pre">$()</span></code> operators on your code.</p>
 </section>
 <section id="context-sensitive-parsing-is-gross">
-<h2>5. Context-sensitive parsing is gross<a class="headerlink" href="#context-sensitive-parsing-is-gross" title="Link to this heading">#</a></h2>
+<h2>5. Context-sensitive parsing is gross<a class="headerlink" href="#context-sensitive-parsing-is-gross" title="Link to this heading">¶</a></h2>
 <p>Yes, context-sensitive parsing is gross. But the point of xonsh is that it uses
 xontext-sensitive parsing and
 is ultimately a lot less gross than other shell languages, such as Bash.
 Furthermore, its use is heavily limited here.</p>
 </section>
 <section id="my-branches-are-timing-out">
-<h2>6. My Branches are Timing Out?!<a class="headerlink" href="#my-branches-are-timing-out" title="Link to this heading">#</a></h2>
+<h2>6. My Branches are Timing Out?!<a class="headerlink" href="#my-branches-are-timing-out" title="Link to this heading">¶</a></h2>
 <p>Depending on you system, setup, and repository sizes, computing branch names
 and colors (i.e. if the branch is dirty or not), can be a pretty slow operation.
 This is bad news because xonsh can try to compute these each time it formats
@@ -458,7 +458,7 @@ Just removing the color lookup from the <code class="docutils literal notranslat
 name while being fast enough.</p>
 </section>
 <section id="exec">
-<h2>7. exec<a class="headerlink" href="#exec" title="Link to this heading">#</a></h2>
+<h2>7. exec<a class="headerlink" href="#exec" title="Link to this heading">¶</a></h2>
 <p>The notion of <code class="docutils literal notranslate"><span class="pre">exec</span></code> is a bit of a tricky beast in xonsh. Both Python and
 basically every other shell language have an exec that perform radically
 different operations.</p>
@@ -509,7 +509,7 @@ variable (since the return is always None):</p>
 it…unless chimera slaying is your bag.</p>
 </section>
 <section id="gotchas">
-<h2>8. Gotchas<a class="headerlink" href="#gotchas" title="Link to this heading">#</a></h2>
+<h2>8. Gotchas<a class="headerlink" href="#gotchas" title="Link to this heading">¶</a></h2>
 <p>There are a few gotchas when using xonsh across multiple versions of Python,
 where some behavior can differ, as the underlying Python might behave
 differently.</p>
@@ -519,7 +519,7 @@ as recursive globbing is <a class="reference external" href="https://docs.python
 It will make sure that the installed packages are available to <cite>xonsh</cite></p>
 </section>
 <section id="how-to-add-xonsh-into-the-context-menu-for-windows">
-<h2>9. How to add xonsh into the context menu for Windows?<a class="headerlink" href="#how-to-add-xonsh-into-the-context-menu-for-windows" title="Link to this heading">#</a></h2>
+<h2>9. How to add xonsh into the context menu for Windows?<a class="headerlink" href="#how-to-add-xonsh-into-the-context-menu-for-windows" title="Link to this heading">¶</a></h2>
 <p>In Windows, there’s a context menu support for opening a folder in a shell, such as <cite>Open PowerShell window here</cite>. You might want to have a similar menu that opens a folder in xonsh:</p>
 <a class="reference internal image-reference" href="_images/context_menu_windows.png"><img alt="context_menu_windows" class="align-center" src="_images/context_menu_windows.png" style="width: 80%;" /></a>
 <p>Usually it involves modifying registry to get it, but <a class="reference external" href="https://gist.github.com/nedsociety/91041691d0ac18bc8fd9e937ad21b055">a contributed script</a> can be used for automating chores for you.</p>
@@ -612,7 +612,7 @@ It will make sure that the installed packages are available to <cite>xonsh</cite
     </aside>
   </div>
 </div><script src="_static/documentation_options.js?v=4befc426"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=32e29ea5"></script>
     <script src="_static/runthis-client.min.js?v=ad2a40d9"></script>

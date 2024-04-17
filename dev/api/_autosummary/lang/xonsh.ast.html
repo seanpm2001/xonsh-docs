@@ -5,11 +5,11 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="xonsh.execer" href="xonsh.execer.html" /><link rel="prev" title="xonsh.parser" href="xonsh.parser.html" />
 
-    <link rel="shortcut icon" href="../../../_static/magic_conch.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
+    <link rel="shortcut icon" href="../../../_static/magic_conch.ico"/><!-- Generated with Sphinx 7.3.5 and Furo 2024.01.29 -->
         <title>xonsh.ast - xonsh 0.15.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=135e06be" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=fd3f3429" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=c8b63bf6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=36a5483c" />
     
@@ -355,11 +355,11 @@
         </div>
         <article role="main">
           <section id="module-xonsh.ast">
-<span id="xonsh-ast"></span><h1>xonsh.ast<a class="headerlink" href="#module-xonsh.ast" title="Link to this heading">#</a></h1>
+<span id="xonsh-ast"></span><h1>xonsh.ast<a class="headerlink" href="#module-xonsh.ast" title="Link to this heading">¶</a></h1>
 <p>Abstract Syntax Tree handler</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="xonsh.ast.CtxAwareTransformer">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">CtxAwareTransformer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parser</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#CtxAwareTransformer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.CtxAwareTransformer" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">CtxAwareTransformer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parser</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#CtxAwareTransformer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.CtxAwareTransformer" title="Link to this definition">¶</a></dt>
 <dd><p>Transforms a xonsh AST based to use subprocess calls when
 the first name in an expression statement is not known in the context.
 This assumes that the expression statement is instead parseable as
@@ -374,25 +374,25 @@ a subprocess.</p>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.ast.CtxAwareTransformer.ctxadd">
-<span class="sig-name descname"><span class="pre">ctxadd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#CtxAwareTransformer.ctxadd"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.CtxAwareTransformer.ctxadd" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">ctxadd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#CtxAwareTransformer.ctxadd"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.CtxAwareTransformer.ctxadd" title="Link to this definition">¶</a></dt>
 <dd><p>Adds a value the most recent context.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.ast.CtxAwareTransformer.ctxremove">
-<span class="sig-name descname"><span class="pre">ctxremove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#CtxAwareTransformer.ctxremove"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.CtxAwareTransformer.ctxremove" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">ctxremove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#CtxAwareTransformer.ctxremove"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.CtxAwareTransformer.ctxremove" title="Link to this definition">¶</a></dt>
 <dd><p>Removes a value the most recent context.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.ast.CtxAwareTransformer.ctxupdate">
-<span class="sig-name descname"><span class="pre">ctxupdate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#CtxAwareTransformer.ctxupdate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.CtxAwareTransformer.ctxupdate" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">ctxupdate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#CtxAwareTransformer.ctxupdate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.CtxAwareTransformer.ctxupdate" title="Link to this definition">¶</a></dt>
 <dd><p>Updated the most recent context.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.ast.CtxAwareTransformer.ctxvisit">
-<span class="sig-name descname"><span class="pre">ctxvisit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'exec'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug_level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#CtxAwareTransformer.ctxvisit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.CtxAwareTransformer.ctxvisit" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">ctxvisit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'exec'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug_level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#CtxAwareTransformer.ctxvisit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.CtxAwareTransformer.ctxvisit" title="Link to this definition">¶</a></dt>
 <dd><p>Transforms the node in a context-dependent way.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -420,126 +420,126 @@ a subprocess.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.ast.CtxAwareTransformer.generic_visit">
-<span class="sig-name descname"><span class="pre">generic_visit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.ast.CtxAwareTransformer.generic_visit" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">generic_visit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.ast.CtxAwareTransformer.generic_visit" title="Link to this definition">¶</a></dt>
 <dd><p>Called if no explicit visitor function exists for a node.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.ast.CtxAwareTransformer.is_in_scope">
-<span class="sig-name descname"><span class="pre">is_in_scope</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#CtxAwareTransformer.is_in_scope"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.CtxAwareTransformer.is_in_scope" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">is_in_scope</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#CtxAwareTransformer.is_in_scope"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.CtxAwareTransformer.is_in_scope" title="Link to this definition">¶</a></dt>
 <dd><p>Determines whether or not the current node is in scope.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.ast.CtxAwareTransformer.try_subproc_toks">
-<span class="sig-name descname"><span class="pre">try_subproc_toks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strip_expr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#CtxAwareTransformer.try_subproc_toks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.CtxAwareTransformer.try_subproc_toks" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">try_subproc_toks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strip_expr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#CtxAwareTransformer.try_subproc_toks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.CtxAwareTransformer.try_subproc_toks" title="Link to this definition">¶</a></dt>
 <dd><p>Tries to parse the line of the node as a subprocess.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.ast.CtxAwareTransformer.visit">
-<span class="sig-name descname"><span class="pre">visit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.ast.CtxAwareTransformer.visit" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">visit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.ast.CtxAwareTransformer.visit" title="Link to this definition">¶</a></dt>
 <dd><p>Visit a node.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.ast.CtxAwareTransformer.visit_AnnAssign">
-<span class="sig-name descname"><span class="pre">visit_AnnAssign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#CtxAwareTransformer.visit_AnnAssign"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.CtxAwareTransformer.visit_AnnAssign" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">visit_AnnAssign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#CtxAwareTransformer.visit_AnnAssign"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.CtxAwareTransformer.visit_AnnAssign" title="Link to this definition">¶</a></dt>
 <dd><p>Handle visiting an annotated assignment statement.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.ast.CtxAwareTransformer.visit_Assign">
-<span class="sig-name descname"><span class="pre">visit_Assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#CtxAwareTransformer.visit_Assign"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.CtxAwareTransformer.visit_Assign" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">visit_Assign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#CtxAwareTransformer.visit_Assign"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.CtxAwareTransformer.visit_Assign" title="Link to this definition">¶</a></dt>
 <dd><p>Handle visiting an assignment statement.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.ast.CtxAwareTransformer.visit_BoolOp">
-<span class="sig-name descname"><span class="pre">visit_BoolOp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#CtxAwareTransformer.visit_BoolOp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.CtxAwareTransformer.visit_BoolOp" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">visit_BoolOp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#CtxAwareTransformer.visit_BoolOp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.CtxAwareTransformer.visit_BoolOp" title="Link to this definition">¶</a></dt>
 <dd><p>Handle visiting an boolean operands, like and/or.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.ast.CtxAwareTransformer.visit_ClassDef">
-<span class="sig-name descname"><span class="pre">visit_ClassDef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#CtxAwareTransformer.visit_ClassDef"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.CtxAwareTransformer.visit_ClassDef" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">visit_ClassDef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#CtxAwareTransformer.visit_ClassDef"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.CtxAwareTransformer.visit_ClassDef" title="Link to this definition">¶</a></dt>
 <dd><p>Handle visiting a class definition.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.ast.CtxAwareTransformer.visit_Constant">
-<span class="sig-name descname"><span class="pre">visit_Constant</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.ast.CtxAwareTransformer.visit_Constant" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">visit_Constant</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.ast.CtxAwareTransformer.visit_Constant" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.ast.CtxAwareTransformer.visit_Delete">
-<span class="sig-name descname"><span class="pre">visit_Delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#CtxAwareTransformer.visit_Delete"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.CtxAwareTransformer.visit_Delete" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">visit_Delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#CtxAwareTransformer.visit_Delete"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.CtxAwareTransformer.visit_Delete" title="Link to this definition">¶</a></dt>
 <dd><p>Handle visiting a del statement.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.ast.CtxAwareTransformer.visit_Expr">
-<span class="sig-name descname"><span class="pre">visit_Expr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#CtxAwareTransformer.visit_Expr"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.CtxAwareTransformer.visit_Expr" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">visit_Expr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#CtxAwareTransformer.visit_Expr"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.CtxAwareTransformer.visit_Expr" title="Link to this definition">¶</a></dt>
 <dd><p>Handle visiting an expression.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.ast.CtxAwareTransformer.visit_Expression">
-<span class="sig-name descname"><span class="pre">visit_Expression</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#CtxAwareTransformer.visit_Expression"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.CtxAwareTransformer.visit_Expression" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">visit_Expression</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#CtxAwareTransformer.visit_Expression"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.CtxAwareTransformer.visit_Expression" title="Link to this definition">¶</a></dt>
 <dd><p>Handle visiting an expression body.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.ast.CtxAwareTransformer.visit_For">
-<span class="sig-name descname"><span class="pre">visit_For</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#CtxAwareTransformer.visit_For"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.CtxAwareTransformer.visit_For" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">visit_For</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#CtxAwareTransformer.visit_For"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.CtxAwareTransformer.visit_For" title="Link to this definition">¶</a></dt>
 <dd><p>Handle visiting a for statement.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.ast.CtxAwareTransformer.visit_FunctionDef">
-<span class="sig-name descname"><span class="pre">visit_FunctionDef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#CtxAwareTransformer.visit_FunctionDef"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.CtxAwareTransformer.visit_FunctionDef" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">visit_FunctionDef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#CtxAwareTransformer.visit_FunctionDef"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.CtxAwareTransformer.visit_FunctionDef" title="Link to this definition">¶</a></dt>
 <dd><p>Handle visiting a function definition.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.ast.CtxAwareTransformer.visit_Global">
-<span class="sig-name descname"><span class="pre">visit_Global</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#CtxAwareTransformer.visit_Global"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.CtxAwareTransformer.visit_Global" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">visit_Global</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#CtxAwareTransformer.visit_Global"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.CtxAwareTransformer.visit_Global" title="Link to this definition">¶</a></dt>
 <dd><p>Handle visiting a global statement.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.ast.CtxAwareTransformer.visit_Import">
-<span class="sig-name descname"><span class="pre">visit_Import</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#CtxAwareTransformer.visit_Import"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.CtxAwareTransformer.visit_Import" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">visit_Import</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#CtxAwareTransformer.visit_Import"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.CtxAwareTransformer.visit_Import" title="Link to this definition">¶</a></dt>
 <dd><p>Handle visiting a import statement.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.ast.CtxAwareTransformer.visit_ImportFrom">
-<span class="sig-name descname"><span class="pre">visit_ImportFrom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#CtxAwareTransformer.visit_ImportFrom"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.CtxAwareTransformer.visit_ImportFrom" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">visit_ImportFrom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#CtxAwareTransformer.visit_ImportFrom"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.CtxAwareTransformer.visit_ImportFrom" title="Link to this definition">¶</a></dt>
 <dd><p>Handle visiting a “from … import …” statement.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.ast.CtxAwareTransformer.visit_Try">
-<span class="sig-name descname"><span class="pre">visit_Try</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#CtxAwareTransformer.visit_Try"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.CtxAwareTransformer.visit_Try" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">visit_Try</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#CtxAwareTransformer.visit_Try"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.CtxAwareTransformer.visit_Try" title="Link to this definition">¶</a></dt>
 <dd><p>Handle visiting a try statement.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.ast.CtxAwareTransformer.visit_UnaryOp">
-<span class="sig-name descname"><span class="pre">visit_UnaryOp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#CtxAwareTransformer.visit_UnaryOp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.CtxAwareTransformer.visit_UnaryOp" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">visit_UnaryOp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#CtxAwareTransformer.visit_UnaryOp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.CtxAwareTransformer.visit_UnaryOp" title="Link to this definition">¶</a></dt>
 <dd><p>Handle visiting an unary operands, like not.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.ast.CtxAwareTransformer.visit_With">
-<span class="sig-name descname"><span class="pre">visit_With</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#CtxAwareTransformer.visit_With"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.CtxAwareTransformer.visit_With" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">visit_With</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#CtxAwareTransformer.visit_With"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.CtxAwareTransformer.visit_With" title="Link to this definition">¶</a></dt>
 <dd><p>Handle visiting a with statement.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.ast.CtxAwareTransformer.visit_comprehension">
-<span class="sig-name descname"><span class="pre">visit_comprehension</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#CtxAwareTransformer.visit_comprehension"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.CtxAwareTransformer.visit_comprehension" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">visit_comprehension</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#CtxAwareTransformer.visit_comprehension"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.CtxAwareTransformer.visit_comprehension" title="Link to this definition">¶</a></dt>
 <dd><p>Handles visiting list comprehensions, set comprehensions,
 dictionary comprehensions, and generator expressions.</p>
 </dd></dl>
@@ -548,97 +548,97 @@ dictionary comprehensions, and generator expressions.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.ast.const_bytes">
-<span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">const_bytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#const_bytes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.const_bytes" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">const_bytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#const_bytes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.const_bytes" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.ast.const_name">
-<span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">const_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#const_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.const_name" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">const_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#const_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.const_name" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.ast.const_num">
-<span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">const_num</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#const_num"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.const_num" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">const_num</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#const_num"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.const_num" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.ast.const_str">
-<span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">const_str</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#const_str"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.const_str" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">const_str</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#const_str"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.const_str" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.ast.gather_load_store_names">
-<span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">gather_load_store_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#gather_load_store_names"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.gather_load_store_names" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">gather_load_store_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#gather_load_store_names"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.gather_load_store_names" title="Link to this definition">¶</a></dt>
 <dd><p>Returns the names present in the node’s tree in a set of load nodes and
 a set of store nodes.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.ast.gather_names">
-<span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">gather_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#gather_names"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.gather_names" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">gather_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#gather_names"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.gather_names" title="Link to this definition">¶</a></dt>
 <dd><p>Returns the set of all names present in the node’s tree.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.ast.get_col">
-<span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">get_col</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#get_col"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.get_col" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">get_col</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#get_col"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.get_col" title="Link to this definition">¶</a></dt>
 <dd><p>Gets the col_offset of a node, or returns the default</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.ast.get_id">
-<span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">get_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#get_id"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.get_id" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">get_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#get_id"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.get_id" title="Link to this definition">¶</a></dt>
 <dd><p>Gets the id attribute of a node, or returns a default.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.ast.get_id_ctx">
-<span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">get_id_ctx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#get_id_ctx"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.get_id_ctx" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">get_id_ctx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#get_id_ctx"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.get_id_ctx" title="Link to this definition">¶</a></dt>
 <dd><p>Gets the id and attribute of a node, or returns a default.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.ast.get_lineno">
-<span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">get_lineno</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#get_lineno"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.get_lineno" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">get_lineno</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#get_lineno"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.get_lineno" title="Link to this definition">¶</a></dt>
 <dd><p>Gets the lineno of a node or returns the default.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.ast.has_elts">
-<span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">has_elts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#has_elts"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.has_elts" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">has_elts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#has_elts"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.has_elts" title="Link to this definition">¶</a></dt>
 <dd><p>Tests if x is an AST node with elements.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.ast.is_const_bytes">
-<span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">is_const_bytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#is_const_bytes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.is_const_bytes" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">is_const_bytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#is_const_bytes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.is_const_bytes" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.ast.is_const_name">
-<span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">is_const_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#is_const_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.is_const_name" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">is_const_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#is_const_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.is_const_name" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.ast.is_const_num">
-<span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">is_const_num</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#is_const_num"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.is_const_num" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">is_const_num</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#is_const_num"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.is_const_num" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.ast.is_const_str">
-<span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">is_const_str</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#is_const_str"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.is_const_str" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">is_const_str</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#is_const_str"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.is_const_str" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.ast.isdescendable">
-<span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">isdescendable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#isdescendable"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.isdescendable" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">isdescendable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#isdescendable"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.isdescendable" title="Link to this definition">¶</a></dt>
 <dd><p>Determines whether or not a node is worth visiting. Currently only
 UnaryOp and BoolOp nodes are visited.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.ast.isexpression">
-<span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">isexpression</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#isexpression"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.isexpression" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">isexpression</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#isexpression"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.isexpression" title="Link to this definition">¶</a></dt>
 <dd><p>Determines whether a node (or code string) is an expression, and
 does not contain any statements. The execution context (ctx) and
 other args and kwargs are passed down to the parser, as needed.</p>
@@ -646,62 +646,62 @@ other args and kwargs are passed down to the parser, as needed.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.ast.leftmostname">
-<span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">leftmostname</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#leftmostname"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.leftmostname" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">leftmostname</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#leftmostname"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.leftmostname" title="Link to this definition">¶</a></dt>
 <dd><p>Attempts to find the first name in the tree.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.ast.load_attribute_chain">
-<span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">load_attribute_chain</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lineno</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#load_attribute_chain"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.load_attribute_chain" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">load_attribute_chain</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lineno</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#load_attribute_chain"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.load_attribute_chain" title="Link to this definition">¶</a></dt>
 <dd><p>Creates an AST that loads variable name that may (or may not)
 have attribute chains. For example, “a.b.c”</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.ast.max_col">
-<span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">max_col</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#max_col"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.max_col" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">max_col</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#max_col"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.max_col" title="Link to this definition">¶</a></dt>
 <dd><p>Returns the maximum col_offset of the node and all sub-nodes.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.ast.max_line">
-<span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">max_line</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#max_line"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.max_line" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">max_line</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#max_line"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.max_line" title="Link to this definition">¶</a></dt>
 <dd><p>Computes the maximum lineno.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.ast.min_col">
-<span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">min_col</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#min_col"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.min_col" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">min_col</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#min_col"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.min_col" title="Link to this definition">¶</a></dt>
 <dd><p>Computes the minimum col_offset.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.ast.min_line">
-<span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">min_line</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#min_line"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.min_line" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">min_line</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#min_line"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.min_line" title="Link to this definition">¶</a></dt>
 <dd><p>Computes the minimum lineno.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.ast.node_len">
-<span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">node_len</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#node_len"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.node_len" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">node_len</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#node_len"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.node_len" title="Link to this definition">¶</a></dt>
 <dd><p>The length of a node as a string</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.ast.pdump">
-<span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">pdump</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#pdump"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.pdump" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">pdump</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#pdump"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.pdump" title="Link to this definition">¶</a></dt>
 <dd><p>performs a pretty dump of an AST node.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.ast.pprint_ast">
-<span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">pprint_ast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flush</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#pprint_ast"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.pprint_ast" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">pprint_ast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flush</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#pprint_ast"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.pprint_ast" title="Link to this definition">¶</a></dt>
 <dd><p>Performs a pretty print of the AST nodes.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.ast.xonsh_call">
-<span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">xonsh_call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lineno</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#xonsh_call"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.xonsh_call" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.ast.</span></span><span class="sig-name descname"><span class="pre">xonsh_call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lineno</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ast.html#xonsh_call"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ast.xonsh_call" title="Link to this definition">¶</a></dt>
 <dd><p>Creates the AST node for calling a function of a given name.
 Functions names may contain attribute access, e.g. __xonsh__.env.</p>
 </dd></dl>
@@ -831,7 +831,7 @@ Functions names may contain attribute access, e.g. __xonsh__.env.</p>
     </aside>
   </div>
 </div><script src="../../../_static/documentation_options.js?v=4befc426"></script>
-    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/scripts/furo.js?v=32e29ea5"></script>
     <script src="../../../_static/runthis-client.min.js?v=ad2a40d9"></script>

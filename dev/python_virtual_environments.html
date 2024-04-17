@@ -5,11 +5,11 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Keyboard Shortcuts" href="keyboard_shortcuts.html" /><link rel="prev" title="Subprocess Types Table" href="subproc_types.html" />
 
-    <link rel="shortcut icon" href="_static/magic_conch.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
+    <link rel="shortcut icon" href="_static/magic_conch.ico"/><!-- Generated with Sphinx 7.3.5 and Furo 2024.01.29 -->
         <title>Python Virtual Environments - xonsh 0.15.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
-    <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=fd3f3429" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css?v=c8b63bf6" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
     
@@ -355,14 +355,14 @@
         </div>
         <article role="main">
           <section id="python-virtual-environments">
-<span id="id1"></span><h1>Python Virtual Environments<a class="headerlink" href="#python-virtual-environments" title="Link to this heading">#</a></h1>
+<span id="id1"></span><h1>Python Virtual Environments<a class="headerlink" href="#python-virtual-environments" title="Link to this heading">¶</a></h1>
 <p>The usual tools for creating Python virtual environments—<code class="docutils literal notranslate"><span class="pre">venv</span></code>, <code class="docutils literal notranslate"><span class="pre">virtualenv</span></code>, <code class="docutils literal notranslate"><span class="pre">pew</span></code>—don’t play well with xonsh. We won’t dig deeper into why it is so, but the general gist is that these tools are hacky and hard-coded for bash, zsh, and other mainstream shells.</p>
 <p>Luckily, xonsh has its own virtual environments manager called <strong>Vox</strong>. Run to install Vox:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>xpip<span class="w"> </span>install<span class="w"> </span>xontrib-vox
 </pre></div>
 </div>
 <section id="vox">
-<h2>Vox<a class="headerlink" href="#vox" title="Link to this heading">#</a></h2>
+<h2>Vox<a class="headerlink" href="#vox" title="Link to this heading">¶</a></h2>
 <p>First, load the vox xontrib:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>@<span class="w"> </span>xontrib<span class="w"> </span>load<span class="w"> </span>vox
 </pre></div>
@@ -435,7 +435,7 @@ Available<span class="w"> </span>commands:
 </pre></div>
 </div>
 <section id="virtualenv-like-prompt">
-<h3><code class="docutils literal notranslate"><span class="pre">virtualenv</span></code> like prompt<a class="headerlink" href="#virtualenv-like-prompt" title="Link to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">virtualenv</span></code> like prompt<a class="headerlink" href="#virtualenv-like-prompt" title="Link to this heading">¶</a></h3>
 <p>Although it’s included in the default prompt, you can customize your prompt
 to automatically update in the same way as <code class="docutils literal notranslate"><span class="pre">virtualenv</span></code>.</p>
 <p>Simply add the <code class="docutils literal notranslate"><span class="pre">'{env_name}'</span></code> variable to your <code class="docutils literal notranslate"><span class="pre">$PROMPT</span></code>:</p>
@@ -446,7 +446,7 @@ to automatically update in the same way as <code class="docutils literal notrans
 For more details see <a class="reference internal" href="tutorial.html#customprompt"><span class="std std-ref">Customizing the Prompt</span></a>.</p>
 </section>
 <section id="automatically-switching-environments">
-<h3>Automatically Switching Environments<a class="headerlink" href="#automatically-switching-environments" title="Link to this heading">#</a></h3>
+<h3>Automatically Switching Environments<a class="headerlink" href="#automatically-switching-environments" title="Link to this heading">¶</a></h3>
 <p>Automatic environment switching based on the current directory is managed with the <code class="docutils literal notranslate"><span class="pre">autovox</span></code> xontrib (<code class="docutils literal notranslate"><span class="pre">xontrib</span> <span class="pre">load</span> <span class="pre">autovox</span></code>). Third-party xontribs may register various policies for use with autovox. Pick and choose xontribs that implement policies that match your work style.</p>
 <p>Implementing policies is easy! Just register with the <code class="docutils literal notranslate"><span class="pre">autovox_policy</span></code> event and return a <code class="docutils literal notranslate"><span class="pre">Path</span></code> if there is a matching venv. For example, this policy implements handling if there is a <code class="docutils literal notranslate"><span class="pre">.venv</span></code> directory in the project:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>@events.autovox_policy
@@ -534,7 +534,7 @@ def<span class="w"> </span>dotvenv_policy<span class="o">(</span>path,<span clas
     </aside>
   </div>
 </div><script src="_static/documentation_options.js?v=4befc426"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=32e29ea5"></script>
     <script src="_static/runthis-client.min.js?v=ad2a40d9"></script>

@@ -5,11 +5,11 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Platform-specific tips and tricks" href="platform-issues.html" /><link rel="prev" title="Built-in Aliases" href="aliases.html" />
 
-    <link rel="shortcut icon" href="_static/magic_conch.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
+    <link rel="shortcut icon" href="_static/magic_conch.ico"/><!-- Generated with Sphinx 7.3.5 and Furo 2024.01.29 -->
         <title>Core Events - xonsh 0.15.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
-    <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=fd3f3429" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css?v=c8b63bf6" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
     
@@ -355,7 +355,7 @@
         </div>
         <article role="main">
           <section id="core-events">
-<h1>Core Events<a class="headerlink" href="#core-events" title="Link to this heading">#</a></h1>
+<h1>Core Events<a class="headerlink" href="#core-events" title="Link to this heading">¶</a></h1>
 <p>The following events are defined by xonsh itself. For more information about events,
 see <a class="reference external" href="tutorial_events.html">the events tutorial</a>.</p>
 <div class="table-wrapper docutils container">
@@ -401,14 +401,14 @@ see <a class="reference external" href="tutorial_events.html">the events tutoria
 </table>
 </div>
 <section id="listing">
-<h2>Listing<a class="headerlink" href="#listing" title="Link to this heading">#</a></h2>
+<h2>Listing<a class="headerlink" href="#listing" title="Link to this heading">¶</a></h2>
 <section id="on-chdir-olddir-str-newdir-str-none">
-<span id="on-chdir"></span><h3><code class="docutils literal notranslate"><span class="pre">on_chdir(olddir:</span> <span class="pre">str,</span> <span class="pre">newdir:</span> <span class="pre">str)</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#on-chdir-olddir-str-newdir-str-none" title="Link to this heading">#</a></h3>
+<span id="on-chdir"></span><h3><code class="docutils literal notranslate"><span class="pre">on_chdir(olddir:</span> <span class="pre">str,</span> <span class="pre">newdir:</span> <span class="pre">str)</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#on-chdir-olddir-str-newdir-str-none" title="Link to this heading">¶</a></h3>
 <p>Fires when the current directory is changed for any reason.</p>
 <hr class="docutils" />
 </section>
 <section id="on-command-not-found-cmd-list-str-none">
-<span id="on-command-not-found"></span><h3><code class="docutils literal notranslate"><span class="pre">on_command_not_found(cmd:</span> <span class="pre">list[str])</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#on-command-not-found-cmd-list-str-none" title="Link to this heading">#</a></h3>
+<span id="on-command-not-found"></span><h3><code class="docutils literal notranslate"><span class="pre">on_command_not_found(cmd:</span> <span class="pre">list[str])</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#on-command-not-found-cmd-list-str-none" title="Link to this heading">¶</a></h3>
 <p>Fires if a command is not found (only in interactive sessions).</p>
 <p>Parameters:</p>
 <ul class="simple">
@@ -417,41 +417,41 @@ see <a class="reference external" href="tutorial_events.html">the events tutoria
 <hr class="docutils" />
 </section>
 <section id="on-envvar-change-name-str-oldvalue-any-newvalue-any-none">
-<span id="on-envvar-change"></span><h3><code class="docutils literal notranslate"><span class="pre">on_envvar_change(name:</span> <span class="pre">str,</span> <span class="pre">oldvalue:</span> <span class="pre">Any,</span> <span class="pre">newvalue:</span> <span class="pre">Any)</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#on-envvar-change-name-str-oldvalue-any-newvalue-any-none" title="Link to this heading">#</a></h3>
+<span id="on-envvar-change"></span><h3><code class="docutils literal notranslate"><span class="pre">on_envvar_change(name:</span> <span class="pre">str,</span> <span class="pre">oldvalue:</span> <span class="pre">Any,</span> <span class="pre">newvalue:</span> <span class="pre">Any)</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#on-envvar-change-name-str-oldvalue-any-newvalue-any-none" title="Link to this heading">¶</a></h3>
 <p>Fires after an environment variable is changed.
 Note: Setting envvars inside the handler might
 cause a recursion until the limit.</p>
 <hr class="docutils" />
 </section>
 <section id="on-envvar-new-name-str-value-any-none">
-<span id="on-envvar-new"></span><h3><code class="docutils literal notranslate"><span class="pre">on_envvar_new(name:</span> <span class="pre">str,</span> <span class="pre">value:</span> <span class="pre">Any)</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#on-envvar-new-name-str-value-any-none" title="Link to this heading">#</a></h3>
+<span id="on-envvar-new"></span><h3><code class="docutils literal notranslate"><span class="pre">on_envvar_new(name:</span> <span class="pre">str,</span> <span class="pre">value:</span> <span class="pre">Any)</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#on-envvar-new-name-str-value-any-none" title="Link to this heading">¶</a></h3>
 <p>Fires after a new environment variable is created.
 Note: Setting envvars inside the handler might
 cause a recursion until the limit.</p>
 <hr class="docutils" />
 </section>
 <section id="on-exit-none">
-<span id="on-exit"></span><h3><code class="docutils literal notranslate"><span class="pre">on_exit()</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#on-exit-none" title="Link to this heading">#</a></h3>
+<span id="on-exit"></span><h3><code class="docutils literal notranslate"><span class="pre">on_exit()</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#on-exit-none" title="Link to this heading">¶</a></h3>
 <p>Fired after all commands have been executed, before tear-down occurs.</p>
 <p>NOTE: All the caveats of the <code class="docutils literal notranslate"><span class="pre">atexit</span></code> module also apply to this event.</p>
 <hr class="docutils" />
 </section>
 <section id="on-import-post-create-module-module-module-spec-modulespec-none">
-<span id="on-import-post-create-module"></span><h3><code class="docutils literal notranslate"><span class="pre">on_import_post_create_module(module:</span> <span class="pre">Module,</span> <span class="pre">spec:</span> <span class="pre">ModuleSpec)</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#on-import-post-create-module-module-module-spec-modulespec-none" title="Link to this heading">#</a></h3>
+<span id="on-import-post-create-module"></span><h3><code class="docutils literal notranslate"><span class="pre">on_import_post_create_module(module:</span> <span class="pre">Module,</span> <span class="pre">spec:</span> <span class="pre">ModuleSpec)</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#on-import-post-create-module-module-module-spec-modulespec-none" title="Link to this heading">¶</a></h3>
 <p>Fires after a module is created by its loader but before the loader returns it.
 The parameters here are the module object itself and the spec object.
 See importlib for more details.</p>
 <hr class="docutils" />
 </section>
 <section id="on-import-post-exec-module">
-<span id="id1"></span><h3><code class="docutils literal notranslate"><span class="pre">on_import_post_exec_module</span></code><a class="headerlink" href="#on-import-post-exec-module" title="Link to this heading">#</a></h3>
+<span id="id1"></span><h3><code class="docutils literal notranslate"><span class="pre">on_import_post_exec_module</span></code><a class="headerlink" href="#on-import-post-exec-module" title="Link to this heading">¶</a></h3>
 <p>on_import_post_create_module(module: Module) -&gt; None</p>
 <p>Fires after a module is executed by its loader but before the loader returns it.
 The only parameter is the module itself. See importlib for more details.</p>
 <hr class="docutils" />
 </section>
 <section id="on-import-post-find-spec-spec-fullname-path-target-none">
-<span id="on-import-post-find-spec"></span><h3><code class="docutils literal notranslate"><span class="pre">on_import_post_find_spec(spec,</span> <span class="pre">fullname,</span> <span class="pre">path,</span> <span class="pre">target)</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#on-import-post-find-spec-spec-fullname-path-target-none" title="Link to this heading">#</a></h3>
+<span id="on-import-post-find-spec"></span><h3><code class="docutils literal notranslate"><span class="pre">on_import_post_find_spec(spec,</span> <span class="pre">fullname,</span> <span class="pre">path,</span> <span class="pre">target)</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#on-import-post-find-spec-spec-fullname-path-target-none" title="Link to this heading">¶</a></h3>
 <p>Fires after all import find_spec() calls have been executed. The parameters
 here the spec and the arguments importlib.abc.MetaPathFinder.find_spec(). Namely,</p>
 <dl class="field-list simple">
@@ -472,19 +472,19 @@ package.</p>
 <hr class="docutils" />
 </section>
 <section id="on-import-pre-create-module-spec-modulespec-none">
-<span id="on-import-pre-create-module"></span><h3><code class="docutils literal notranslate"><span class="pre">on_import_pre_create_module(spec:</span> <span class="pre">ModuleSpec)</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#on-import-pre-create-module-spec-modulespec-none" title="Link to this heading">#</a></h3>
+<span id="on-import-pre-create-module"></span><h3><code class="docutils literal notranslate"><span class="pre">on_import_pre_create_module(spec:</span> <span class="pre">ModuleSpec)</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#on-import-pre-create-module-spec-modulespec-none" title="Link to this heading">¶</a></h3>
 <p>Fires right before a module is created by its loader. The only parameter
 is the spec object. See importlib for more details.</p>
 <hr class="docutils" />
 </section>
 <section id="on-import-pre-exec-module-module-module-none">
-<span id="on-import-pre-exec-module"></span><h3><code class="docutils literal notranslate"><span class="pre">on_import_pre_exec_module(module:</span> <span class="pre">Module)</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#on-import-pre-exec-module-module-module-none" title="Link to this heading">#</a></h3>
+<span id="on-import-pre-exec-module"></span><h3><code class="docutils literal notranslate"><span class="pre">on_import_pre_exec_module(module:</span> <span class="pre">Module)</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#on-import-pre-exec-module-module-module-none" title="Link to this heading">¶</a></h3>
 <p>Fires right before a module is executed by its loader. The only parameter
 is the module itself. See importlib for more details.</p>
 <hr class="docutils" />
 </section>
 <section id="on-import-pre-find-spec-fullname-str-path-str-target-module-or-none-none">
-<span id="on-import-pre-find-spec"></span><h3><code class="docutils literal notranslate"><span class="pre">on_import_pre_find_spec(fullname:</span> <span class="pre">str,</span> <span class="pre">path:</span> <span class="pre">str,</span> <span class="pre">target:</span> <span class="pre">module</span> <span class="pre">or</span> <span class="pre">None)</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#on-import-pre-find-spec-fullname-str-path-str-target-module-or-none-none" title="Link to this heading">#</a></h3>
+<span id="on-import-pre-find-spec"></span><h3><code class="docutils literal notranslate"><span class="pre">on_import_pre_find_spec(fullname:</span> <span class="pre">str,</span> <span class="pre">path:</span> <span class="pre">str,</span> <span class="pre">target:</span> <span class="pre">module</span> <span class="pre">or</span> <span class="pre">None)</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#on-import-pre-find-spec-fullname-str-path-str-target-module-or-none-none" title="Link to this heading">¶</a></h3>
 <p>Fires before any import find_spec() calls have been executed. The parameters
 here are the same as importlib.abc.MetaPathFinder.find_spec(). Namely,</p>
 <dl class="field-list simple">
@@ -502,7 +502,7 @@ package.</p>
 <hr class="docutils" />
 </section>
 <section id="on-lscolors-change-key-str-oldvalue-any-newvalue-any-none">
-<span id="on-lscolors-change"></span><h3><code class="docutils literal notranslate"><span class="pre">on_lscolors_change(key:</span> <span class="pre">str,</span> <span class="pre">oldvalue:</span> <span class="pre">Any,</span> <span class="pre">newvalue:</span> <span class="pre">Any)</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#on-lscolors-change-key-str-oldvalue-any-newvalue-any-none" title="Link to this heading">#</a></h3>
+<span id="on-lscolors-change"></span><h3><code class="docutils literal notranslate"><span class="pre">on_lscolors_change(key:</span> <span class="pre">str,</span> <span class="pre">oldvalue:</span> <span class="pre">Any,</span> <span class="pre">newvalue:</span> <span class="pre">Any)</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#on-lscolors-change-key-str-oldvalue-any-newvalue-any-none" title="Link to this heading">¶</a></h3>
 <p>Fires after a value in LS_COLORS changes, when a new key is added (oldvalue is None)
 or when an existing key is deleted (newvalue is None).
 LS_COLORS values must be (ANSI color) strings, None is unambiguous.
@@ -512,29 +512,29 @@ Normal usage is to arm the event handler, then read (not modify) all existing va
 <hr class="docutils" />
 </section>
 <section id="on-post-cmdloop-none">
-<span id="on-post-cmdloop"></span><h3><code class="docutils literal notranslate"><span class="pre">on_post_cmdloop()</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#on-post-cmdloop-none" title="Link to this heading">#</a></h3>
+<span id="on-post-cmdloop"></span><h3><code class="docutils literal notranslate"><span class="pre">on_post_cmdloop()</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#on-post-cmdloop-none" title="Link to this heading">¶</a></h3>
 <p>Fired just after the command loop finishes, if it is.</p>
 <p>NOTE: All the caveats of the <code class="docutils literal notranslate"><span class="pre">atexit</span></code> module also apply to this event.</p>
 <hr class="docutils" />
 </section>
 <section id="on-post-init-none">
-<span id="on-post-init"></span><h3><code class="docutils literal notranslate"><span class="pre">on_post_init()</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#on-post-init-none" title="Link to this heading">#</a></h3>
+<span id="on-post-init"></span><h3><code class="docutils literal notranslate"><span class="pre">on_post_init()</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#on-post-init-none" title="Link to this heading">¶</a></h3>
 <p>Fired after all initialization is finished and we’re ready to do work.</p>
 <p>NOTE: This is fired before the wizard is automatically started.</p>
 <hr class="docutils" />
 </section>
 <section id="on-post-prompt-none">
-<span id="on-post-prompt"></span><h3><code class="docutils literal notranslate"><span class="pre">on_post_prompt()</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#on-post-prompt-none" title="Link to this heading">#</a></h3>
+<span id="on-post-prompt"></span><h3><code class="docutils literal notranslate"><span class="pre">on_post_prompt()</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#on-post-prompt-none" title="Link to this heading">¶</a></h3>
 <p>Fires just after the prompt returns</p>
 <hr class="docutils" />
 </section>
 <section id="on-post-rc-none">
-<span id="on-post-rc"></span><h3><code class="docutils literal notranslate"><span class="pre">on_post_rc()</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#on-post-rc-none" title="Link to this heading">#</a></h3>
+<span id="on-post-rc"></span><h3><code class="docutils literal notranslate"><span class="pre">on_post_rc()</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#on-post-rc-none" title="Link to this heading">¶</a></h3>
 <p>Fired just after rc files are loaded, if they are.</p>
 <hr class="docutils" />
 </section>
 <section id="on-postcommand-cmd-str-rtn-int-out-str-or-none-ts-list-none">
-<span id="on-postcommand"></span><h3><code class="docutils literal notranslate"><span class="pre">on_postcommand(cmd:</span> <span class="pre">str,</span> <span class="pre">rtn:</span> <span class="pre">int,</span> <span class="pre">out:</span> <span class="pre">str</span> <span class="pre">or</span> <span class="pre">None,</span> <span class="pre">ts:</span> <span class="pre">list)</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#on-postcommand-cmd-str-rtn-int-out-str-or-none-ts-list-none" title="Link to this heading">#</a></h3>
+<span id="on-postcommand"></span><h3><code class="docutils literal notranslate"><span class="pre">on_postcommand(cmd:</span> <span class="pre">str,</span> <span class="pre">rtn:</span> <span class="pre">int,</span> <span class="pre">out:</span> <span class="pre">str</span> <span class="pre">or</span> <span class="pre">None,</span> <span class="pre">ts:</span> <span class="pre">list)</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#on-postcommand-cmd-str-rtn-int-out-str-or-none-ts-list-none" title="Link to this heading">¶</a></h3>
 <p>Fires just after a command is executed. The arguments are the same as history.</p>
 <p>Parameters:</p>
 <ul class="simple">
@@ -546,43 +546,43 @@ Normal usage is to arm the event handler, then read (not modify) all existing va
 <hr class="docutils" />
 </section>
 <section id="on-pre-cmdloop-none">
-<span id="on-pre-cmdloop"></span><h3><code class="docutils literal notranslate"><span class="pre">on_pre_cmdloop()</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#on-pre-cmdloop-none" title="Link to this heading">#</a></h3>
+<span id="on-pre-cmdloop"></span><h3><code class="docutils literal notranslate"><span class="pre">on_pre_cmdloop()</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#on-pre-cmdloop-none" title="Link to this heading">¶</a></h3>
 <p>Fired just before the command loop is started, if it is.</p>
 <hr class="docutils" />
 </section>
 <section id="on-pre-prompt-none">
-<span id="on-pre-prompt"></span><h3><code class="docutils literal notranslate"><span class="pre">on_pre_prompt()</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#on-pre-prompt-none" title="Link to this heading">#</a></h3>
+<span id="on-pre-prompt"></span><h3><code class="docutils literal notranslate"><span class="pre">on_pre_prompt()</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#on-pre-prompt-none" title="Link to this heading">¶</a></h3>
 <p>Fires just before showing the prompt</p>
 <hr class="docutils" />
 </section>
 <section id="on-pre-prompt-format-none">
-<span id="on-pre-prompt-format"></span><h3><code class="docutils literal notranslate"><span class="pre">on_pre_prompt_format()</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#on-pre-prompt-format-none" title="Link to this heading">#</a></h3>
+<span id="on-pre-prompt-format"></span><h3><code class="docutils literal notranslate"><span class="pre">on_pre_prompt_format()</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#on-pre-prompt-format-none" title="Link to this heading">¶</a></h3>
 <p>Fires before the prompt will be formatted</p>
 <hr class="docutils" />
 </section>
 <section id="on-pre-rc-none">
-<span id="on-pre-rc"></span><h3><code class="docutils literal notranslate"><span class="pre">on_pre_rc()</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#on-pre-rc-none" title="Link to this heading">#</a></h3>
+<span id="on-pre-rc"></span><h3><code class="docutils literal notranslate"><span class="pre">on_pre_rc()</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#on-pre-rc-none" title="Link to this heading">¶</a></h3>
 <p>Fired just before rc files are loaded, if they are.</p>
 <hr class="docutils" />
 </section>
 <section id="on-pre-spec-run-ls-spec-xonsh-built-ins-subprocspec-none">
-<span id="on-pre-spec-run-ls"></span><h3><code class="docutils literal notranslate"><span class="pre">on_pre_spec_run_ls(spec:</span> <span class="pre">xonsh.built_ins.SubprocSpec)</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#on-pre-spec-run-ls-spec-xonsh-built-ins-subprocspec-none" title="Link to this heading">#</a></h3>
+<span id="on-pre-spec-run-ls"></span><h3><code class="docutils literal notranslate"><span class="pre">on_pre_spec_run_ls(spec:</span> <span class="pre">xonsh.built_ins.SubprocSpec)</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#on-pre-spec-run-ls-spec-xonsh-built-ins-subprocspec-none" title="Link to this heading">¶</a></h3>
 <p>Fires right before a SubprocSpec.run() is called for the ls
 command.</p>
 <hr class="docutils" />
 </section>
 <section id="on-precommand-cmd-str-none">
-<span id="on-precommand"></span><h3><code class="docutils literal notranslate"><span class="pre">on_precommand(cmd:</span> <span class="pre">str)</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#on-precommand-cmd-str-none" title="Link to this heading">#</a></h3>
+<span id="on-precommand"></span><h3><code class="docutils literal notranslate"><span class="pre">on_precommand(cmd:</span> <span class="pre">str)</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#on-precommand-cmd-str-none" title="Link to this heading">¶</a></h3>
 <p>Fires just before a command is executed.</p>
 <hr class="docutils" />
 </section>
 <section id="on-ptk-create-prompter-promptsession-history-prompttoolkithistory-completer-prompttoolkitcompleter-bindings-keybindings">
-<span id="on-ptk-create"></span><h3><code class="docutils literal notranslate"><span class="pre">on_ptk_create(prompter:</span> <span class="pre">PromptSession,</span> <span class="pre">history:</span> <span class="pre">PromptToolkitHistory,</span> <span class="pre">completer:</span> <span class="pre">PromptToolkitCompleter,</span> <span class="pre">bindings:</span> <span class="pre">KeyBindings)</span> <span class="pre">-&gt;</span></code><a class="headerlink" href="#on-ptk-create-prompter-promptsession-history-prompttoolkithistory-completer-prompttoolkitcompleter-bindings-keybindings" title="Link to this heading">#</a></h3>
+<span id="on-ptk-create"></span><h3><code class="docutils literal notranslate"><span class="pre">on_ptk_create(prompter:</span> <span class="pre">PromptSession,</span> <span class="pre">history:</span> <span class="pre">PromptToolkitHistory,</span> <span class="pre">completer:</span> <span class="pre">PromptToolkitCompleter,</span> <span class="pre">bindings:</span> <span class="pre">KeyBindings)</span> <span class="pre">-&gt;</span></code><a class="headerlink" href="#on-ptk-create-prompter-promptsession-history-prompttoolkithistory-completer-prompttoolkitcompleter-bindings-keybindings" title="Link to this heading">¶</a></h3>
 <p>Fired after prompt toolkit has been initialized</p>
 <hr class="docutils" />
 </section>
 <section id="on-transform-command-cmd-str-str">
-<span id="on-transform-command"></span><h3><code class="docutils literal notranslate"><span class="pre">on_transform_command(cmd:</span> <span class="pre">str)</span> <span class="pre">-&gt;</span> <span class="pre">str</span></code><a class="headerlink" href="#on-transform-command-cmd-str-str" title="Link to this heading">#</a></h3>
+<span id="on-transform-command"></span><h3><code class="docutils literal notranslate"><span class="pre">on_transform_command(cmd:</span> <span class="pre">str)</span> <span class="pre">-&gt;</span> <span class="pre">str</span></code><a class="headerlink" href="#on-transform-command-cmd-str-str" title="Link to this heading">¶</a></h3>
 <p>Fired to request xontribs to transform a command line. Return the transformed
 command, or the same command if no transformation occurs. Only done for
 interactive sessions.</p>
@@ -591,23 +591,23 @@ output, so design any handlers for this carefully.</p>
 <hr class="docutils" />
 </section>
 <section id="on-xonfig-info-requested-list-tuple-str-str">
-<span id="on-xonfig-info-requested"></span><h3><code class="docutils literal notranslate"><span class="pre">on_xonfig_info_requested()</span> <span class="pre">-&gt;</span> <span class="pre">list[tuple[str,</span> <span class="pre">str]]</span></code><a class="headerlink" href="#on-xonfig-info-requested-list-tuple-str-str" title="Link to this heading">#</a></h3>
+<span id="on-xonfig-info-requested"></span><h3><code class="docutils literal notranslate"><span class="pre">on_xonfig_info_requested()</span> <span class="pre">-&gt;</span> <span class="pre">list[tuple[str,</span> <span class="pre">str]]</span></code><a class="headerlink" href="#on-xonfig-info-requested-list-tuple-str-str" title="Link to this heading">¶</a></h3>
 <p>Register a callable that will return extra info when <code class="docutils literal notranslate"><span class="pre">xonfig</span> <span class="pre">info</span></code> is called.</p>
 <hr class="docutils" />
 </section>
 <section id="on-xontribs-loaded-none">
-<span id="on-xontribs-loaded"></span><h3><code class="docutils literal notranslate"><span class="pre">on_xontribs_loaded()</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#on-xontribs-loaded-none" title="Link to this heading">#</a></h3>
+<span id="on-xontribs-loaded"></span><h3><code class="docutils literal notranslate"><span class="pre">on_xontribs_loaded()</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#on-xontribs-loaded-none" title="Link to this heading">¶</a></h3>
 <p>Fired after external xontribs with <code class="docutils literal notranslate"><span class="pre">entrypoints</span> <span class="pre">defined</span></code> are loaded.</p>
 </section>
 </section>
 <section id="event-categories">
-<h2>Event Categories<a class="headerlink" href="#event-categories" title="Link to this heading">#</a></h2>
+<h2>Event Categories<a class="headerlink" href="#event-categories" title="Link to this heading">¶</a></h2>
 <p>Additionally, there are a few categories of events whose names are part of
 the specification of the event. These events are fired if they exist, and
 are ignored otherwise. Here are their specifications.</p>
 <hr class="docutils" />
 <section id="on-pre-spec-run-spec-subprocspec-none">
-<h3><code class="docutils literal notranslate"><span class="pre">on_pre_spec_run(spec:</span> <span class="pre">SubprocSpec)</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#on-pre-spec-run-spec-subprocspec-none" title="Link to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">on_pre_spec_run(spec:</span> <span class="pre">SubprocSpec)</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#on-pre-spec-run-spec-subprocspec-none" title="Link to this heading">¶</a></h3>
 <p>This event fires whenever any command has its <code class="docutils literal notranslate"><span class="pre">SubprocSpec.run()</span></code>
 method called.  This is fired prior to the run call executing anything
 at all. This receives the <code class="docutils literal notranslate"><span class="pre">SubprocSpec</span></code> object as <code class="docutils literal notranslate"><span class="pre">spec</span></code> that triggered
@@ -620,7 +620,7 @@ if we wanted to intercept all specs, we could write:</p>
 </div>
 </section>
 <section id="on-pre-spec-run-cmd-name-spec-subprocspec-none">
-<h3><code class="docutils literal notranslate"><span class="pre">on_pre_spec_run_&lt;cmd-name&gt;(spec:</span> <span class="pre">SubprocSpec)</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#on-pre-spec-run-cmd-name-spec-subprocspec-none" title="Link to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">on_pre_spec_run_&lt;cmd-name&gt;(spec:</span> <span class="pre">SubprocSpec)</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#on-pre-spec-run-cmd-name-spec-subprocspec-none" title="Link to this heading">¶</a></h3>
 <p>This event fires whenever a command with a give name (<code class="docutils literal notranslate"><span class="pre">&lt;cmd-name&gt;</span></code>)
 has its <code class="docutils literal notranslate"><span class="pre">SubprocSpec.run()</span></code> method called.  This is fired
 prior to the run call executing anything at all. This receives the
@@ -634,7 +634,7 @@ intercept an <code class="docutils literal notranslate"><span class="pre">ls</sp
 </div>
 </section>
 <section id="on-post-spec-run-spec-subprocspec-none">
-<h3><code class="docutils literal notranslate"><span class="pre">on_post_spec_run(spec:</span> <span class="pre">SubprocSpec)</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#on-post-spec-run-spec-subprocspec-none" title="Link to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">on_post_spec_run(spec:</span> <span class="pre">SubprocSpec)</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#on-post-spec-run-spec-subprocspec-none" title="Link to this heading">¶</a></h3>
 <p>This event fires whenever any command has its <code class="docutils literal notranslate"><span class="pre">SubprocSpec.run()</span></code>
 method called.  This is fired after to the run call has executed
 everything except returning. This recieves the <code class="docutils literal notranslate"><span class="pre">SubprocSpec</span></code> object as
@@ -651,7 +651,7 @@ we could write:</p>
 </div>
 </section>
 <section id="on-post-spec-run-cmd-name-spec-subprocspec-none">
-<h3><code class="docutils literal notranslate"><span class="pre">on_post_spec_run_&lt;cmd-name&gt;(spec:</span> <span class="pre">SubprocSpec)</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#on-post-spec-run-cmd-name-spec-subprocspec-none" title="Link to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">on_post_spec_run_&lt;cmd-name&gt;(spec:</span> <span class="pre">SubprocSpec)</span> <span class="pre">-&gt;</span> <span class="pre">None</span></code><a class="headerlink" href="#on-post-spec-run-cmd-name-spec-subprocspec-none" title="Link to this heading">¶</a></h3>
 <p>This event fires whenever a command with a give name (<code class="docutils literal notranslate"><span class="pre">&lt;cmd-name&gt;</span></code>)
 has its <code class="docutils literal notranslate"><span class="pre">SubprocSpec.run()</span></code> method called.  This is fired
 after to the run call has executed everything except returning. This recieves the
@@ -776,7 +776,7 @@ we could write:</p>
     </aside>
   </div>
 </div><script src="_static/documentation_options.js?v=4befc426"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=32e29ea5"></script>
     <script src="_static/runthis-client.min.js?v=ad2a40d9"></script>

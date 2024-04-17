@@ -5,11 +5,11 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Subprocess Types Table" href="subproc_types.html" /><link rel="prev" title="Bash to Xonsh Translation Guide" href="bash_to_xsh.html" />
 
-    <link rel="shortcut icon" href="_static/magic_conch.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
+    <link rel="shortcut icon" href="_static/magic_conch.ico"/><!-- Generated with Sphinx 7.3.5 and Furo 2024.01.29 -->
         <title>Editor and IDE Support - xonsh 0.15.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
-    <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=fd3f3429" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css?v=c8b63bf6" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
     
@@ -355,9 +355,9 @@
         </div>
         <article role="main">
           <section id="editor-and-ide-support">
-<h1>Editor and IDE Support<a class="headerlink" href="#editor-and-ide-support" title="Link to this heading">#</a></h1>
+<h1>Editor and IDE Support<a class="headerlink" href="#editor-and-ide-support" title="Link to this heading">¶</a></h1>
 <section id="sublime-text">
-<h2>Sublime Text<a class="headerlink" href="#sublime-text" title="Link to this heading">#</a></h2>
+<h2>Sublime Text<a class="headerlink" href="#sublime-text" title="Link to this heading">¶</a></h2>
 <p>There is a <a class="reference external" href="https://packagecontrol.io/packages/xonsh">xonsh package</a> for <strong>Sublime Text 4</strong> (build &gt; 4075). To install:</p>
 <ul>
 <li><p>Via <strong>Package Control</strong>: open (<code class="docutils literal notranslate"><span class="pre">^</span></code>/<code class="docutils literal notranslate"><span class="pre">⌘</span></code> <code class="docutils literal notranslate"><span class="pre">⇧</span></code> <code class="docutils literal notranslate"><span class="pre">P</span></code>) <code class="docutils literal notranslate"><span class="pre">Command</span> <span class="pre">Palette</span></code> → <code class="docutils literal notranslate"><span class="pre">Package</span> <span class="pre">Control:</span> <span class="pre">Install</span> <span class="pre">Package</span></code> → <code class="docutils literal notranslate"><span class="pre">xonsh</span></code></p></li>
@@ -371,7 +371,7 @@ mv<span class="w"> </span>sublime-xonsh<span class="w"> </span>xonsh
 </ul>
 </section>
 <section id="visual-studio-code-vs-code">
-<h2>Visual Studio Code (VS Code)<a class="headerlink" href="#visual-studio-code-vs-code" title="Link to this heading">#</a></h2>
+<h2>Visual Studio Code (VS Code)<a class="headerlink" href="#visual-studio-code-vs-code" title="Link to this heading">¶</a></h2>
 <p>There is <a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=jnoortheen.xonsh">xonsh extension for VS Code</a>. To install search “xonsh” using extensions
 menu or just press <code class="docutils literal notranslate"><span class="pre">F1</span></code> and run without <cite>&gt;</cite> preceding:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ext</span> <span class="n">install</span> <span class="n">jnoortheen</span><span class="o">.</span><span class="n">xonsh</span>
@@ -380,9 +380,9 @@ menu or just press <code class="docutils literal notranslate"><span class="pre">
 <p>Since version 1.86 of VS Code, the editor also supports loading the environment for users with xonsh as their default shell.</p>
 </section>
 <section id="emacs">
-<h2>Emacs<a class="headerlink" href="#emacs" title="Link to this heading">#</a></h2>
+<h2>Emacs<a class="headerlink" href="#emacs" title="Link to this heading">¶</a></h2>
 <section id="emacs-xonsh-mode">
-<h3>Emacs Xonsh mode<a class="headerlink" href="#emacs-xonsh-mode" title="Link to this heading">#</a></h3>
+<h3>Emacs Xonsh mode<a class="headerlink" href="#emacs-xonsh-mode" title="Link to this heading">¶</a></h3>
 <p>There is an emacs mode for editing xonsh scripts available from the
 <a class="reference external" href="https://melpa.org/#/xonsh-mode">MELPA repository</a>. If you are not familiar see the installation
 instructions there.</p>
@@ -392,7 +392,7 @@ instructions there.</p>
 </div>
 </section>
 <section id="xonsh-comint-buffer">
-<h3>Xonsh Comint buffer<a class="headerlink" href="#xonsh-comint-buffer" title="Link to this heading">#</a></h3>
+<h3>Xonsh Comint buffer<a class="headerlink" href="#xonsh-comint-buffer" title="Link to this heading">¶</a></h3>
 <p>You can use xonsh as your <a class="reference external" href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Interactive-Shell.html">interactive shell in Emacs</a>
 in a Comint buffer. This way you keep all the Emacs editing power
 in the shell, but you lose xonsh’s completion feature.</p>
@@ -404,7 +404,7 @@ in the shell, but you lose xonsh’s completion feature.</p>
 <p>Also, in Emacs set <code class="docutils literal notranslate"><span class="pre">explicit-shell-file-name</span></code> to your xonsh executable.</p>
 </section>
 <section id="xonsh-ansi-term-buffer">
-<h3>Xonsh Ansi-term buffer<a class="headerlink" href="#xonsh-ansi-term-buffer" title="Link to this heading">#</a></h3>
+<h3>Xonsh Ansi-term buffer<a class="headerlink" href="#xonsh-ansi-term-buffer" title="Link to this heading">¶</a></h3>
 <p>The second option is to run xonsh in an Ansi-term buffer inside
 Emacs. This way you have to switch modes if you want do Emacs-style
 editing, but you keep xonsh’s impressive completion.</p>
@@ -415,7 +415,7 @@ start up <code class="docutils literal notranslate"><span class="pre">ansi-term<
 </section>
 </section>
 <section id="vim">
-<h2>Vim<a class="headerlink" href="#vim" title="Link to this heading">#</a></h2>
+<h2>Vim<a class="headerlink" href="#vim" title="Link to this heading">¶</a></h2>
 <p>There is <a class="reference external" href="https://github.com/linkinpark342/xonsh-vim">xonsh syntax file for vim</a>. To install run:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="o">--</span><span class="n">depth</span> <span class="mi">1</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">linkinpark342</span><span class="o">/</span><span class="n">xonsh</span><span class="o">-</span><span class="n">vim</span> <span class="o">~/.</span><span class="n">vim</span>
 </pre></div>
@@ -500,7 +500,7 @@ start up <code class="docutils literal notranslate"><span class="pre">ansi-term<
     </aside>
   </div>
 </div><script src="_static/documentation_options.js?v=4befc426"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=32e29ea5"></script>
     <script src="_static/runthis-client.min.js?v=ad2a40d9"></script>

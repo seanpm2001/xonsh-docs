@@ -5,11 +5,11 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="xonsh.parser" href="xonsh.parser.html" /><link rel="prev" title="Xonsh API" href="../../index.html" />
 
-    <link rel="shortcut icon" href="../../../_static/magic_conch.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
+    <link rel="shortcut icon" href="../../../_static/magic_conch.ico"/><!-- Generated with Sphinx 7.3.5 and Furo 2024.01.29 -->
         <title>xonsh.lexer - xonsh 0.15.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=135e06be" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=fd3f3429" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=c8b63bf6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=36a5483c" />
     
@@ -355,12 +355,12 @@
         </div>
         <article role="main">
           <section id="module-xonsh.lexer">
-<span id="xonsh-lexer"></span><h1>xonsh.lexer<a class="headerlink" href="#module-xonsh.lexer" title="Link to this heading">#</a></h1>
+<span id="xonsh-lexer"></span><h1>xonsh.lexer<a class="headerlink" href="#module-xonsh.lexer" title="Link to this heading">¶</a></h1>
 <p>Lexer for xonsh code.</p>
 <p>Written using a hybrid of <code class="docutils literal notranslate"><span class="pre">tokenize</span></code> and PLY.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="xonsh.lexer.Lexer">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xonsh.lexer.</span></span><span class="sig-name descname"><span class="pre">Lexer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tolerant</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pymode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/lexer.html#Lexer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.lexer.Lexer" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xonsh.lexer.</span></span><span class="sig-name descname"><span class="pre">Lexer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tolerant</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pymode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/lexer.html#Lexer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.lexer.Lexer" title="Link to this definition">¶</a></dt>
 <dd><p>Implements a lexer for the xonsh language.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Attributes<span class="colon">:</span></dt>
@@ -381,120 +381,120 @@ When True, ERRORTOKEN contains the erroneous string instead of an error msg.</p>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.lexer.Lexer.build">
-<span class="sig-name descname"><span class="pre">build</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/lexer.html#Lexer.build"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.lexer.Lexer.build" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">build</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/lexer.html#Lexer.build"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.lexer.Lexer.build" title="Link to this definition">¶</a></dt>
 <dd><p>Part of the PLY lexer API.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.lexer.Lexer.input">
-<span class="sig-name descname"><span class="pre">input</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/lexer.html#Lexer.input"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.lexer.Lexer.input" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">input</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/lexer.html#Lexer.input"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.lexer.Lexer.input" title="Link to this definition">¶</a></dt>
 <dd><p>Calls the lexer on the string s.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.lexer.Lexer.reset">
-<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/lexer.html#Lexer.reset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.lexer.Lexer.reset" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/lexer.html#Lexer.reset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.lexer.Lexer.reset" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.lexer.Lexer.split">
-<span class="sig-name descname"><span class="pre">split</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/lexer.html#Lexer.split"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.lexer.Lexer.split" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">split</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/lexer.html#Lexer.split"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.lexer.Lexer.split" title="Link to this definition">¶</a></dt>
 <dd><p>Splits a string into a list of strings which are whitespace-separated
 tokens.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.lexer.Lexer.token">
-<span class="sig-name descname"><span class="pre">token</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/lexer.html#Lexer.token"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.lexer.Lexer.token" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">token</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/lexer.html#Lexer.token"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.lexer.Lexer.token" title="Link to this definition">¶</a></dt>
 <dd><p>Retrieves the next token.</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="xonsh.lexer.Lexer.tokens">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tokens</span></span><a class="headerlink" href="#xonsh.lexer.Lexer.tokens" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tokens</span></span><a class="headerlink" href="#xonsh.lexer.Lexer.tokens" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="xonsh.lexer.Lexer.tolerant">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tolerant</span></span><a class="headerlink" href="#xonsh.lexer.Lexer.tolerant" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tolerant</span></span><a class="headerlink" href="#xonsh.lexer.Lexer.tolerant" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.lexer.get_tokens">
-<span class="sig-prename descclassname"><span class="pre">xonsh.lexer.</span></span><span class="sig-name descname"><span class="pre">get_tokens</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tolerant</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pymode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tokenize_ioredirects</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/lexer.html#get_tokens"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.lexer.get_tokens" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.lexer.</span></span><span class="sig-name descname"><span class="pre">get_tokens</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tolerant</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pymode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tokenize_ioredirects</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/lexer.html#get_tokens"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.lexer.get_tokens" title="Link to this definition">¶</a></dt>
 <dd><p>Given a string containing xonsh code, generates a stream of relevant PLY
 tokens using <code class="docutils literal notranslate"><span class="pre">handle_token</span></code>.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.lexer.handle_double_amps">
-<span class="sig-prename descclassname"><span class="pre">xonsh.lexer.</span></span><span class="sig-name descname"><span class="pre">handle_double_amps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/lexer.html#handle_double_amps"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.lexer.handle_double_amps" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.lexer.</span></span><span class="sig-name descname"><span class="pre">handle_double_amps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/lexer.html#handle_double_amps"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.lexer.handle_double_amps" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.lexer.handle_double_pipe">
-<span class="sig-prename descclassname"><span class="pre">xonsh.lexer.</span></span><span class="sig-name descname"><span class="pre">handle_double_pipe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/lexer.html#handle_double_pipe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.lexer.handle_double_pipe" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.lexer.</span></span><span class="sig-name descname"><span class="pre">handle_double_pipe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/lexer.html#handle_double_pipe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.lexer.handle_double_pipe" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.lexer.handle_error_linecont">
-<span class="sig-prename descclassname"><span class="pre">xonsh.lexer.</span></span><span class="sig-name descname"><span class="pre">handle_error_linecont</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/lexer.html#handle_error_linecont"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.lexer.handle_error_linecont" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.lexer.</span></span><span class="sig-name descname"><span class="pre">handle_error_linecont</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/lexer.html#handle_error_linecont"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.lexer.handle_error_linecont" title="Link to this definition">¶</a></dt>
 <dd><p>Function for handling special line continuations as whitespace
 characters in subprocess mode.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.lexer.handle_error_space">
-<span class="sig-prename descclassname"><span class="pre">xonsh.lexer.</span></span><span class="sig-name descname"><span class="pre">handle_error_space</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/lexer.html#handle_error_space"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.lexer.handle_error_space" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.lexer.</span></span><span class="sig-name descname"><span class="pre">handle_error_space</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/lexer.html#handle_error_space"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.lexer.handle_error_space" title="Link to this definition">¶</a></dt>
 <dd><p>Function for handling special whitespace characters in subprocess mode</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.lexer.handle_error_token">
-<span class="sig-prename descclassname"><span class="pre">xonsh.lexer.</span></span><span class="sig-name descname"><span class="pre">handle_error_token</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/lexer.html#handle_error_token"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.lexer.handle_error_token" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.lexer.</span></span><span class="sig-name descname"><span class="pre">handle_error_token</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/lexer.html#handle_error_token"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.lexer.handle_error_token" title="Link to this definition">¶</a></dt>
 <dd><p>Function for handling error tokens</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.lexer.handle_ignore">
-<span class="sig-prename descclassname"><span class="pre">xonsh.lexer.</span></span><span class="sig-name descname"><span class="pre">handle_ignore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/lexer.html#handle_ignore"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.lexer.handle_ignore" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.lexer.</span></span><span class="sig-name descname"><span class="pre">handle_ignore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/lexer.html#handle_ignore"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.lexer.handle_ignore" title="Link to this definition">¶</a></dt>
 <dd><p>Function for handling tokens that should be ignored</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.lexer.handle_name">
-<span class="sig-prename descclassname"><span class="pre">xonsh.lexer.</span></span><span class="sig-name descname"><span class="pre">handle_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/lexer.html#handle_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.lexer.handle_name" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.lexer.</span></span><span class="sig-name descname"><span class="pre">handle_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/lexer.html#handle_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.lexer.handle_name" title="Link to this definition">¶</a></dt>
 <dd><p>Function for handling name tokens</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.lexer.handle_rbrace">
-<span class="sig-prename descclassname"><span class="pre">xonsh.lexer.</span></span><span class="sig-name descname"><span class="pre">handle_rbrace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/lexer.html#handle_rbrace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.lexer.handle_rbrace" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.lexer.</span></span><span class="sig-name descname"><span class="pre">handle_rbrace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/lexer.html#handle_rbrace"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.lexer.handle_rbrace" title="Link to this definition">¶</a></dt>
 <dd><p>Function for handling <code class="docutils literal notranslate"><span class="pre">}</span></code></p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.lexer.handle_rbracket">
-<span class="sig-prename descclassname"><span class="pre">xonsh.lexer.</span></span><span class="sig-name descname"><span class="pre">handle_rbracket</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/lexer.html#handle_rbracket"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.lexer.handle_rbracket" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.lexer.</span></span><span class="sig-name descname"><span class="pre">handle_rbracket</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/lexer.html#handle_rbracket"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.lexer.handle_rbracket" title="Link to this definition">¶</a></dt>
 <dd><p>Function for handling <code class="docutils literal notranslate"><span class="pre">]</span></code></p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.lexer.handle_redirect">
-<span class="sig-prename descclassname"><span class="pre">xonsh.lexer.</span></span><span class="sig-name descname"><span class="pre">handle_redirect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/lexer.html#handle_redirect"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.lexer.handle_redirect" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.lexer.</span></span><span class="sig-name descname"><span class="pre">handle_redirect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/lexer.html#handle_redirect"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.lexer.handle_redirect" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.lexer.handle_rparen">
-<span class="sig-prename descclassname"><span class="pre">xonsh.lexer.</span></span><span class="sig-name descname"><span class="pre">handle_rparen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/lexer.html#handle_rparen"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.lexer.handle_rparen" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.lexer.</span></span><span class="sig-name descname"><span class="pre">handle_rparen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/lexer.html#handle_rparen"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.lexer.handle_rparen" title="Link to this definition">¶</a></dt>
 <dd><p>Function for handling <code class="docutils literal notranslate"><span class="pre">)</span></code></p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.lexer.handle_token">
-<span class="sig-prename descclassname"><span class="pre">xonsh.lexer.</span></span><span class="sig-name descname"><span class="pre">handle_token</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/lexer.html#handle_token"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.lexer.handle_token" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.lexer.</span></span><span class="sig-name descname"><span class="pre">handle_token</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/lexer.html#handle_token"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.lexer.handle_token" title="Link to this definition">¶</a></dt>
 <dd><p>General-purpose token handler.  Makes use of <code class="docutils literal notranslate"><span class="pre">token_map</span></code> or
 <code class="docutils literal notranslate"><span class="pre">special_map</span></code> to yield one or more PLY tokens from the given input.</p>
 <dl class="field-list simple">
@@ -604,7 +604,7 @@ behavior.  Also includes the stream of tokens yet to be considered.</p>
     </aside>
   </div>
 </div><script src="../../../_static/documentation_options.js?v=4befc426"></script>
-    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/scripts/furo.js?v=32e29ea5"></script>
     <script src="../../../_static/runthis-client.min.js?v=ad2a40d9"></script>

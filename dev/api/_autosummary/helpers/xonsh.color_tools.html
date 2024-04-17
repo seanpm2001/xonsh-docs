@@ -5,11 +5,11 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="xonsh.pyghooks" href="xonsh.pyghooks.html" /><link rel="prev" title="xonsh.main" href="xonsh.main.html" />
 
-    <link rel="shortcut icon" href="../../../_static/magic_conch.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
+    <link rel="shortcut icon" href="../../../_static/magic_conch.ico"/><!-- Generated with Sphinx 7.3.5 and Furo 2024.01.29 -->
         <title>xonsh.color_tools - xonsh 0.15.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=135e06be" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=fd3f3429" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=c8b63bf6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=36a5483c" />
     
@@ -355,7 +355,7 @@
         </div>
         <article role="main">
           <section id="module-xonsh.color_tools">
-<span id="xonsh-color-tools"></span><h1>xonsh.color_tools<a class="headerlink" href="#module-xonsh.color_tools" title="Link to this heading">#</a></h1>
+<span id="xonsh-color-tools"></span><h1>xonsh.color_tools<a class="headerlink" href="#module-xonsh.color_tools" title="Link to this heading">¶</a></h1>
 <p>Tools for color handling in xonsh.</p>
 <p>This includes Convert values between RGB hex codes and xterm-256
 color codes. Parts of this file were originally forked from Micah Elliott
@@ -363,60 +363,60 @@ color codes. Parts of this file were originally forked from Micah Elliott
 WTFPL <a class="reference external" href="http://sam.zoy.org/wtfpl/">http://sam.zoy.org/wtfpl/</a></p>
 <dl class="py class">
 <dt class="sig sig-object py" id="xonsh.color_tools.COLORS">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xonsh.color_tools.</span></span><span class="sig-name descname"><span class="pre">COLORS</span></span><a class="reference internal" href="../../../_modules/xonsh/color_tools.html#COLORS"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.color_tools.COLORS" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xonsh.color_tools.</span></span><span class="sig-name descname"><span class="pre">COLORS</span></span><a class="reference internal" href="../../../_modules/xonsh/color_tools.html#COLORS"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.color_tools.COLORS" title="Link to this definition">¶</a></dt>
 <dd><p>constants</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="xonsh.color_tools.COLORS.BOLD_GREEN">
-<span class="sig-name descname"><span class="pre">BOLD_GREEN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'{BOLD_GREEN}'</span></em><a class="headerlink" href="#xonsh.color_tools.COLORS.BOLD_GREEN" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">BOLD_GREEN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'{BOLD_GREEN}'</span></em><a class="headerlink" href="#xonsh.color_tools.COLORS.BOLD_GREEN" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="xonsh.color_tools.COLORS.BOLD_RED">
-<span class="sig-name descname"><span class="pre">BOLD_RED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'{BOLD_RED}'</span></em><a class="headerlink" href="#xonsh.color_tools.COLORS.BOLD_RED" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">BOLD_RED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'{BOLD_RED}'</span></em><a class="headerlink" href="#xonsh.color_tools.COLORS.BOLD_RED" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="xonsh.color_tools.COLORS.GREEN">
-<span class="sig-name descname"><span class="pre">GREEN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'{GREEN}'</span></em><a class="headerlink" href="#xonsh.color_tools.COLORS.GREEN" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">GREEN</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'{GREEN}'</span></em><a class="headerlink" href="#xonsh.color_tools.COLORS.GREEN" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="xonsh.color_tools.COLORS.RED">
-<span class="sig-name descname"><span class="pre">RED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'{RED}'</span></em><a class="headerlink" href="#xonsh.color_tools.COLORS.RED" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">RED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'{RED}'</span></em><a class="headerlink" href="#xonsh.color_tools.COLORS.RED" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="xonsh.color_tools.COLORS.RESET">
-<span class="sig-name descname"><span class="pre">RESET</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'{RESET}'</span></em><a class="headerlink" href="#xonsh.color_tools.COLORS.RESET" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">RESET</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'{RESET}'</span></em><a class="headerlink" href="#xonsh.color_tools.COLORS.RESET" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.color_tools.color_dist">
-<span class="sig-prename descclassname"><span class="pre">xonsh.color_tools.</span></span><span class="sig-name descname"><span class="pre">color_dist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="reference internal" href="../../../_modules/xonsh/color_tools.html#color_dist"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.color_tools.color_dist" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.color_tools.</span></span><span class="sig-name descname"><span class="pre">color_dist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="reference internal" href="../../../_modules/xonsh/color_tools.html#color_dist"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.color_tools.color_dist" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.color_tools.find_closest_color">
-<span class="sig-prename descclassname"><span class="pre">xonsh.color_tools.</span></span><span class="sig-name descname"><span class="pre">find_closest_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">palette</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/color_tools.html#find_closest_color"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.color_tools.find_closest_color" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.color_tools.</span></span><span class="sig-name descname"><span class="pre">find_closest_color</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">palette</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/color_tools.html#find_closest_color"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.color_tools.find_closest_color" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.color_tools.iscolor">
-<span class="sig-prename descclassname"><span class="pre">xonsh.color_tools.</span></span><span class="sig-name descname"><span class="pre">iscolor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/color_tools.html#iscolor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.color_tools.iscolor" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.color_tools.</span></span><span class="sig-name descname"><span class="pre">iscolor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/color_tools.html#iscolor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.color_tools.iscolor" title="Link to this definition">¶</a></dt>
 <dd><p>Tests if a string is a valid color</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.color_tools.make_palette">
-<span class="sig-prename descclassname"><span class="pre">xonsh.color_tools.</span></span><span class="sig-name descname"><span class="pre">make_palette</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strings</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/color_tools.html#make_palette"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.color_tools.make_palette" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.color_tools.</span></span><span class="sig-name descname"><span class="pre">make_palette</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strings</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/color_tools.html#make_palette"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.color_tools.make_palette" title="Link to this definition">¶</a></dt>
 <dd><p>Makes a color palette from a collection of strings.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.color_tools.rgb2short">
-<span class="sig-prename descclassname"><span class="pre">xonsh.color_tools.</span></span><span class="sig-name descname"><span class="pre">rgb2short</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rgb</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.color_tools.rgb2short" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.color_tools.</span></span><span class="sig-name descname"><span class="pre">rgb2short</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rgb</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.color_tools.rgb2short" title="Link to this definition">¶</a></dt>
 <dd><p>Find the closest ANSI 256 approximation to the given RGB value.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">rgb2short</span><span class="p">(</span><span class="s1">&#39;123456&#39;</span><span class="p">)</span>
 <span class="go">(&#39;23&#39;, &#39;005f5f&#39;)</span>
@@ -443,7 +443,7 @@ WTFPL <a class="reference external" href="http://sam.zoy.org/wtfpl/">http://sam.
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.color_tools.rgb_to_256">
-<span class="sig-prename descclassname"><span class="pre">xonsh.color_tools.</span></span><span class="sig-name descname"><span class="pre">rgb_to_256</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rgb</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/color_tools.html#rgb_to_256"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.color_tools.rgb_to_256" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.color_tools.</span></span><span class="sig-name descname"><span class="pre">rgb_to_256</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rgb</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/color_tools.html#rgb_to_256"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.color_tools.rgb_to_256" title="Link to this definition">¶</a></dt>
 <dd><p>Find the closest ANSI 256 approximation to the given RGB value.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">rgb2short</span><span class="p">(</span><span class="s1">&#39;123456&#39;</span><span class="p">)</span>
 <span class="go">(&#39;23&#39;, &#39;005f5f&#39;)</span>
@@ -470,23 +470,23 @@ WTFPL <a class="reference external" href="http://sam.zoy.org/wtfpl/">http://sam.
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.color_tools.rgb_to_ints">
-<span class="sig-prename descclassname"><span class="pre">xonsh.color_tools.</span></span><span class="sig-name descname"><span class="pre">rgb_to_ints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rgb</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/color_tools.html#rgb_to_ints"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.color_tools.rgb_to_ints" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.color_tools.</span></span><span class="sig-name descname"><span class="pre">rgb_to_ints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rgb</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/color_tools.html#rgb_to_ints"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.color_tools.rgb_to_ints" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.color_tools.short2rgb">
-<span class="sig-prename descclassname"><span class="pre">xonsh.color_tools.</span></span><span class="sig-name descname"><span class="pre">short2rgb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">short</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/color_tools.html#short2rgb"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.color_tools.short2rgb" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.color_tools.</span></span><span class="sig-name descname"><span class="pre">short2rgb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">short</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/color_tools.html#short2rgb"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.color_tools.short2rgb" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.color_tools.short_to_ints">
-<span class="sig-prename descclassname"><span class="pre">xonsh.color_tools.</span></span><span class="sig-name descname"><span class="pre">short_to_ints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">short</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/color_tools.html#short_to_ints"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.color_tools.short_to_ints" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.color_tools.</span></span><span class="sig-name descname"><span class="pre">short_to_ints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">short</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/color_tools.html#short_to_ints"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.color_tools.short_to_ints" title="Link to this definition">¶</a></dt>
 <dd><p>Coverts a short (256) color to a 3-tuple of ints.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.color_tools.warn_deprecated_no_color">
-<span class="sig-prename descclassname"><span class="pre">xonsh.color_tools.</span></span><span class="sig-name descname"><span class="pre">warn_deprecated_no_color</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/color_tools.html#warn_deprecated_no_color"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.color_tools.warn_deprecated_no_color" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.color_tools.</span></span><span class="sig-name descname"><span class="pre">warn_deprecated_no_color</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/color_tools.html#warn_deprecated_no_color"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.color_tools.warn_deprecated_no_color" title="Link to this definition">¶</a></dt>
 <dd><p>Show a warning once if NO_COLOR was used instead of RESET.</p>
 </dd></dl>
 
@@ -578,7 +578,7 @@ WTFPL <a class="reference external" href="http://sam.zoy.org/wtfpl/">http://sam.
     </aside>
   </div>
 </div><script src="../../../_static/documentation_options.js?v=4befc426"></script>
-    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/scripts/furo.js?v=32e29ea5"></script>
     <script src="../../../_static/runthis-client.min.js?v=ad2a40d9"></script>

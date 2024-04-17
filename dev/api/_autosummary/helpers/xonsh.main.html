@@ -5,11 +5,11 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="xonsh.color_tools" href="xonsh.color_tools.html" /><link rel="prev" title="xonsh.tracer" href="xonsh.tracer.html" />
 
-    <link rel="shortcut icon" href="../../../_static/magic_conch.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
+    <link rel="shortcut icon" href="../../../_static/magic_conch.ico"/><!-- Generated with Sphinx 7.3.5 and Furo 2024.01.29 -->
         <title>xonsh.main - xonsh 0.15.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=135e06be" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=fd3f3429" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=c8b63bf6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=36a5483c" />
     
@@ -355,48 +355,48 @@
         </div>
         <article role="main">
           <section id="module-xonsh.main">
-<span id="xonsh-main"></span><h1>xonsh.main<a class="headerlink" href="#module-xonsh.main" title="Link to this heading">#</a></h1>
+<span id="xonsh-main"></span><h1>xonsh.main<a class="headerlink" href="#module-xonsh.main" title="Link to this heading">¶</a></h1>
 <p>The main xonsh script.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="xonsh.main.XonshMode">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xonsh.main.</span></span><span class="sig-name descname"><span class="pre">XonshMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/main.html#XonshMode"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.main.XonshMode" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xonsh.main.</span></span><span class="sig-name descname"><span class="pre">XonshMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/main.html#XonshMode"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.main.XonshMode" title="Link to this definition">¶</a></dt>
 <dd><p>An enumeration.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="xonsh.main.XonshMode.interactive">
-<span class="sig-name descname"><span class="pre">interactive</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#xonsh.main.XonshMode.interactive" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">interactive</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#xonsh.main.XonshMode.interactive" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="xonsh.main.XonshMode.script_from_file">
-<span class="sig-name descname"><span class="pre">script_from_file</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#xonsh.main.XonshMode.script_from_file" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">script_from_file</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#xonsh.main.XonshMode.script_from_file" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="xonsh.main.XonshMode.script_from_stdin">
-<span class="sig-name descname"><span class="pre">script_from_stdin</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#xonsh.main.XonshMode.script_from_stdin" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">script_from_stdin</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#xonsh.main.XonshMode.script_from_stdin" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="xonsh.main.XonshMode.single_command">
-<span class="sig-name descname"><span class="pre">single_command</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#xonsh.main.XonshMode.single_command" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">single_command</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#xonsh.main.XonshMode.single_command" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.main.get_setproctitle">
-<span class="sig-prename descclassname"><span class="pre">xonsh.main.</span></span><span class="sig-name descname"><span class="pre">get_setproctitle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/main.html#get_setproctitle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.main.get_setproctitle" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.main.</span></span><span class="sig-name descname"><span class="pre">get_setproctitle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/main.html#get_setproctitle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.main.get_setproctitle" title="Link to this definition">¶</a></dt>
 <dd><p>Proxy function for loading process title</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.main.main">
-<span class="sig-prename descclassname"><span class="pre">xonsh.main.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">argv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/main.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.main.main" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.main.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">argv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/main.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.main.main" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.main.main_context">
-<span class="sig-prename descclassname"><span class="pre">xonsh.main.</span></span><span class="sig-name descname"><span class="pre">main_context</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">argv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/main.html#main_context"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.main.main_context" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.main.</span></span><span class="sig-name descname"><span class="pre">main_context</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">argv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/main.html#main_context"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.main.main_context" title="Link to this definition">¶</a></dt>
 <dd><p>Generator that runs pre- and post-main() functions. This has two iterations.
 The first yields the shell. The second returns None but cleans
 up the shell.</p>
@@ -404,13 +404,13 @@ up the shell.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.main.main_xonsh">
-<span class="sig-prename descclassname"><span class="pre">xonsh.main.</span></span><span class="sig-name descname"><span class="pre">main_xonsh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/main.html#main_xonsh"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.main.main_xonsh" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.main.</span></span><span class="sig-name descname"><span class="pre">main_xonsh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/main.html#main_xonsh"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.main.main_xonsh" title="Link to this definition">¶</a></dt>
 <dd><p>Main entry point for xonsh cli.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.main.path_argument">
-<span class="sig-prename descclassname"><span class="pre">xonsh.main.</span></span><span class="sig-name descname"><span class="pre">path_argument</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/main.html#path_argument"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.main.path_argument" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.main.</span></span><span class="sig-name descname"><span class="pre">path_argument</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/main.html#path_argument"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.main.path_argument" title="Link to this definition">¶</a></dt>
 <dd><p>Return a path only if the path is actually legal (file or directory)</p>
 <p>This is very similar to argparse.FileType, except that it doesn’t return
 an open file handle, but rather simply validates the path.</p>
@@ -418,19 +418,19 @@ an open file handle, but rather simply validates the path.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.main.postmain">
-<span class="sig-prename descclassname"><span class="pre">xonsh.main.</span></span><span class="sig-name descname"><span class="pre">postmain</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/main.html#postmain"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.main.postmain" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.main.</span></span><span class="sig-name descname"><span class="pre">postmain</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/main.html#postmain"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.main.postmain" title="Link to this definition">¶</a></dt>
 <dd><p>Teardown for main xonsh entry point, accepts parsed arguments.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.main.premain">
-<span class="sig-prename descclassname"><span class="pre">xonsh.main.</span></span><span class="sig-name descname"><span class="pre">premain</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">argv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/main.html#premain"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.main.premain" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.main.</span></span><span class="sig-name descname"><span class="pre">premain</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">argv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/main.html#premain"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.main.premain" title="Link to this definition">¶</a></dt>
 <dd><p>Setup for main xonsh entry point. Returns parsed arguments.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.main.setup">
-<span class="sig-prename descclassname"><span class="pre">xonsh.main.</span></span><span class="sig-name descname"><span class="pre">setup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shell_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'none'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(('RAISE_SUBPROC_ERROR',</span> <span class="pre">True),)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aliases</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xontribs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threadable_predictors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/main.html#setup"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.main.setup" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.main.</span></span><span class="sig-name descname"><span class="pre">setup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shell_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'none'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(('RAISE_SUBPROC_ERROR',</span> <span class="pre">True),)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aliases</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xontribs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threadable_predictors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/main.html#setup"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.main.setup" title="Link to this definition">¶</a></dt>
 <dd><p>Starts up a new xonsh shell. Calling this in function in another
 packages <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> will allow xonsh to be fully used in the
 package in headless or headed mode. This function is primarily indended to
@@ -466,7 +466,7 @@ has been initialized.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.main.start_services">
-<span class="sig-prename descclassname"><span class="pre">xonsh.main.</span></span><span class="sig-name descname"><span class="pre">start_services</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shell_kwargs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pre_env</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/main.html#start_services"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.main.start_services" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.main.</span></span><span class="sig-name descname"><span class="pre">start_services</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shell_kwargs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pre_env</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/main.html#start_services"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.main.start_services" title="Link to this definition">¶</a></dt>
 <dd><p>Starts up the essential services in the proper order.
 This returns the environment instance as a convenience.</p>
 </dd></dl>
@@ -557,7 +557,7 @@ This returns the environment instance as a convenience.</p>
     </aside>
   </div>
 </div><script src="../../../_static/documentation_options.js?v=4befc426"></script>
-    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/scripts/furo.js?v=32e29ea5"></script>
     <script src="../../../_static/runthis-client.min.js?v=ad2a40d9"></script>

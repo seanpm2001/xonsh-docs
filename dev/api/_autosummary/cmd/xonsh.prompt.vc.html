@@ -5,11 +5,11 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="xonsh.shell" href="xonsh.shell.html" /><link rel="prev" title="xonsh.prompt.times" href="xonsh.prompt.times.html" />
 
-    <link rel="shortcut icon" href="../../../_static/magic_conch.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
+    <link rel="shortcut icon" href="../../../_static/magic_conch.ico"/><!-- Generated with Sphinx 7.3.5 and Furo 2024.01.29 -->
         <title>xonsh.prompt.vc - xonsh 0.15.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=135e06be" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=fd3f3429" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=c8b63bf6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=36a5483c" />
     
@@ -355,18 +355,18 @@
         </div>
         <article role="main">
           <section id="module-xonsh.prompt.vc">
-<span id="xonsh-prompt-vc"></span><h1>xonsh.prompt.vc<a class="headerlink" href="#module-xonsh.prompt.vc" title="Link to this heading">#</a></h1>
+<span id="xonsh-prompt-vc"></span><h1>xonsh.prompt.vc<a class="headerlink" href="#module-xonsh.prompt.vc" title="Link to this heading">¶</a></h1>
 <p>Prompt formatter for simple version control branches</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.prompt.vc.branch_bg_color">
-<span class="sig-prename descclassname"><span class="pre">xonsh.prompt.vc.</span></span><span class="sig-name descname"><span class="pre">branch_bg_color</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/prompt/vc.html#branch_bg_color"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.prompt.vc.branch_bg_color" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.prompt.vc.</span></span><span class="sig-name descname"><span class="pre">branch_bg_color</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/prompt/vc.html#branch_bg_color"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.prompt.vc.branch_bg_color" title="Link to this definition">¶</a></dt>
 <dd><p>Return red if the current branch is dirty, yellow if the dirtiness can
 not be determined, and green if it clean. These are background colors.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.prompt.vc.branch_color">
-<span class="sig-prename descclassname"><span class="pre">xonsh.prompt.vc.</span></span><span class="sig-name descname"><span class="pre">branch_color</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/prompt/vc.html#branch_color"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.prompt.vc.branch_color" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.prompt.vc.</span></span><span class="sig-name descname"><span class="pre">branch_color</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/prompt/vc.html#branch_color"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.prompt.vc.branch_color" title="Link to this definition">¶</a></dt>
 <dd><p>Return red if the current branch is dirty, yellow if the dirtiness can
 not be determined, and green if it clean. These are bold, intense colors
 for the foreground.</p>
@@ -374,7 +374,7 @@ for the foreground.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.prompt.vc.current_branch">
-<span class="sig-prename descclassname"><span class="pre">xonsh.prompt.vc.</span></span><span class="sig-name descname"><span class="pre">current_branch</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/prompt/vc.html#current_branch"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.prompt.vc.current_branch" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.prompt.vc.</span></span><span class="sig-name descname"><span class="pre">current_branch</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/prompt/vc.html#current_branch"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.prompt.vc.current_branch" title="Link to this definition">¶</a></dt>
 <dd><p>Gets the branch for a current working directory. Returns an empty string
 if the cwd is not a repository.  This currently only works for git, hg, and fossil
 and should be extended in the future.  If a timeout occurred, the string
@@ -383,7 +383,7 @@ and should be extended in the future.  If a timeout occurred, the string
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.prompt.vc.dirty_working_directory">
-<span class="sig-prename descclassname"><span class="pre">xonsh.prompt.vc.</span></span><span class="sig-name descname"><span class="pre">dirty_working_directory</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/prompt/vc.html#dirty_working_directory"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.prompt.vc.dirty_working_directory" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.prompt.vc.</span></span><span class="sig-name descname"><span class="pre">dirty_working_directory</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/prompt/vc.html#dirty_working_directory"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.prompt.vc.dirty_working_directory" title="Link to this definition">¶</a></dt>
 <dd><p>Returns a boolean as to whether there are uncommitted files in version
 control repository we are inside. If this cannot be determined, returns
 None. Currently supports git and hg.</p>
@@ -391,42 +391,42 @@ None. Currently supports git and hg.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.prompt.vc.fossil_dirty_working_directory">
-<span class="sig-prename descclassname"><span class="pre">xonsh.prompt.vc.</span></span><span class="sig-name descname"><span class="pre">fossil_dirty_working_directory</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/prompt/vc.html#fossil_dirty_working_directory"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.prompt.vc.fossil_dirty_working_directory" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.prompt.vc.</span></span><span class="sig-name descname"><span class="pre">fossil_dirty_working_directory</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/prompt/vc.html#fossil_dirty_working_directory"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.prompt.vc.fossil_dirty_working_directory" title="Link to this definition">¶</a></dt>
 <dd><p>Returns whether the fossil checkout is dirty. If this could not
 be determined (timeout, file not found, etc.) then this returns None.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.prompt.vc.get_fossil_branch">
-<span class="sig-prename descclassname"><span class="pre">xonsh.prompt.vc.</span></span><span class="sig-name descname"><span class="pre">get_fossil_branch</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/prompt/vc.html#get_fossil_branch"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.prompt.vc.get_fossil_branch" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.prompt.vc.</span></span><span class="sig-name descname"><span class="pre">get_fossil_branch</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/prompt/vc.html#get_fossil_branch"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.prompt.vc.get_fossil_branch" title="Link to this definition">¶</a></dt>
 <dd><p>Attempts to find the current fossil branch. If this could not
 be determined (timeout, not in a fossil checkout, etc.) then this returns None.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.prompt.vc.get_git_branch">
-<span class="sig-prename descclassname"><span class="pre">xonsh.prompt.vc.</span></span><span class="sig-name descname"><span class="pre">get_git_branch</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/prompt/vc.html#get_git_branch"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.prompt.vc.get_git_branch" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.prompt.vc.</span></span><span class="sig-name descname"><span class="pre">get_git_branch</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/prompt/vc.html#get_git_branch"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.prompt.vc.get_git_branch" title="Link to this definition">¶</a></dt>
 <dd><p>Attempts to find the current git branch. If this could not
 be determined (timeout, not in a git repo, etc.) then this returns None.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.prompt.vc.get_hg_branch">
-<span class="sig-prename descclassname"><span class="pre">xonsh.prompt.vc.</span></span><span class="sig-name descname"><span class="pre">get_hg_branch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/prompt/vc.html#get_hg_branch"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.prompt.vc.get_hg_branch" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.prompt.vc.</span></span><span class="sig-name descname"><span class="pre">get_hg_branch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/prompt/vc.html#get_hg_branch"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.prompt.vc.get_hg_branch" title="Link to this definition">¶</a></dt>
 <dd><p>Try to get the mercurial branch of the current directory,
 return None if not in a repo or subprocess.TimeoutExpired if timed out.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.prompt.vc.git_dirty_working_directory">
-<span class="sig-prename descclassname"><span class="pre">xonsh.prompt.vc.</span></span><span class="sig-name descname"><span class="pre">git_dirty_working_directory</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/prompt/vc.html#git_dirty_working_directory"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.prompt.vc.git_dirty_working_directory" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.prompt.vc.</span></span><span class="sig-name descname"><span class="pre">git_dirty_working_directory</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/prompt/vc.html#git_dirty_working_directory"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.prompt.vc.git_dirty_working_directory" title="Link to this definition">¶</a></dt>
 <dd><p>Returns whether or not the git directory is dirty. If this could not
 be determined (timeout, file not found, etc.) then this returns None.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.prompt.vc.hg_dirty_working_directory">
-<span class="sig-prename descclassname"><span class="pre">xonsh.prompt.vc.</span></span><span class="sig-name descname"><span class="pre">hg_dirty_working_directory</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/prompt/vc.html#hg_dirty_working_directory"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.prompt.vc.hg_dirty_working_directory" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.prompt.vc.</span></span><span class="sig-name descname"><span class="pre">hg_dirty_working_directory</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/prompt/vc.html#hg_dirty_working_directory"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.prompt.vc.hg_dirty_working_directory" title="Link to this definition">¶</a></dt>
 <dd><p>Computes whether or not the mercurial working directory is dirty or not.
 If this cannot be determined, None is returned.</p>
 </dd></dl>
@@ -511,7 +511,7 @@ If this cannot be determined, None is returned.</p>
     </aside>
   </div>
 </div><script src="../../../_static/documentation_options.js?v=4befc426"></script>
-    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/scripts/furo.js?v=32e29ea5"></script>
     <script src="../../../_static/runthis-client.min.js?v=ad2a40d9"></script>

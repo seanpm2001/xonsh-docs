@@ -5,11 +5,11 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="xonsh.procs.proxies" href="xonsh.procs.proxies.html" /><link rel="prev" title="xonsh.procs.pipelines" href="xonsh.procs.pipelines.html" />
 
-    <link rel="shortcut icon" href="../../../_static/magic_conch.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
+    <link rel="shortcut icon" href="../../../_static/magic_conch.ico"/><!-- Generated with Sphinx 7.3.5 and Furo 2024.01.29 -->
         <title>xonsh.procs.posix - xonsh 0.15.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=135e06be" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=fd3f3429" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=c8b63bf6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=36a5483c" />
     
@@ -355,11 +355,11 @@
         </div>
         <article role="main">
           <section id="module-xonsh.procs.posix">
-<span id="xonsh-procs-posix"></span><h1>xonsh.procs.posix<a class="headerlink" href="#module-xonsh.procs.posix" title="Link to this heading">#</a></h1>
+<span id="xonsh-procs-posix"></span><h1>xonsh.procs.posix<a class="headerlink" href="#module-xonsh.procs.posix" title="Link to this heading">¶</a></h1>
 <p>Interface for running subprocess-mode commands on posix systems.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="xonsh.procs.posix.PopenThread">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xonsh.procs.posix.</span></span><span class="sig-name descname"><span class="pre">PopenThread</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stderr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/procs/posix.html#PopenThread"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.procs.posix.PopenThread" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xonsh.procs.posix.</span></span><span class="sig-name descname"><span class="pre">PopenThread</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stdout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stderr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/procs/posix.html#PopenThread"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.procs.posix.PopenThread" title="Link to this definition">¶</a></dt>
 <dd><p>A thread for running and managing subprocess. This allows reading
 from the stdin, stdout, and stderr streams in a non-blocking fashion.</p>
 <p>This takes the same arguments and keyword arguments as regular Popen.
@@ -380,21 +380,21 @@ the base class constructor (Thread.__init__()) before doing anything
 else to the thread.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.procs.posix.PopenThread.getName">
-<span class="sig-name descname"><span class="pre">getName</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.procs.posix.PopenThread.getName" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getName</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.procs.posix.PopenThread.getName" title="Link to this definition">¶</a></dt>
 <dd><p>Return a string used for identification purposes only.</p>
 <p>This method is deprecated, use the name attribute instead.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.procs.posix.PopenThread.isDaemon">
-<span class="sig-name descname"><span class="pre">isDaemon</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.procs.posix.PopenThread.isDaemon" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">isDaemon</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.procs.posix.PopenThread.isDaemon" title="Link to this definition">¶</a></dt>
 <dd><p>Return whether this thread is a daemon.</p>
 <p>This method is deprecated, use the daemon attribute instead.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.procs.posix.PopenThread.is_alive">
-<span class="sig-name descname"><span class="pre">is_alive</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.procs.posix.PopenThread.is_alive" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">is_alive</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.procs.posix.PopenThread.is_alive" title="Link to this definition">¶</a></dt>
 <dd><p>Return whether the thread is alive.</p>
 <p>This method returns True just before the run() method starts until just
 after the run() method terminates. See also the module function
@@ -403,7 +403,7 @@ enumerate().</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.procs.posix.PopenThread.join">
-<span class="sig-name descname"><span class="pre">join</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.procs.posix.PopenThread.join" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">join</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.procs.posix.PopenThread.join" title="Link to this definition">¶</a></dt>
 <dd><p>Wait until the thread terminates.</p>
 <p>This blocks the calling thread until the thread whose join() method is
 called terminates – either normally or through an unhandled exception
@@ -424,19 +424,19 @@ exception.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.procs.posix.PopenThread.kill">
-<span class="sig-name descname"><span class="pre">kill</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/procs/posix.html#PopenThread.kill"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.procs.posix.PopenThread.kill" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">kill</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/procs/posix.html#PopenThread.kill"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.procs.posix.PopenThread.kill" title="Link to this definition">¶</a></dt>
 <dd><p>Dispatches to Popen.kill().</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.procs.posix.PopenThread.poll">
-<span class="sig-name descname"><span class="pre">poll</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/procs/posix.html#PopenThread.poll"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.procs.posix.PopenThread.poll" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">poll</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/procs/posix.html#PopenThread.poll"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.procs.posix.PopenThread.poll" title="Link to this definition">¶</a></dt>
 <dd><p>Dispatches to Popen.returncode.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.procs.posix.PopenThread.run">
-<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/procs/posix.html#PopenThread.run"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.procs.posix.PopenThread.run" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/procs/posix.html#PopenThread.run"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.procs.posix.PopenThread.run" title="Link to this definition">¶</a></dt>
 <dd><p>Runs the subprocess by performing a parallel read on stdin if allowed,
 and copying bytes from captured_stdout to stdout and bytes from
 captured_stderr to stderr.</p>
@@ -444,27 +444,27 @@ captured_stderr to stderr.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.procs.posix.PopenThread.send_signal">
-<span class="sig-name descname"><span class="pre">send_signal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">signal</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/procs/posix.html#PopenThread.send_signal"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.procs.posix.PopenThread.send_signal" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">send_signal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">signal</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/procs/posix.html#PopenThread.send_signal"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.procs.posix.PopenThread.send_signal" title="Link to this definition">¶</a></dt>
 <dd><p>Dispatches to Popen.send_signal().</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.procs.posix.PopenThread.setDaemon">
-<span class="sig-name descname"><span class="pre">setDaemon</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">daemonic</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.procs.posix.PopenThread.setDaemon" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">setDaemon</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">daemonic</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.procs.posix.PopenThread.setDaemon" title="Link to this definition">¶</a></dt>
 <dd><p>Set whether this thread is a daemon.</p>
 <p>This method is deprecated, use the .daemon property instead.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.procs.posix.PopenThread.setName">
-<span class="sig-name descname"><span class="pre">setName</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.procs.posix.PopenThread.setName" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">setName</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.procs.posix.PopenThread.setName" title="Link to this definition">¶</a></dt>
 <dd><p>Set the name string for this thread.</p>
 <p>This method is deprecated, use the name attribute instead.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.procs.posix.PopenThread.start">
-<span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.procs.posix.PopenThread.start" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.procs.posix.PopenThread.start" title="Link to this definition">¶</a></dt>
 <dd><p>Start the thread’s activity.</p>
 <p>It must be called at most once per thread object. It arranges for the
 object’s run() method to be invoked in a separate thread of control.</p>
@@ -474,13 +474,13 @@ same thread object.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.procs.posix.PopenThread.terminate">
-<span class="sig-name descname"><span class="pre">terminate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/procs/posix.html#PopenThread.terminate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.procs.posix.PopenThread.terminate" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">terminate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/procs/posix.html#PopenThread.terminate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.procs.posix.PopenThread.terminate" title="Link to this definition">¶</a></dt>
 <dd><p>Dispatches to Popen.terminate().</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.procs.posix.PopenThread.wait">
-<span class="sig-name descname"><span class="pre">wait</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/procs/posix.html#PopenThread.wait"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.procs.posix.PopenThread.wait" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">wait</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/procs/posix.html#PopenThread.wait"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.procs.posix.PopenThread.wait" title="Link to this definition">¶</a></dt>
 <dd><p>Dispatches to Popen.wait(), but also does process cleanup such as
 joining this thread and replacing the original window size signal
 handler.</p>
@@ -488,7 +488,7 @@ handler.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="xonsh.procs.posix.PopenThread.daemon">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">daemon</span></span><a class="headerlink" href="#xonsh.procs.posix.PopenThread.daemon" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">daemon</span></span><a class="headerlink" href="#xonsh.procs.posix.PopenThread.daemon" title="Link to this definition">¶</a></dt>
 <dd><p>A boolean value indicating whether this thread is a daemon thread.</p>
 <p>This must be set before start() is called, otherwise RuntimeError is
 raised. Its initial value is inherited from the creating thread; the
@@ -499,7 +499,7 @@ the main thread default to daemon = False.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="xonsh.procs.posix.PopenThread.ident">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ident</span></span><a class="headerlink" href="#xonsh.procs.posix.PopenThread.ident" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ident</span></span><a class="headerlink" href="#xonsh.procs.posix.PopenThread.ident" title="Link to this definition">¶</a></dt>
 <dd><p>Thread identifier of this thread or None if it has not been started.</p>
 <p>This is a nonzero integer. See the get_ident() function. Thread
 identifiers may be recycled when a thread exits and another thread is
@@ -508,7 +508,7 @@ created. The identifier is available even after the thread has exited.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="xonsh.procs.posix.PopenThread.name">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#xonsh.procs.posix.PopenThread.name" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#xonsh.procs.posix.PopenThread.name" title="Link to this definition">¶</a></dt>
 <dd><p>A string used for identification purposes only.</p>
 <p>It has no semantics. Multiple threads may be given the same name. The
 initial name is set by the constructor.</p>
@@ -516,7 +516,7 @@ initial name is set by the constructor.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="xonsh.procs.posix.PopenThread.native_id">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">native_id</span></span><a class="headerlink" href="#xonsh.procs.posix.PopenThread.native_id" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">native_id</span></span><a class="headerlink" href="#xonsh.procs.posix.PopenThread.native_id" title="Link to this definition">¶</a></dt>
 <dd><p>Native integral thread ID of this thread, or None if it has not been started.</p>
 <p>This is a non-negative integer. See the get_native_id() function.
 This represents the Thread ID as reported by the kernel.</p>
@@ -524,13 +524,13 @@ This represents the Thread ID as reported by the kernel.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="xonsh.procs.posix.PopenThread.returncode">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">returncode</span></span><a class="headerlink" href="#xonsh.procs.posix.PopenThread.returncode" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">returncode</span></span><a class="headerlink" href="#xonsh.procs.posix.PopenThread.returncode" title="Link to this definition">¶</a></dt>
 <dd><p>Process return code.</p>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="xonsh.procs.posix.PopenThread.signal">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">signal</span></span><a class="headerlink" href="#xonsh.procs.posix.PopenThread.signal" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">signal</span></span><a class="headerlink" href="#xonsh.procs.posix.PopenThread.signal" title="Link to this definition">¶</a></dt>
 <dd><p>Process signal, or None.</p>
 </dd></dl>
 
@@ -628,7 +628,7 @@ This represents the Thread ID as reported by the kernel.</p>
     </aside>
   </div>
 </div><script src="../../../_static/documentation_options.js?v=4befc426"></script>
-    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/scripts/furo.js?v=32e29ea5"></script>
     <script src="../../../_static/runthis-client.min.js?v=ad2a40d9"></script>
