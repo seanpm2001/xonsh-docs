@@ -363,7 +363,7 @@
 <span class="kn">import</span> <span class="nn">xonsh.wizard</span> <span class="k">as</span> <span class="nn">wiz</span>
 <span class="kn">from</span> <span class="nn">xonsh</span> <span class="kn">import</span> <span class="n">__version__</span> <span class="k">as</span> <span class="n">XONSH_VERSION</span>
 <span class="kn">from</span> <span class="nn">xonsh.built_ins</span> <span class="kn">import</span> <span class="n">XSH</span>
-<span class="kn">from</span> <span class="nn">xonsh.cli_utils</span> <span class="kn">import</span> <span class="n">Annotated</span><span class="p">,</span> <span class="n">Arg</span><span class="p">,</span> <span class="n">ArgParserAlias</span><span class="p">,</span> <span class="n">add_args</span>
+<span class="kn">from</span> <span class="nn">xonsh.cli_utils</span> <span class="kn">import</span> <span class="n">Arg</span><span class="p">,</span> <span class="n">ArgParserAlias</span>
 <span class="kn">from</span> <span class="nn">xonsh.events</span> <span class="kn">import</span> <span class="n">events</span>
 <span class="kn">from</span> <span class="nn">xonsh.foreign_shells</span> <span class="kn">import</span> <span class="n">CANON_SHELL_NAMES</span>
 <span class="kn">from</span> <span class="nn">xonsh.lazyasd</span> <span class="kn">import</span> <span class="n">lazyobject</span>
@@ -1011,7 +1011,7 @@
 
 
 <span class="k">def</span> <span class="nf">_colors</span><span class="p">(</span>
-    <span class="n">style</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Arg</span><span class="p">(</span><span class="n">nargs</span><span class="o">=</span><span class="s2">&quot;?&quot;</span><span class="p">,</span> <span class="n">completer</span><span class="o">=</span><span class="n">xonfig_color_completer</span><span class="p">)]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">style</span><span class="p">:</span> <span class="n">tp</span><span class="o">.</span><span class="n">Annotated</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Arg</span><span class="p">(</span><span class="n">nargs</span><span class="o">=</span><span class="s2">&quot;?&quot;</span><span class="p">,</span> <span class="n">completer</span><span class="o">=</span><span class="n">xonfig_color_completer</span><span class="p">)]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Preview color style</span>
 
@@ -1087,8 +1087,7 @@
     <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">parser</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_parser</span><span class="p">(</span><span class="n">prog</span><span class="o">=</span><span class="s2">&quot;xonfig&quot;</span><span class="p">)</span>
         <span class="c1"># register as default action</span>
-        <span class="n">add_args</span><span class="p">(</span><span class="n">parser</span><span class="p">,</span> <span class="n">_info</span><span class="p">,</span> <span class="n">allowed_params</span><span class="o">=</span><span class="p">())</span>
-        <span class="n">parser</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">_info</span><span class="p">)</span>
+        <span class="n">parser</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">_info</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         <span class="n">parser</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">_web</span><span class="p">)</span>
         <span class="n">parser</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">_wizard</span><span class="p">)</span>
         <span class="n">parser</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">_styles</span><span class="p">)</span>

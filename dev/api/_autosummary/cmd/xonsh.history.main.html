@@ -394,7 +394,7 @@ set self.__traceback__ to tb and return self.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.history.main.HistoryAlias.create_parser">
-<span class="sig-name descname"><span class="pre">create_parser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">has_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowed_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.history.main.HistoryAlias.create_parser" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">create_parser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">has_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowed_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ArgParser</span></span></span><a class="headerlink" href="#xonsh.history.main.HistoryAlias.create_parser" title="Link to this definition">¶</a></dt>
 <dd><p>create root parser</p>
 </dd></dl>
 
@@ -466,19 +466,6 @@ set self.__traceback__ to tb and return self.</p>
 </dl>
 </dd>
 </dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="xonsh.history.main.HistoryAlias.hook_post_add_argument">
-<span class="sig-name descname"><span class="pre">hook_post_add_argument</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">action</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">param</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">_</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/history/main.html#HistoryAlias.hook_post_add_argument"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.history.main.HistoryAlias.hook_post_add_argument" title="Link to this definition">¶</a></dt>
-<dd><p>Hook into parser.add_argument step.</p>
-<p>Can be used to update action’s attributes</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="xonsh.history.main.HistoryAlias.hook_pre_add_argument">
-<span class="sig-name descname"><span class="pre">hook_pre_add_argument</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flags</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.history.main.HistoryAlias.hook_pre_add_argument" title="Link to this definition">¶</a></dt>
-<dd><p>Hook to update arguments that are passed to parser.add_argument</p>
 </dd></dl>
 
 <dl class="py method">
@@ -606,6 +593,17 @@ set self.__traceback__ to tb and return self.</p>
 
 </dd></dl>
 
+<dl class="py class">
+<dt class="sig sig-object py" id="xonsh.history.main.SessionAction">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xonsh.history.main.</span></span><span class="sig-name descname"><span class="pre">SessionAction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/history/main.html#SessionAction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.history.main.SessionAction" title="Link to this definition">¶</a></dt>
+<dd><p>Set the choices lazily</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="xonsh.history.main.SessionAction.format_usage">
+<span class="sig-name descname"><span class="pre">format_usage</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.history.main.SessionAction.format_usage" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.history.main.construct_history">
 <span class="sig-prename descclassname"><span class="pre">xonsh.history.main.</span></span><span class="sig-name descname"><span class="pre">construct_history</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">backend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="xonsh.history.base.html#xonsh.history.base.History" title="xonsh.history.base.History"><span class="pre">History</span></a></span></span><a class="reference internal" href="../../../_modules/xonsh/history/main.html#construct_history"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.history.main.construct_history" title="Link to this definition">¶</a></dt>
@@ -685,8 +683,6 @@ set self.__traceback__ to tb and return self.</p>
 <li><a class="reference internal" href="#xonsh.history.main.HistoryAlias.file"><code class="docutils literal notranslate"><span class="pre">HistoryAlias.file()</span></code></a></li>
 <li><a class="reference internal" href="#xonsh.history.main.HistoryAlias.flush"><code class="docutils literal notranslate"><span class="pre">HistoryAlias.flush()</span></code></a></li>
 <li><a class="reference internal" href="#xonsh.history.main.HistoryAlias.gc"><code class="docutils literal notranslate"><span class="pre">HistoryAlias.gc()</span></code></a></li>
-<li><a class="reference internal" href="#xonsh.history.main.HistoryAlias.hook_post_add_argument"><code class="docutils literal notranslate"><span class="pre">HistoryAlias.hook_post_add_argument()</span></code></a></li>
-<li><a class="reference internal" href="#xonsh.history.main.HistoryAlias.hook_pre_add_argument"><code class="docutils literal notranslate"><span class="pre">HistoryAlias.hook_pre_add_argument()</span></code></a></li>
 <li><a class="reference internal" href="#xonsh.history.main.HistoryAlias.id_cmd"><code class="docutils literal notranslate"><span class="pre">HistoryAlias.id_cmd()</span></code></a></li>
 <li><a class="reference internal" href="#xonsh.history.main.HistoryAlias.info"><code class="docutils literal notranslate"><span class="pre">HistoryAlias.info()</span></code></a></li>
 <li><a class="reference internal" href="#xonsh.history.main.HistoryAlias.off"><code class="docutils literal notranslate"><span class="pre">HistoryAlias.off()</span></code></a></li>
@@ -698,6 +694,10 @@ set self.__traceback__ to tb and return self.</p>
 <li><a class="reference internal" href="#xonsh.history.main.HistoryAlias.write_to"><code class="docutils literal notranslate"><span class="pre">HistoryAlias.write_to()</span></code></a></li>
 <li><a class="reference internal" href="#xonsh.history.main.HistoryAlias.xonsh_complete"><code class="docutils literal notranslate"><span class="pre">HistoryAlias.xonsh_complete()</span></code></a></li>
 <li><a class="reference internal" href="#xonsh.history.main.HistoryAlias.parser"><code class="docutils literal notranslate"><span class="pre">HistoryAlias.parser</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#xonsh.history.main.SessionAction"><code class="docutils literal notranslate"><span class="pre">SessionAction</span></code></a><ul>
+<li><a class="reference internal" href="#xonsh.history.main.SessionAction.format_usage"><code class="docutils literal notranslate"><span class="pre">SessionAction.format_usage()</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#xonsh.history.main.construct_history"><code class="docutils literal notranslate"><span class="pre">construct_history()</span></code></a></li>

@@ -620,7 +620,7 @@ set self.__traceback__ to tb and return self.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.aliases.SourceForeignAlias.create_parser">
-<span class="sig-name descname"><span class="pre">create_parser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">has_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowed_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.aliases.SourceForeignAlias.create_parser" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">create_parser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">has_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowed_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ArgParser</span></span></span><a class="headerlink" href="#xonsh.aliases.SourceForeignAlias.create_parser" title="Link to this definition">¶</a></dt>
 <dd><p>create root parser</p>
 </dd></dl>
 
@@ -628,19 +628,6 @@ set self.__traceback__ to tb and return self.</p>
 <dt class="sig sig-object py" id="xonsh.aliases.SourceForeignAlias.err">
 <span class="sig-name descname"><span class="pre">err</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.aliases.SourceForeignAlias.err" title="Link to this definition">¶</a></dt>
 <dd><p>Write text to error stream</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="xonsh.aliases.SourceForeignAlias.hook_post_add_argument">
-<span class="sig-name descname"><span class="pre">hook_post_add_argument</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parser</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ArgParser</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ArgumentParser</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Action</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">param</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.aliases.SourceForeignAlias.hook_post_add_argument" title="Link to this definition">¶</a></dt>
-<dd><p>Hook into parser.add_argument step.</p>
-<p>Can be used to update action’s attributes</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="xonsh.aliases.SourceForeignAlias.hook_pre_add_argument">
-<span class="sig-name descname"><span class="pre">hook_pre_add_argument</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flags</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.aliases.SourceForeignAlias.hook_pre_add_argument" title="Link to this definition">¶</a></dt>
-<dd><p>Hook to update arguments that are passed to parser.add_argument</p>
 </dd></dl>
 
 <dl class="py method">
@@ -953,8 +940,6 @@ explicitly with ![exec command]. For more details, please see
 <li><a class="reference internal" href="#xonsh.aliases.SourceForeignAlias.build"><code class="docutils literal notranslate"><span class="pre">SourceForeignAlias.build()</span></code></a></li>
 <li><a class="reference internal" href="#xonsh.aliases.SourceForeignAlias.create_parser"><code class="docutils literal notranslate"><span class="pre">SourceForeignAlias.create_parser()</span></code></a></li>
 <li><a class="reference internal" href="#xonsh.aliases.SourceForeignAlias.err"><code class="docutils literal notranslate"><span class="pre">SourceForeignAlias.err()</span></code></a></li>
-<li><a class="reference internal" href="#xonsh.aliases.SourceForeignAlias.hook_post_add_argument"><code class="docutils literal notranslate"><span class="pre">SourceForeignAlias.hook_post_add_argument()</span></code></a></li>
-<li><a class="reference internal" href="#xonsh.aliases.SourceForeignAlias.hook_pre_add_argument"><code class="docutils literal notranslate"><span class="pre">SourceForeignAlias.hook_pre_add_argument()</span></code></a></li>
 <li><a class="reference internal" href="#xonsh.aliases.SourceForeignAlias.out"><code class="docutils literal notranslate"><span class="pre">SourceForeignAlias.out()</span></code></a></li>
 <li><a class="reference internal" href="#xonsh.aliases.SourceForeignAlias.write_to"><code class="docutils literal notranslate"><span class="pre">SourceForeignAlias.write_to()</span></code></a></li>
 <li><a class="reference internal" href="#xonsh.aliases.SourceForeignAlias.xonsh_complete"><code class="docutils literal notranslate"><span class="pre">SourceForeignAlias.xonsh_complete()</span></code></a></li>
