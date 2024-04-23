@@ -5,11 +5,11 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Bash to Xonsh Translation Guide" href="bash_to_xsh.html" /><link rel="prev" title="Tutorial: Subprocess Strings" href="tutorial_subproc_strings.html" />
 
-    <link rel="shortcut icon" href="_static/magic_conch.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
-        <title>Tutorial: prompt_toolkit custom keybindings - xonsh 0.15.1 documentation</title>
+    <link rel="shortcut icon" href="_static/magic_conch.ico"/><!-- Generated with Sphinx 7.3.7 and Furo 2024.01.29 -->
+        <title>Tutorial: prompt_toolkit custom keybindings - xonsh 0.16.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
-    <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=fd3f3429" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css?v=c8b63bf6" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
     
@@ -125,7 +125,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="contents.html"><div class="brand">xonsh 0.15.1 documentation</div></a>
+      <a href="contents.html"><div class="brand">xonsh 0.16.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -151,7 +151,7 @@
     <img class="sidebar-logo" src="_static/ascii_conch_part_transparent_tight.png" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">xonsh 0.15.1 documentation</span>
+  <span class="sidebar-brand-text">xonsh 0.16.0 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -355,7 +355,7 @@
         </div>
         <article role="main">
           <section id="tutorial-prompt-toolkit-custom-keybindings">
-<span id="tutorial-ptk"></span><h1>Tutorial: <code class="docutils literal notranslate"><span class="pre">prompt_toolkit</span></code> custom keybindings<a class="headerlink" href="#tutorial-prompt-toolkit-custom-keybindings" title="Link to this heading">#</a></h1>
+<span id="tutorial-ptk"></span><h1>Tutorial: <code class="docutils literal notranslate"><span class="pre">prompt_toolkit</span></code> custom keybindings<a class="headerlink" href="#tutorial-prompt-toolkit-custom-keybindings" title="Link to this heading">¶</a></h1>
 <p>Are you really jonesing for some special keybindings? We can help you out with
 that. The first time is free and so is every other time!</p>
 <div class="admonition warning">
@@ -365,7 +365,7 @@ that. The first time is free and so is every other time!</p>
 rendering your prompt completely unusable, so tread lightly.</p>
 </div>
 <section id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">prompt_toolkit</span></code> shell has a registry for handling custom keybindings. You
 may not like the default keybindings in xonsh, or you may want to add a new key
 binding.</p>
@@ -374,7 +374,7 @@ keybindings and warn you about potential pitfalls.</p>
 <p>All of the code below can be entered into your <a class="reference external" href="xonshrc.html">xonshrc</a></p>
 </section>
 <section id="control-characters">
-<h2>Control characters<a class="headerlink" href="#control-characters" title="Link to this heading">#</a></h2>
+<h2>Control characters<a class="headerlink" href="#control-characters" title="Link to this heading">¶</a></h2>
 <p>We can’t and won’t stop you from doing what you want, but in the interest of a
 functioning shell, you probably shouldn’t mess with the following keystrokes.
 Some of them are <a class="reference external" href="https://en.wikipedia.org/wiki/Control_character#In_ASCII">ASCII control characters</a> and <em>really</em>
@@ -419,7 +419,7 @@ functionality (in less you take the time to rebind them elsewhere).</p>
 </div>
 </section>
 <section id="useful-imports">
-<h2>Useful imports<a class="headerlink" href="#useful-imports" title="Link to this heading">#</a></h2>
+<h2>Useful imports<a class="headerlink" href="#useful-imports" title="Link to this heading">¶</a></h2>
 <p>There are a few useful <code class="docutils literal notranslate"><span class="pre">prompt_toolkit</span></code> tools that will help us create better
 bindings:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">prompt_toolkit.keys</span> <span class="kn">import</span> <span class="n">Keys</span>
@@ -428,7 +428,7 @@ bindings:</p>
 </div>
 </section>
 <section id="custom-keyload-function">
-<h2>Custom keyload function<a class="headerlink" href="#custom-keyload-function" title="Link to this heading">#</a></h2>
+<h2>Custom keyload function<a class="headerlink" href="#custom-keyload-function" title="Link to this heading">¶</a></h2>
 <p>We need our additional keybindings to load after the shell is initialized, so we
 define a function that contains all of the custom keybindings and decorate it
 with the appropriate event, in this case <code class="docutils literal notranslate"><span class="pre">on_ptk_create</span></code>.</p>
@@ -449,7 +449,7 @@ pressing <code class="docutils literal notranslate"><span class="pre">Ctrl-w</sp
 </div>
 </section>
 <section id="what-commands-can-keybindings-run">
-<h2>What commands can keybindings run?<a class="headerlink" href="#what-commands-can-keybindings-run" title="Link to this heading">#</a></h2>
+<h2>What commands can keybindings run?<a class="headerlink" href="#what-commands-can-keybindings-run" title="Link to this heading">¶</a></h2>
 <p>Pretty much anything! Since we’re defining these commands after xonsh has
 started up, we can create keybinding events that run subprocess commands with
 hardly any effort at all. If we wanted to, say, have a command that runs <code class="docutils literal notranslate"><span class="pre">ls</span>
@@ -467,7 +467,7 @@ after asking for a separate command to send information to <code class="docutils
 </div>
 </section>
 <section id="restrict-actions-with-filters">
-<h2>Restrict actions with filters<a class="headerlink" href="#restrict-actions-with-filters" title="Link to this heading">#</a></h2>
+<h2>Restrict actions with filters<a class="headerlink" href="#restrict-actions-with-filters" title="Link to this heading">¶</a></h2>
 <p>Often we want a key command to only work if certain conditions are met. For
 instance, the <code class="docutils literal notranslate"><span class="pre">&lt;TAB&gt;</span></code> key in xonsh brings up the completions menu, but then it
 also cycles through the available completions. We use filters to create this
@@ -573,8 +573,8 @@ Useful? Debatable. Powerful? Yes.</p>
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=4befc426"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
+</div><script src="_static/documentation_options.js?v=ecbec2ee"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=32e29ea5"></script>
     <script src="_static/runthis-client.min.js?v=ad2a40d9"></script>

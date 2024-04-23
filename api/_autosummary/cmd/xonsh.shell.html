@@ -5,11 +5,11 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="xonsh.base_shell" href="xonsh.base_shell.html" /><link rel="prev" title="xonsh.prompt.vc" href="xonsh.prompt.vc.html" />
 
-    <link rel="shortcut icon" href="../../../_static/magic_conch.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
-        <title>xonsh.shell - xonsh 0.15.1 documentation</title>
+    <link rel="shortcut icon" href="../../../_static/magic_conch.ico"/><!-- Generated with Sphinx 7.3.7 and Furo 2024.01.29 -->
+        <title>xonsh.shell - xonsh 0.16.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=135e06be" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=fd3f3429" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=c8b63bf6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=36a5483c" />
     
@@ -125,7 +125,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../../contents.html"><div class="brand">xonsh 0.15.1 documentation</div></a>
+      <a href="../../../contents.html"><div class="brand">xonsh 0.16.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -151,7 +151,7 @@
     <img class="sidebar-logo" src="../../../_static/ascii_conch_part_transparent_tight.png" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">xonsh 0.15.1 documentation</span>
+  <span class="sidebar-brand-text">xonsh 0.16.0 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -355,11 +355,11 @@
         </div>
         <article role="main">
           <section id="module-xonsh.shell">
-<span id="xonsh-shell"></span><h1>xonsh.shell<a class="headerlink" href="#module-xonsh.shell" title="Link to this heading">#</a></h1>
+<span id="xonsh-shell"></span><h1>xonsh.shell<a class="headerlink" href="#module-xonsh.shell" title="Link to this heading">¶</a></h1>
 <p>The xonsh shell</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="xonsh.shell.Shell">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xonsh.shell.</span></span><span class="sig-name descname"><span class="pre">Shell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">execer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shell_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/shell.html#Shell"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.shell.Shell" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xonsh.shell.</span></span><span class="sig-name descname"><span class="pre">Shell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">execer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shell_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/shell.html#Shell"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.shell.Shell" title="Link to this definition">¶</a></dt>
 <dd><p>Main xonsh shell.</p>
 <p>Initializes execution environment and decides if prompt_toolkit or
 readline version of shell should be used.</p>
@@ -381,25 +381,25 @@ or ‘random’.</p>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.shell.Shell.choose_shell_type">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">choose_shell_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">init_shell_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/shell.html#Shell.choose_shell_type"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.shell.Shell.choose_shell_type" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">choose_shell_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">init_shell_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/shell.html#Shell.choose_shell_type"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.shell.Shell.choose_shell_type" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.shell.Shell.construct_shell_cls">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">construct_shell_cls</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">backend</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/shell.html#Shell.construct_shell_cls"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.shell.Shell.construct_shell_cls" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">construct_shell_cls</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">backend</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/shell.html#Shell.construct_shell_cls"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.shell.Shell.construct_shell_cls" title="Link to this definition">¶</a></dt>
 <dd><p>Construct the history backend object.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="xonsh.shell.Shell.shell_type_aliases">
-<span class="sig-name descname"><span class="pre">shell_type_aliases</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'b':</span> <span class="pre">'best',</span> <span class="pre">'best':</span> <span class="pre">'best',</span> <span class="pre">'d':</span> <span class="pre">'dumb',</span> <span class="pre">'dumb':</span> <span class="pre">'dumb',</span> <span class="pre">'prompt-toolkit':</span> <span class="pre">'prompt_toolkit',</span> <span class="pre">'prompt_toolkit':</span> <span class="pre">'prompt_toolkit',</span> <span class="pre">'ptk':</span> <span class="pre">'prompt_toolkit',</span> <span class="pre">'rand':</span> <span class="pre">'random',</span> <span class="pre">'random':</span> <span class="pre">'random',</span> <span class="pre">'readline':</span> <span class="pre">'readline',</span> <span class="pre">'rl':</span> <span class="pre">'readline'}</span></em><a class="headerlink" href="#xonsh.shell.Shell.shell_type_aliases" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">shell_type_aliases</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'b':</span> <span class="pre">'best',</span> <span class="pre">'best':</span> <span class="pre">'best',</span> <span class="pre">'d':</span> <span class="pre">'dumb',</span> <span class="pre">'dumb':</span> <span class="pre">'dumb',</span> <span class="pre">'prompt-toolkit':</span> <span class="pre">'prompt_toolkit',</span> <span class="pre">'prompt_toolkit':</span> <span class="pre">'prompt_toolkit',</span> <span class="pre">'ptk':</span> <span class="pre">'prompt_toolkit',</span> <span class="pre">'rand':</span> <span class="pre">'random',</span> <span class="pre">'random':</span> <span class="pre">'random',</span> <span class="pre">'readline':</span> <span class="pre">'readline',</span> <span class="pre">'rl':</span> <span class="pre">'readline'}</span></em><a class="headerlink" href="#xonsh.shell.Shell.shell_type_aliases" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.shell.transform_command">
-<span class="sig-prename descclassname"><span class="pre">xonsh.shell.</span></span><span class="sig-name descname"><span class="pre">transform_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_diff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/shell.html#transform_command"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.shell.transform_command" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.shell.</span></span><span class="sig-name descname"><span class="pre">transform_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_diff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/shell.html#transform_command"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.shell.transform_command" title="Link to this definition">¶</a></dt>
 <dd><p>Returns the results of firing the precommand handles.</p>
 </dd></dl>
 
@@ -479,8 +479,8 @@ or ‘random’.</p>
       
     </aside>
   </div>
-</div><script src="../../../_static/documentation_options.js?v=4befc426"></script>
-    <script src="../../../_static/doctools.js?v=888ff710"></script>
+</div><script src="../../../_static/documentation_options.js?v=ecbec2ee"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/scripts/furo.js?v=32e29ea5"></script>
     <script src="../../../_static/runthis-client.min.js?v=ad2a40d9"></script>

@@ -4,11 +4,11 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" />
 
-    <link rel="shortcut icon" href="../../_static/magic_conch.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
-        <title>xonsh.aliases - xonsh 0.15.1 documentation</title>
+    <link rel="shortcut icon" href="../../_static/magic_conch.ico"/><!-- Generated with Sphinx 7.3.7 and Furo 2024.01.29 -->
+        <title>xonsh.aliases - xonsh 0.16.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
-    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=fd3f3429" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=c8b63bf6" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
     
@@ -124,7 +124,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../contents.html"><div class="brand">xonsh 0.15.1 documentation</div></a>
+      <a href="../../contents.html"><div class="brand">xonsh 0.16.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -150,7 +150,7 @@
     <img class="sidebar-logo" src="../../_static/ascii_conch_part_transparent_tight.png" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">xonsh 0.15.1 documentation</span>
+  <span class="sidebar-brand-text">xonsh 0.16.0 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -809,7 +809,7 @@
 <span class="k">def</span> <span class="nf">source_foreign_fn</span><span class="p">(</span>
     <span class="n">shell</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">files_or_code</span><span class="p">:</span> <span class="n">Annotated</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">Arg</span><span class="p">(</span><span class="n">nargs</span><span class="o">=</span><span class="s2">&quot;+&quot;</span><span class="p">)],</span>
-    <span class="n">interactive</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">interactive</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="n">login</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="n">envcmd</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">aliascmd</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -836,7 +836,7 @@
 <span class="sd">        Name or path to the foreign shell</span>
 <span class="sd">    files_or_code</span>
 <span class="sd">        file paths to source or code in the target language.</span>
-<span class="sd">    interactive : -n, --non-interactive</span>
+<span class="sd">    interactive : -i, --interactive</span>
 <span class="sd">        whether the sourced shell should be interactive</span>
 <span class="sd">    login : -l, --login</span>
 <span class="sd">        whether the sourced shell should be login</span>
@@ -951,7 +951,27 @@
 
 
 
-<span class="n">source_foreign</span> <span class="o">=</span> <span class="n">ArgParserAlias</span><span class="p">(</span>
+<div class="viewcode-block" id="SourceForeignAlias">
+<a class="viewcode-back" href="../../api/_autosummary/cmd/xonsh.aliases.html#xonsh.aliases.SourceForeignAlias">[docs]</a>
+<span class="k">class</span> <span class="nc">SourceForeignAlias</span><span class="p">(</span><span class="n">ArgParserAlias</span><span class="p">):</span>
+<div class="viewcode-block" id="SourceForeignAlias.build">
+<a class="viewcode-back" href="../../api/_autosummary/cmd/xonsh.aliases.html#xonsh.aliases.SourceForeignAlias.build">[docs]</a>
+    <span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">parser</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_parser</span><span class="p">(</span><span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="c1"># for backwards compatibility</span>
+        <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+            <span class="s2">&quot;-n&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;--non-interactive&quot;</span><span class="p">,</span>
+            <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store_false&quot;</span><span class="p">,</span>
+            <span class="n">dest</span><span class="o">=</span><span class="s2">&quot;interactive&quot;</span><span class="p">,</span>
+            <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Deprecated: The default mode runs in non-interactive mode.&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">parser</span></div>
+</div>
+
+
+
+<span class="n">source_foreign</span> <span class="o">=</span> <span class="n">SourceForeignAlias</span><span class="p">(</span>
     <span class="n">func</span><span class="o">=</span><span class="n">source_foreign_fn</span><span class="p">,</span> <span class="n">has_args</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">prog</span><span class="o">=</span><span class="s2">&quot;source-foreign&quot;</span>
 <span class="p">)</span>
 
@@ -1271,12 +1291,12 @@
         <span class="s2">&quot;exec&quot;</span><span class="p">:</span> <span class="n">xexec</span><span class="p">,</span>
         <span class="s2">&quot;xexec&quot;</span><span class="p">:</span> <span class="n">xexec</span><span class="p">,</span>
         <span class="s2">&quot;source&quot;</span><span class="p">:</span> <span class="n">source_alias</span><span class="p">,</span>
-        <span class="s2">&quot;source-zsh&quot;</span><span class="p">:</span> <span class="n">ArgParserAlias</span><span class="p">(</span>
+        <span class="s2">&quot;source-zsh&quot;</span><span class="p">:</span> <span class="n">SourceForeignAlias</span><span class="p">(</span>
             <span class="n">func</span><span class="o">=</span><span class="n">functools</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span><span class="n">source_foreign_fn</span><span class="p">,</span> <span class="s2">&quot;zsh&quot;</span><span class="p">,</span> <span class="n">sourcer</span><span class="o">=</span><span class="s2">&quot;source&quot;</span><span class="p">),</span>
             <span class="n">has_args</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
             <span class="n">prog</span><span class="o">=</span><span class="s2">&quot;source-zsh&quot;</span><span class="p">,</span>
         <span class="p">),</span>
-        <span class="s2">&quot;source-bash&quot;</span><span class="p">:</span> <span class="n">ArgParserAlias</span><span class="p">(</span>
+        <span class="s2">&quot;source-bash&quot;</span><span class="p">:</span> <span class="n">SourceForeignAlias</span><span class="p">(</span>
             <span class="n">func</span><span class="o">=</span><span class="n">functools</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span><span class="n">source_foreign_fn</span><span class="p">,</span> <span class="s2">&quot;bash&quot;</span><span class="p">,</span> <span class="n">sourcer</span><span class="o">=</span><span class="s2">&quot;source&quot;</span><span class="p">),</span>
             <span class="n">has_args</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
             <span class="n">prog</span><span class="o">=</span><span class="s2">&quot;source-bash&quot;</span><span class="p">,</span>
@@ -1399,8 +1419,8 @@
       
     </aside>
   </div>
-</div><script src="../../_static/documentation_options.js?v=4befc426"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
+</div><script src="../../_static/documentation_options.js?v=ecbec2ee"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>
     <script src="../../_static/runthis-client.min.js?v=ad2a40d9"></script>

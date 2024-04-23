@@ -4,11 +4,11 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" />
 
-    <link rel="shortcut icon" href="../../_static/magic_conch.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
-        <title>xonsh.lexer - xonsh 0.15.1 documentation</title>
+    <link rel="shortcut icon" href="../../_static/magic_conch.ico"/><!-- Generated with Sphinx 7.3.7 and Furo 2024.01.29 -->
+        <title>xonsh.lexer - xonsh 0.16.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
-    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=fd3f3429" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=c8b63bf6" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
     
@@ -124,7 +124,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../contents.html"><div class="brand">xonsh 0.15.1 documentation</div></a>
+      <a href="../../contents.html"><div class="brand">xonsh 0.16.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -150,7 +150,7 @@
     <img class="sidebar-logo" src="../../_static/ascii_conch_part_transparent_tight.png" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">xonsh 0.15.1 documentation</span>
+  <span class="sidebar-brand-text">xonsh 0.16.0 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -370,7 +370,8 @@
     <span class="n">ERRORTOKEN</span><span class="p">,</span>
     <span class="n">GREATER</span><span class="p">,</span>
     <span class="n">INDENT</span><span class="p">,</span>
-    <span class="n">IOREDIRECT</span><span class="p">,</span>
+    <span class="n">IOREDIRECT1</span><span class="p">,</span>
+    <span class="n">IOREDIRECT2</span><span class="p">,</span>
     <span class="n">LESS</span><span class="p">,</span>
     <span class="n">MATCH</span><span class="p">,</span>
     <span class="n">NAME</span><span class="p">,</span>
@@ -448,7 +449,8 @@
     <span class="p">}</span>
     <span class="k">for</span> <span class="n">op</span><span class="p">,</span> <span class="n">typ</span> <span class="ow">in</span> <span class="n">_op_map</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
         <span class="n">tm</span><span class="p">[(</span><span class="n">OP</span><span class="p">,</span> <span class="n">op</span><span class="p">)]</span> <span class="o">=</span> <span class="n">typ</span>
-    <span class="n">tm</span><span class="p">[</span><span class="n">IOREDIRECT</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;IOREDIRECT&quot;</span>
+    <span class="n">tm</span><span class="p">[</span><span class="n">IOREDIRECT1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;IOREDIRECT1&quot;</span>
+    <span class="n">tm</span><span class="p">[</span><span class="n">IOREDIRECT2</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;IOREDIRECT2&quot;</span>
     <span class="n">tm</span><span class="p">[</span><span class="n">STRING</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;STRING&quot;</span>
     <span class="n">tm</span><span class="p">[</span><span class="n">DOLLARNAME</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;DOLLAR_NAME&quot;</span>
     <span class="n">tm</span><span class="p">[</span><span class="n">NUMBER</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;NUMBER&quot;</span>
@@ -632,9 +634,25 @@
     <span class="n">typ</span> <span class="o">=</span> <span class="n">token</span><span class="o">.</span><span class="n">type</span>
     <span class="n">st</span> <span class="o">=</span> <span class="n">token</span><span class="o">.</span><span class="n">string</span>
     <span class="n">key</span> <span class="o">=</span> <span class="p">(</span><span class="n">typ</span><span class="p">,</span> <span class="n">st</span><span class="p">)</span> <span class="k">if</span> <span class="p">(</span><span class="n">typ</span><span class="p">,</span> <span class="n">st</span><span class="p">)</span> <span class="ow">in</span> <span class="n">token_map</span> <span class="k">else</span> <span class="n">typ</span>
-    <span class="k">yield</span> <span class="n">_new_token</span><span class="p">(</span><span class="n">token_map</span><span class="p">[</span><span class="n">key</span><span class="p">],</span> <span class="n">st</span><span class="p">,</span> <span class="n">token</span><span class="o">.</span><span class="n">start</span><span class="p">)</span>
+    <span class="n">new_tok</span> <span class="o">=</span> <span class="n">_new_token</span><span class="p">(</span><span class="n">token_map</span><span class="p">[</span><span class="n">key</span><span class="p">],</span> <span class="n">st</span><span class="p">,</span> <span class="n">token</span><span class="o">.</span><span class="n">start</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">state</span><span class="p">[</span><span class="s2">&quot;pymode&quot;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="n">typ</span> <span class="ow">in</span> <span class="p">(</span><span class="n">IOREDIRECT1</span><span class="p">,</span> <span class="n">IOREDIRECT2</span><span class="p">):</span>
+            <span class="c1"># Fix Python mode code that was incorrectly recognized as an</span>
+            <span class="c1"># IOREDIRECT by the tokenizer (see issue #4994).</span>
+            <span class="c1"># The tokenizer does not know when the code should be tokenized in</span>
+            <span class="c1"># Python mode. By default, when it sees code like `2&gt;`, it produces</span>
+            <span class="c1"># an IOREDIRECT token. This call to `get_tokens` makes the</span>
+            <span class="c1"># tokenizer run over the code again, knowing that it is *not* an</span>
+            <span class="c1"># IOREDIRECT token.</span>
+            <span class="n">lineno</span><span class="p">,</span> <span class="n">lexpos</span> <span class="o">=</span> <span class="n">token</span><span class="o">.</span><span class="n">start</span>
+            <span class="k">for</span> <span class="n">tok</span> <span class="ow">in</span> <span class="n">get_tokens</span><span class="p">(</span>
+                <span class="n">token</span><span class="o">.</span><span class="n">string</span><span class="p">,</span> <span class="n">state</span><span class="p">[</span><span class="s2">&quot;tolerant&quot;</span><span class="p">],</span> <span class="n">tokenize_ioredirects</span><span class="o">=</span><span class="kc">False</span>
+            <span class="p">):</span>
+                <span class="k">yield</span> <span class="n">_new_token</span><span class="p">(</span><span class="n">tok</span><span class="o">.</span><span class="n">type</span><span class="p">,</span> <span class="n">tok</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="p">(</span><span class="n">lineno</span><span class="p">,</span> <span class="n">lexpos</span> <span class="o">+</span> <span class="n">tok</span><span class="o">.</span><span class="n">lexpos</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">yield</span> <span class="n">new_tok</span>
         <span class="k">return</span>
+    <span class="k">yield</span> <span class="n">new_tok</span>
     <span class="c1"># add a whitespace token after a redirection, if we need to</span>
     <span class="n">next_tok</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">state</span><span class="p">[</span><span class="s2">&quot;stream&quot;</span><span class="p">])</span>
     <span class="k">if</span> <span class="n">next_tok</span><span class="o">.</span><span class="n">start</span> <span class="o">==</span> <span class="n">token</span><span class="o">.</span><span class="n">end</span><span class="p">:</span>
@@ -647,7 +665,11 @@
     <span class="n">matcher</span> <span class="o">=</span> <span class="p">(</span>
         <span class="s2">&quot;)&quot;</span>
         <span class="k">if</span> <span class="n">tok</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;(&quot;</span><span class="p">)</span>
-        <span class="k">else</span> <span class="s2">&quot;}&quot;</span> <span class="k">if</span> <span class="n">tok</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;{&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="s2">&quot;]&quot;</span> <span class="k">if</span> <span class="n">tok</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;[&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="k">else</span> <span class="s2">&quot;}&quot;</span>
+        <span class="k">if</span> <span class="n">tok</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;{&quot;</span><span class="p">)</span>
+        <span class="k">else</span> <span class="s2">&quot;]&quot;</span>
+        <span class="k">if</span> <span class="n">tok</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;[&quot;</span><span class="p">)</span>
+        <span class="k">else</span> <span class="kc">None</span>
     <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_inner_handler</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">token</span><span class="p">):</span>
@@ -674,7 +696,8 @@
         <span class="n">LESS</span><span class="p">:</span> <span class="n">handle_redirect</span><span class="p">,</span>
         <span class="n">GREATER</span><span class="p">:</span> <span class="n">handle_redirect</span><span class="p">,</span>
         <span class="n">RIGHTSHIFT</span><span class="p">:</span> <span class="n">handle_redirect</span><span class="p">,</span>
-        <span class="n">IOREDIRECT</span><span class="p">:</span> <span class="n">handle_redirect</span><span class="p">,</span>
+        <span class="n">IOREDIRECT1</span><span class="p">:</span> <span class="n">handle_redirect</span><span class="p">,</span>
+        <span class="n">IOREDIRECT2</span><span class="p">:</span> <span class="n">handle_redirect</span><span class="p">,</span>
         <span class="p">(</span><span class="n">OP</span><span class="p">,</span> <span class="s2">&quot;&lt;&quot;</span><span class="p">):</span> <span class="n">handle_redirect</span><span class="p">,</span>
         <span class="p">(</span><span class="n">OP</span><span class="p">,</span> <span class="s2">&quot;&gt;&quot;</span><span class="p">):</span> <span class="n">handle_redirect</span><span class="p">,</span>
         <span class="p">(</span><span class="n">OP</span><span class="p">,</span> <span class="s2">&quot;&gt;&gt;&quot;</span><span class="p">):</span> <span class="n">handle_redirect</span><span class="p">,</span>
@@ -743,7 +766,7 @@
 
 <div class="viewcode-block" id="get_tokens">
 <a class="viewcode-back" href="../../api/_autosummary/lang/xonsh.lexer.html#xonsh.lexer.get_tokens">[docs]</a>
-<span class="k">def</span> <span class="nf">get_tokens</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">tolerant</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">get_tokens</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">tolerant</span><span class="p">,</span> <span class="n">pymode</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">tokenize_ioredirects</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Given a string containing xonsh code, generates a stream of relevant PLY</span>
 <span class="sd">    tokens using ``handle_token``.</span>
@@ -751,8 +774,10 @@
     <span class="n">state</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s2">&quot;indents&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span>
         <span class="s2">&quot;last&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
-        <span class="s2">&quot;pymode&quot;</span><span class="p">:</span> <span class="p">[(</span><span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))],</span>
-        <span class="s2">&quot;stream&quot;</span><span class="p">:</span> <span class="n">tokenize</span><span class="p">(</span><span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">readline</span><span class="p">,</span> <span class="n">tolerant</span><span class="p">),</span>
+        <span class="s2">&quot;pymode&quot;</span><span class="p">:</span> <span class="p">[(</span><span class="n">pymode</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))],</span>
+        <span class="s2">&quot;stream&quot;</span><span class="p">:</span> <span class="n">tokenize</span><span class="p">(</span>
+            <span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">readline</span><span class="p">,</span> <span class="n">tolerant</span><span class="p">,</span> <span class="n">tokenize_ioredirects</span>
+        <span class="p">),</span>
         <span class="s2">&quot;tolerant&quot;</span><span class="p">:</span> <span class="n">tolerant</span><span class="p">,</span>
     <span class="p">}</span>
     <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
@@ -794,7 +819,7 @@
 
     <span class="n">_tokens</span><span class="p">:</span> <span class="n">tp</span><span class="o">.</span><span class="n">Optional</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="o">...</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tolerant</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tolerant</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">pymode</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Attributes</span>
 <span class="sd">        ----------</span>
@@ -807,12 +832,15 @@
 <span class="sd">        tolerant : bool</span>
 <span class="sd">            Tokenize without extra checks (e.g. paren matching).</span>
 <span class="sd">            When True, ERRORTOKEN contains the erroneous string instead of an error msg.</span>
+<span class="sd">        pymode : bool</span>
+<span class="sd">            Start the lexer in Python mode.</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">fname</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">last</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">beforelast</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_tolerant</span> <span class="o">=</span> <span class="n">tolerant</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_pymode</span> <span class="o">=</span> <span class="n">pymode</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_token_stream</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(())</span>
 
     <span class="nd">@property</span>
@@ -838,7 +866,7 @@
 <a class="viewcode-back" href="../../api/_autosummary/lang/xonsh.lexer.html#xonsh.lexer.Lexer.input">[docs]</a>
     <span class="k">def</span> <span class="nf">input</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Calls the lexer on the string s.&quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_token_stream</span> <span class="o">=</span> <span class="n">get_tokens</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tolerant</span><span class="p">)</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_token_stream</span> <span class="o">=</span> <span class="n">get_tokens</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tolerant</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pymode</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="Lexer.token">
@@ -952,8 +980,8 @@
       
     </aside>
   </div>
-</div><script src="../../_static/documentation_options.js?v=4befc426"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
+</div><script src="../../_static/documentation_options.js?v=ecbec2ee"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>
     <script src="../../_static/runthis-client.min.js?v=ad2a40d9"></script>

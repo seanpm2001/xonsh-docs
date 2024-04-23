@@ -4,11 +4,11 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" />
 
-    <link rel="shortcut icon" href="../../_static/magic_conch.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
-        <title>xonsh.xontribs - xonsh 0.15.1 documentation</title>
+    <link rel="shortcut icon" href="../../_static/magic_conch.ico"/><!-- Generated with Sphinx 7.3.7 and Furo 2024.01.29 -->
+        <title>xonsh.xontribs - xonsh 0.16.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
-    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=fd3f3429" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=c8b63bf6" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
     
@@ -124,7 +124,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../contents.html"><div class="brand">xonsh 0.15.1 documentation</div></a>
+      <a href="../../contents.html"><div class="brand">xonsh 0.16.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -150,7 +150,7 @@
     <img class="sidebar-logo" src="../../_static/ascii_conch_part_transparent_tight.png" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">xonsh 0.15.1 documentation</span>
+  <span class="sidebar-brand-text">xonsh 0.16.0 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -730,7 +730,7 @@
 
 <div class="viewcode-block" id="xontribs_list">
 <a class="viewcode-back" href="../../api/_autosummary/helpers/xonsh.xontribs.html#xonsh.xontribs.xontribs_list">[docs]</a>
-<span class="k">def</span> <span class="nf">xontribs_list</span><span class="p">(</span><span class="n">to_json</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">xontribs_list</span><span class="p">(</span><span class="n">to_json</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">_stdout</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;List installed xontribs and show whether they are loaded or not</span>
 
 <span class="sd">    Parameters</span>
@@ -741,7 +741,7 @@
     <span class="n">data</span> <span class="o">=</span> <span class="n">xontrib_data</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">to_json</span><span class="p">:</span>
         <span class="n">s</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">s</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">nname</span> <span class="o">=</span> <span class="nb">max</span><span class="p">([</span><span class="mi">6</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data</span><span class="p">])</span>
         <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
@@ -756,7 +756,7 @@
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="si">{RED}</span><span class="s2">not-loaded</span><span class="si">{RESET}</span><span class="s2">&quot;</span>
             <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
-        <span class="n">print_color</span><span class="p">(</span><span class="n">s</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span></div>
+        <span class="n">print_color</span><span class="p">(</span><span class="n">s</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">file</span><span class="o">=</span><span class="n">_stdout</span><span class="p">)</span></div>
 
 
 
@@ -766,7 +766,11 @@
     <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;xonsh.xontribs&quot;</span>
     <span class="n">entries</span> <span class="o">=</span> <span class="n">metadata</span><span class="o">.</span><span class="n">entry_points</span><span class="p">()</span>
     <span class="c1"># for some reason, on CI (win py3.8) atleast, returns dict</span>
-    <span class="n">group</span> <span class="o">=</span> <span class="n">entries</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">group</span><span class="o">=</span><span class="n">name</span><span class="p">)</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">entries</span><span class="p">,</span> <span class="s2">&quot;select&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="n">entries</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="p">[])</span>  <span class="c1"># type: ignore</span>
+    <span class="n">group</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">entries</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">group</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">entries</span><span class="p">,</span> <span class="s2">&quot;select&quot;</span><span class="p">)</span>
+        <span class="k">else</span> <span class="n">entries</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="p">[])</span>  <span class="c1"># type: ignore</span>
+    <span class="p">)</span>
     <span class="k">yield from</span> <span class="n">group</span>
 
 
@@ -842,8 +846,8 @@
       
     </aside>
   </div>
-</div><script src="../../_static/documentation_options.js?v=4befc426"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
+</div><script src="../../_static/documentation_options.js?v=ecbec2ee"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>
     <script src="../../_static/runthis-client.min.js?v=ad2a40d9"></script>

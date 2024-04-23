@@ -5,11 +5,11 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="xonsh.completer" href="xonsh.completer.html" /><link rel="prev" title="xonsh.history.main" href="xonsh.history.main.html" />
 
-    <link rel="shortcut icon" href="../../../_static/magic_conch.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
-        <title>xonsh.history.sqlite - xonsh 0.15.1 documentation</title>
+    <link rel="shortcut icon" href="../../../_static/magic_conch.ico"/><!-- Generated with Sphinx 7.3.7 and Furo 2024.01.29 -->
+        <title>xonsh.history.sqlite - xonsh 0.16.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=135e06be" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=fd3f3429" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=c8b63bf6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=36a5483c" />
     
@@ -125,7 +125,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../../contents.html"><div class="brand">xonsh 0.15.1 documentation</div></a>
+      <a href="../../../contents.html"><div class="brand">xonsh 0.16.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -151,7 +151,7 @@
     <img class="sidebar-logo" src="../../../_static/ascii_conch_part_transparent_tight.png" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">xonsh 0.15.1 documentation</span>
+  <span class="sidebar-brand-text">xonsh 0.16.0 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -355,11 +355,11 @@
         </div>
         <article role="main">
           <section id="module-xonsh.history.sqlite">
-<span id="xonsh-history-sqlite"></span><h1>xonsh.history.sqlite<a class="headerlink" href="#module-xonsh.history.sqlite" title="Link to this heading">#</a></h1>
+<span id="xonsh-history-sqlite"></span><h1>xonsh.history.sqlite<a class="headerlink" href="#module-xonsh.history.sqlite" title="Link to this heading">¶</a></h1>
 <p>Implements the xonsh history backend via sqlite3.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="xonsh.history.sqlite.SqliteHistory">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xonsh.history.sqlite.</span></span><span class="sig-name descname"><span class="pre">SqliteHistory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_cwd</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/history/sqlite.html#SqliteHistory"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.history.sqlite.SqliteHistory" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xonsh.history.sqlite.</span></span><span class="sig-name descname"><span class="pre">SqliteHistory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_cwd</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/history/sqlite.html#SqliteHistory"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.history.sqlite.SqliteHistory" title="Link to this definition">¶</a></dt>
 <dd><p>Xonsh history backend implemented with sqlite3.</p>
 <p>Represents a xonsh session’s history.</p>
 <dl class="field-list simple">
@@ -373,13 +373,13 @@ set.</p>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.history.sqlite.SqliteHistory.all_items">
-<span class="sig-name descname"><span class="pre">all_items</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">newest_first</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">session_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/history/sqlite.html#SqliteHistory.all_items"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.history.sqlite.SqliteHistory.all_items" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">all_items</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">newest_first</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">session_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/history/sqlite.html#SqliteHistory.all_items"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.history.sqlite.SqliteHistory.all_items" title="Link to this definition">¶</a></dt>
 <dd><p>Display all history items.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.history.sqlite.SqliteHistory.append">
-<span class="sig-name descname"><span class="pre">append</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/history/sqlite.html#SqliteHistory.append"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.history.sqlite.SqliteHistory.append" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">append</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/history/sqlite.html#SqliteHistory.append"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.history.sqlite.SqliteHistory.append" title="Link to this definition">¶</a></dt>
 <dd><p>Append a command item into history.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -396,25 +396,25 @@ as instance variables in the <code class="docutils literal notranslate"><span cl
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.history.sqlite.SqliteHistory.clear">
-<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/history/sqlite.html#SqliteHistory.clear"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.history.sqlite.SqliteHistory.clear" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/history/sqlite.html#SqliteHistory.clear"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.history.sqlite.SqliteHistory.clear" title="Link to this definition">¶</a></dt>
 <dd><p>Clears the current session’s history from both memory and disk.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.history.sqlite.SqliteHistory.delete">
-<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pattern</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/history/sqlite.html#SqliteHistory.delete"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.history.sqlite.SqliteHistory.delete" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pattern</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/history/sqlite.html#SqliteHistory.delete"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.history.sqlite.SqliteHistory.delete" title="Link to this definition">¶</a></dt>
 <dd><p>Deletes all entries in the database where the input matches a pattern.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.history.sqlite.SqliteHistory.flush">
-<span class="sig-name descname"><span class="pre">flush</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.history.sqlite.SqliteHistory.flush" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">flush</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.history.sqlite.SqliteHistory.flush" title="Link to this definition">¶</a></dt>
 <dd><p>Flush the history items to disk from a buffer.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.history.sqlite.SqliteHistory.info">
-<span class="sig-name descname"><span class="pre">info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/history/sqlite.html#SqliteHistory.info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.history.sqlite.SqliteHistory.info" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/history/sqlite.html#SqliteHistory.info"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.history.sqlite.SqliteHistory.info" title="Link to this definition">¶</a></dt>
 <dd><p>A collection of information about the shell history.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -428,7 +428,7 @@ as instance variables in the <code class="docutils literal notranslate"><span cl
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.history.sqlite.SqliteHistory.is_ignored">
-<span class="sig-name descname"><span class="pre">is_ignored</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.history.sqlite.SqliteHistory.is_ignored" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">is_ignored</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.history.sqlite.SqliteHistory.is_ignored" title="Link to this definition">¶</a></dt>
 <dd><p>Determines if a history item should be added to the event history.
 Call this in your append method.</p>
 <dl class="field-list simple">
@@ -449,19 +449,19 @@ Call this in your append method.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.history.sqlite.SqliteHistory.items">
-<span class="sig-name descname"><span class="pre">items</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">newest_first</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/history/sqlite.html#SqliteHistory.items"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.history.sqlite.SqliteHistory.items" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">items</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">newest_first</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/history/sqlite.html#SqliteHistory.items"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.history.sqlite.SqliteHistory.items" title="Link to this definition">¶</a></dt>
 <dd><p>Display history items of current session.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.history.sqlite.SqliteHistory.pull">
-<span class="sig-name descname"><span class="pre">pull</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">show_commands</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/history/sqlite.html#SqliteHistory.pull"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.history.sqlite.SqliteHistory.pull" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">pull</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">show_commands</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/history/sqlite.html#SqliteHistory.pull"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.history.sqlite.SqliteHistory.pull" title="Link to this definition">¶</a></dt>
 <dd><p>Pull history from other parallel sessions.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.history.sqlite.SqliteHistory.run_gc">
-<span class="sig-name descname"><span class="pre">run_gc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">blocking</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/history/sqlite.html#SqliteHistory.run_gc"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.history.sqlite.SqliteHistory.run_gc" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">run_gc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">blocking</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/history/sqlite.html#SqliteHistory.run_gc"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.history.sqlite.SqliteHistory.run_gc" title="Link to this definition">¶</a></dt>
 <dd><p>Run the garbage collector.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -477,34 +477,34 @@ Call this in your append method.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="xonsh.history.sqlite.SqliteHistory.ignore_regex">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ignore_regex</span></span><a class="headerlink" href="#xonsh.history.sqlite.SqliteHistory.ignore_regex" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ignore_regex</span></span><a class="headerlink" href="#xonsh.history.sqlite.SqliteHistory.ignore_regex" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="xonsh.history.sqlite.SqliteHistoryGC">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xonsh.history.sqlite.</span></span><span class="sig-name descname"><span class="pre">SqliteHistoryGC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wait_for_shell</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/history/sqlite.html#SqliteHistoryGC"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.history.sqlite.SqliteHistoryGC" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xonsh.history.sqlite.</span></span><span class="sig-name descname"><span class="pre">SqliteHistoryGC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wait_for_shell</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/history/sqlite.html#SqliteHistoryGC"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.history.sqlite.SqliteHistoryGC" title="Link to this definition">¶</a></dt>
 <dd><p>Shell history garbage collection.</p>
 <p>Thread responsible for garbage collecting old history.</p>
 <p>May wait for shell (and for xonshrc to have been loaded) to start work.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.history.sqlite.SqliteHistoryGC.getName">
-<span class="sig-name descname"><span class="pre">getName</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.history.sqlite.SqliteHistoryGC.getName" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">getName</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.history.sqlite.SqliteHistoryGC.getName" title="Link to this definition">¶</a></dt>
 <dd><p>Return a string used for identification purposes only.</p>
 <p>This method is deprecated, use the name attribute instead.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.history.sqlite.SqliteHistoryGC.isDaemon">
-<span class="sig-name descname"><span class="pre">isDaemon</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.history.sqlite.SqliteHistoryGC.isDaemon" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">isDaemon</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.history.sqlite.SqliteHistoryGC.isDaemon" title="Link to this definition">¶</a></dt>
 <dd><p>Return whether this thread is a daemon.</p>
 <p>This method is deprecated, use the daemon attribute instead.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.history.sqlite.SqliteHistoryGC.is_alive">
-<span class="sig-name descname"><span class="pre">is_alive</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.history.sqlite.SqliteHistoryGC.is_alive" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">is_alive</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.history.sqlite.SqliteHistoryGC.is_alive" title="Link to this definition">¶</a></dt>
 <dd><p>Return whether the thread is alive.</p>
 <p>This method returns True just before the run() method starts until just
 after the run() method terminates. See also the module function
@@ -513,7 +513,7 @@ enumerate().</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.history.sqlite.SqliteHistoryGC.join">
-<span class="sig-name descname"><span class="pre">join</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.history.sqlite.SqliteHistoryGC.join" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">join</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.history.sqlite.SqliteHistoryGC.join" title="Link to this definition">¶</a></dt>
 <dd><p>Wait until the thread terminates.</p>
 <p>This blocks the calling thread until the thread whose join() method is
 called terminates – either normally or through an unhandled exception
@@ -534,7 +534,7 @@ exception.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.history.sqlite.SqliteHistoryGC.run">
-<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/history/sqlite.html#SqliteHistoryGC.run"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.history.sqlite.SqliteHistoryGC.run" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/history/sqlite.html#SqliteHistoryGC.run"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.history.sqlite.SqliteHistoryGC.run" title="Link to this definition">¶</a></dt>
 <dd><p>Method representing the thread’s activity.</p>
 <p>You may override this method in a subclass. The standard run() method
 invokes the callable object passed to the object’s constructor as the
@@ -544,21 +544,21 @@ from the args and kwargs arguments, respectively.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.history.sqlite.SqliteHistoryGC.setDaemon">
-<span class="sig-name descname"><span class="pre">setDaemon</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">daemonic</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.history.sqlite.SqliteHistoryGC.setDaemon" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">setDaemon</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">daemonic</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.history.sqlite.SqliteHistoryGC.setDaemon" title="Link to this definition">¶</a></dt>
 <dd><p>Set whether this thread is a daemon.</p>
 <p>This method is deprecated, use the .daemon property instead.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.history.sqlite.SqliteHistoryGC.setName">
-<span class="sig-name descname"><span class="pre">setName</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.history.sqlite.SqliteHistoryGC.setName" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">setName</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.history.sqlite.SqliteHistoryGC.setName" title="Link to this definition">¶</a></dt>
 <dd><p>Set the name string for this thread.</p>
 <p>This method is deprecated, use the name attribute instead.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.history.sqlite.SqliteHistoryGC.start">
-<span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.history.sqlite.SqliteHistoryGC.start" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.history.sqlite.SqliteHistoryGC.start" title="Link to this definition">¶</a></dt>
 <dd><p>Start the thread’s activity.</p>
 <p>It must be called at most once per thread object. It arranges for the
 object’s run() method to be invoked in a separate thread of control.</p>
@@ -568,7 +568,7 @@ same thread object.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="xonsh.history.sqlite.SqliteHistoryGC.daemon">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">daemon</span></span><a class="headerlink" href="#xonsh.history.sqlite.SqliteHistoryGC.daemon" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">daemon</span></span><a class="headerlink" href="#xonsh.history.sqlite.SqliteHistoryGC.daemon" title="Link to this definition">¶</a></dt>
 <dd><p>A boolean value indicating whether this thread is a daemon thread.</p>
 <p>This must be set before start() is called, otherwise RuntimeError is
 raised. Its initial value is inherited from the creating thread; the
@@ -579,7 +579,7 @@ the main thread default to daemon = False.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="xonsh.history.sqlite.SqliteHistoryGC.ident">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ident</span></span><a class="headerlink" href="#xonsh.history.sqlite.SqliteHistoryGC.ident" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ident</span></span><a class="headerlink" href="#xonsh.history.sqlite.SqliteHistoryGC.ident" title="Link to this definition">¶</a></dt>
 <dd><p>Thread identifier of this thread or None if it has not been started.</p>
 <p>This is a nonzero integer. See the get_ident() function. Thread
 identifiers may be recycled when a thread exits and another thread is
@@ -588,7 +588,7 @@ created. The identifier is available even after the thread has exited.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="xonsh.history.sqlite.SqliteHistoryGC.name">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#xonsh.history.sqlite.SqliteHistoryGC.name" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#xonsh.history.sqlite.SqliteHistoryGC.name" title="Link to this definition">¶</a></dt>
 <dd><p>A string used for identification purposes only.</p>
 <p>It has no semantics. Multiple threads may be given the same name. The
 initial name is set by the constructor.</p>
@@ -596,7 +596,7 @@ initial name is set by the constructor.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="xonsh.history.sqlite.SqliteHistoryGC.native_id">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">native_id</span></span><a class="headerlink" href="#xonsh.history.sqlite.SqliteHistoryGC.native_id" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">native_id</span></span><a class="headerlink" href="#xonsh.history.sqlite.SqliteHistoryGC.native_id" title="Link to this definition">¶</a></dt>
 <dd><p>Native integral thread ID of this thread, or None if it has not been started.</p>
 <p>This is a non-negative integer. See the get_native_id() function.
 This represents the Thread ID as reported by the kernel.</p>
@@ -606,38 +606,38 @@ This represents the Thread ID as reported by the kernel.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.history.sqlite.xh_sqlite_append_history">
-<span class="sig-prename descclassname"><span class="pre">xonsh.history.sqlite.</span></span><span class="sig-name descname"><span class="pre">xh_sqlite_append_history</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sessionid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">store_stdout</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remove_duplicates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/history/sqlite.html#xh_sqlite_append_history"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.history.sqlite.xh_sqlite_append_history" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.history.sqlite.</span></span><span class="sig-name descname"><span class="pre">xh_sqlite_append_history</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sessionid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">store_stdout</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remove_duplicates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/history/sqlite.html#xh_sqlite_append_history"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.history.sqlite.xh_sqlite_append_history" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.history.sqlite.xh_sqlite_delete_input_matching">
-<span class="sig-prename descclassname"><span class="pre">xonsh.history.sqlite.</span></span><span class="sig-name descname"><span class="pre">xh_sqlite_delete_input_matching</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pattern</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/history/sqlite.html#xh_sqlite_delete_input_matching"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.history.sqlite.xh_sqlite_delete_input_matching" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.history.sqlite.</span></span><span class="sig-name descname"><span class="pre">xh_sqlite_delete_input_matching</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pattern</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/history/sqlite.html#xh_sqlite_delete_input_matching"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.history.sqlite.xh_sqlite_delete_input_matching" title="Link to this definition">¶</a></dt>
 <dd><p>Deletes entries from the database where the input matches a pattern.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.history.sqlite.xh_sqlite_delete_items">
-<span class="sig-prename descclassname"><span class="pre">xonsh.history.sqlite.</span></span><span class="sig-name descname"><span class="pre">xh_sqlite_delete_items</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size_to_keep</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/history/sqlite.html#xh_sqlite_delete_items"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.history.sqlite.xh_sqlite_delete_items" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.history.sqlite.</span></span><span class="sig-name descname"><span class="pre">xh_sqlite_delete_items</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size_to_keep</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/history/sqlite.html#xh_sqlite_delete_items"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.history.sqlite.xh_sqlite_delete_items" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.history.sqlite.xh_sqlite_get_count">
-<span class="sig-prename descclassname"><span class="pre">xonsh.history.sqlite.</span></span><span class="sig-name descname"><span class="pre">xh_sqlite_get_count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sessionid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/history/sqlite.html#xh_sqlite_get_count"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.history.sqlite.xh_sqlite_get_count" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.history.sqlite.</span></span><span class="sig-name descname"><span class="pre">xh_sqlite_get_count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sessionid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/history/sqlite.html#xh_sqlite_get_count"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.history.sqlite.xh_sqlite_get_count" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.history.sqlite.xh_sqlite_items">
-<span class="sig-prename descclassname"><span class="pre">xonsh.history.sqlite.</span></span><span class="sig-name descname"><span class="pre">xh_sqlite_items</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sessionid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">newest_first</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/history/sqlite.html#xh_sqlite_items"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.history.sqlite.xh_sqlite_items" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.history.sqlite.</span></span><span class="sig-name descname"><span class="pre">xh_sqlite_items</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sessionid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">newest_first</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/history/sqlite.html#xh_sqlite_items"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.history.sqlite.xh_sqlite_items" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.history.sqlite.xh_sqlite_pull">
-<span class="sig-prename descclassname"><span class="pre">xonsh.history.sqlite.</span></span><span class="sig-name descname"><span class="pre">xh_sqlite_pull</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">last_pull_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_sessionid</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/history/sqlite.html#xh_sqlite_pull"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.history.sqlite.xh_sqlite_pull" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.history.sqlite.</span></span><span class="sig-name descname"><span class="pre">xh_sqlite_pull</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">last_pull_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_sessionid</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/history/sqlite.html#xh_sqlite_pull"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.history.sqlite.xh_sqlite_pull" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.history.sqlite.xh_sqlite_wipe_session">
-<span class="sig-prename descclassname"><span class="pre">xonsh.history.sqlite.</span></span><span class="sig-name descname"><span class="pre">xh_sqlite_wipe_session</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sessionid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/history/sqlite.html#xh_sqlite_wipe_session"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.history.sqlite.xh_sqlite_wipe_session" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.history.sqlite.</span></span><span class="sig-name descname"><span class="pre">xh_sqlite_wipe_session</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sessionid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/history/sqlite.html#xh_sqlite_wipe_session"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.history.sqlite.xh_sqlite_wipe_session" title="Link to this definition">¶</a></dt>
 <dd><p>Wipe the current session’s entries from the database.</p>
 </dd></dl>
 
@@ -746,8 +746,8 @@ This represents the Thread ID as reported by the kernel.</p>
       
     </aside>
   </div>
-</div><script src="../../../_static/documentation_options.js?v=4befc426"></script>
-    <script src="../../../_static/doctools.js?v=888ff710"></script>
+</div><script src="../../../_static/documentation_options.js?v=ecbec2ee"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/scripts/furo.js?v=32e29ea5"></script>
     <script src="../../../_static/runthis-client.min.js?v=ad2a40d9"></script>

@@ -5,11 +5,11 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="xonsh.xontribs" href="xonsh.xontribs.html" /><link rel="prev" title="xonsh.wizard" href="xonsh.wizard.html" />
 
-    <link rel="shortcut icon" href="../../../_static/magic_conch.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
-        <title>xonsh.xonfig - xonsh 0.15.1 documentation</title>
+    <link rel="shortcut icon" href="../../../_static/magic_conch.ico"/><!-- Generated with Sphinx 7.3.7 and Furo 2024.01.29 -->
+        <title>xonsh.xonfig - xonsh 0.16.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=135e06be" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=fd3f3429" />
     <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=c8b63bf6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=36a5483c" />
     
@@ -125,7 +125,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../../contents.html"><div class="brand">xonsh 0.15.1 documentation</div></a>
+      <a href="../../../contents.html"><div class="brand">xonsh 0.16.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -151,7 +151,7 @@
     <img class="sidebar-logo" src="../../../_static/ascii_conch_part_transparent_tight.png" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">xonsh 0.15.1 documentation</span>
+  <span class="sidebar-brand-text">xonsh 0.16.0 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -355,124 +355,111 @@
         </div>
         <article role="main">
           <section id="module-xonsh.xonfig">
-<span id="xonsh-xonfig"></span><h1>xonsh.xonfig<a class="headerlink" href="#module-xonsh.xonfig" title="Link to this heading">#</a></h1>
+<span id="xonsh-xonfig"></span><h1>xonsh.xonfig<a class="headerlink" href="#module-xonsh.xonfig" title="Link to this heading">¶</a></h1>
 <p>The xonsh configuration (xonfig) utility.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="xonsh.xonfig.XonfigAlias">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xonsh.xonfig.</span></span><span class="sig-name descname"><span class="pre">XonfigAlias</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/xonfig.html#XonfigAlias"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.xonfig.XonfigAlias" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xonsh.xonfig.</span></span><span class="sig-name descname"><span class="pre">XonfigAlias</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/xonfig.html#XonfigAlias"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.xonfig.XonfigAlias" title="Link to this definition">¶</a></dt>
 <dd><p>Manage xonsh configuration.</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="xonsh.xonfig.XonfigAlias.Error">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errno</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.xonfig.XonfigAlias.Error" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errno</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.xonfig.XonfigAlias.Error" title="Link to this definition">¶</a></dt>
 <dd><p>Special case, when raised, the traceback will not be shown.
 Instead the process with exit with error code and message</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.xonfig.XonfigAlias.Error.add_note">
-<span class="sig-name descname"><span class="pre">add_note</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.xonfig.XonfigAlias.Error.add_note" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">add_note</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.xonfig.XonfigAlias.Error.add_note" title="Link to this definition">¶</a></dt>
 <dd><p>Exception.add_note(note) –
 add a note to the exception</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.xonfig.XonfigAlias.Error.with_traceback">
-<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.xonfig.XonfigAlias.Error.with_traceback" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.xonfig.XonfigAlias.Error.with_traceback" title="Link to this definition">¶</a></dt>
 <dd><p>Exception.with_traceback(tb) –
 set self.__traceback__ to tb and return self.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="xonsh.xonfig.XonfigAlias.Error.args">
-<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#xonsh.xonfig.XonfigAlias.Error.args" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#xonsh.xonfig.XonfigAlias.Error.args" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.xonfig.XonfigAlias.add_command">
-<span class="sig-name descname"><span class="pre">add_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fn</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/xonfig.html#XonfigAlias.add_command"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.xonfig.XonfigAlias.add_command" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">add_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fn</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/xonfig.html#XonfigAlias.add_command"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.xonfig.XonfigAlias.add_command" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.xonfig.XonfigAlias.build">
-<span class="sig-name descname"><span class="pre">build</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/xonfig.html#XonfigAlias.build"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.xonfig.XonfigAlias.build" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">build</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/xonfig.html#XonfigAlias.build"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.xonfig.XonfigAlias.build" title="Link to this definition">¶</a></dt>
 <dd><p>Sub-classes should return constructed ArgumentParser</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.xonfig.XonfigAlias.create_parser">
-<span class="sig-name descname"><span class="pre">create_parser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">has_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowed_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.xonfig.XonfigAlias.create_parser" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">create_parser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">has_args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowed_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ArgParser</span></span></span><a class="headerlink" href="#xonsh.xonfig.XonfigAlias.create_parser" title="Link to this definition">¶</a></dt>
 <dd><p>create root parser</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.xonfig.XonfigAlias.err">
-<span class="sig-name descname"><span class="pre">err</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.xonfig.XonfigAlias.err" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">err</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.xonfig.XonfigAlias.err" title="Link to this definition">¶</a></dt>
 <dd><p>Write text to error stream</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="xonsh.xonfig.XonfigAlias.hook_post_add_argument">
-<span class="sig-name descname"><span class="pre">hook_post_add_argument</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parser</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ArgParser</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">ArgumentParser</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Action</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">param</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.xonfig.XonfigAlias.hook_post_add_argument" title="Link to this definition">#</a></dt>
-<dd><p>Hook into parser.add_argument step.</p>
-<p>Can be used to update action’s attributes</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="xonsh.xonfig.XonfigAlias.hook_pre_add_argument">
-<span class="sig-name descname"><span class="pre">hook_pre_add_argument</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flags</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.xonfig.XonfigAlias.hook_pre_add_argument" title="Link to this definition">#</a></dt>
-<dd><p>Hook to update arguments that are passed to parser.add_argument</p>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="xonsh.xonfig.XonfigAlias.out">
-<span class="sig-name descname"><span class="pre">out</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.xonfig.XonfigAlias.out" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">out</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.xonfig.XonfigAlias.out" title="Link to this definition">¶</a></dt>
 <dd><p>Write text to output stream</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.xonfig.XonfigAlias.write_to">
-<span class="sig-name descname"><span class="pre">write_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stream</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.xonfig.XonfigAlias.write_to" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">write_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stream</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.xonfig.XonfigAlias.write_to" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.xonfig.XonfigAlias.xonsh_complete">
-<span class="sig-name descname"><span class="pre">xonsh_complete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">command</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.xonfig.XonfigAlias.xonsh_complete" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">xonsh_complete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">command</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.xonfig.XonfigAlias.xonsh_complete" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="xonsh.xonfig.XonfigAlias.parser">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parser</span></span><a class="headerlink" href="#xonsh.xonfig.XonfigAlias.parser" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parser</span></span><a class="headerlink" href="#xonsh.xonfig.XonfigAlias.parser" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.xonfig.make_env_wiz">
-<span class="sig-prename descclassname"><span class="pre">xonsh.xonfig.</span></span><span class="sig-name descname"><span class="pre">make_env_wiz</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/xonfig.html#make_env_wiz"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.xonfig.make_env_wiz" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.xonfig.</span></span><span class="sig-name descname"><span class="pre">make_env_wiz</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/xonfig.html#make_env_wiz"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.xonfig.make_env_wiz" title="Link to this definition">¶</a></dt>
 <dd><p>Makes an environment variable wizard.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.xonfig.make_envvar">
-<span class="sig-prename descclassname"><span class="pre">xonsh.xonfig.</span></span><span class="sig-name descname"><span class="pre">make_envvar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/xonfig.html#make_envvar"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.xonfig.make_envvar" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.xonfig.</span></span><span class="sig-name descname"><span class="pre">make_envvar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/xonfig.html#make_envvar"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.xonfig.make_envvar" title="Link to this definition">¶</a></dt>
 <dd><p>Makes a StoreNonEmpty node for an environment variable.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.xonfig.make_exit_message">
-<span class="sig-prename descclassname"><span class="pre">xonsh.xonfig.</span></span><span class="sig-name descname"><span class="pre">make_exit_message</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/xonfig.html#make_exit_message"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.xonfig.make_exit_message" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.xonfig.</span></span><span class="sig-name descname"><span class="pre">make_exit_message</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/xonfig.html#make_exit_message"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.xonfig.make_exit_message" title="Link to this definition">¶</a></dt>
 <dd><p>Creates a message for how to exit the wizard.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.xonfig.make_fs_wiz">
-<span class="sig-prename descclassname"><span class="pre">xonsh.xonfig.</span></span><span class="sig-name descname"><span class="pre">make_fs_wiz</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/xonfig.html#make_fs_wiz"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.xonfig.make_fs_wiz" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.xonfig.</span></span><span class="sig-name descname"><span class="pre">make_fs_wiz</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/xonfig.html#make_fs_wiz"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.xonfig.make_fs_wiz" title="Link to this definition">¶</a></dt>
 <dd><p>Makes the foreign shell part of the wizard.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.xonfig.make_xonfig_wizard">
-<span class="sig-prename descclassname"><span class="pre">xonsh.xonfig.</span></span><span class="sig-name descname"><span class="pre">make_xonfig_wizard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">default_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">confirm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_wizard_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/xonfig.html#make_xonfig_wizard"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.xonfig.make_xonfig_wizard" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.xonfig.</span></span><span class="sig-name descname"><span class="pre">make_xonfig_wizard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">default_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">confirm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_wizard_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/xonfig.html#make_xonfig_wizard"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.xonfig.make_xonfig_wizard" title="Link to this definition">¶</a></dt>
 <dd><p>Makes a configuration wizard for xonsh config file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -491,24 +478,24 @@ run again. If None (default), this defaults to default_file.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.xonfig.make_xontrib">
-<span class="sig-prename descclassname"><span class="pre">xonsh.xonfig.</span></span><span class="sig-name descname"><span class="pre">make_xontrib</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xon_item</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="xonsh.xontribs.html#xonsh.xontribs.Xontrib" title="xonsh.xontribs.Xontrib"><span class="pre">Xontrib</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/xonfig.html#make_xontrib"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.xonfig.make_xontrib" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.xonfig.</span></span><span class="sig-name descname"><span class="pre">make_xontrib</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xon_item</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="xonsh.xontribs.html#xonsh.xontribs.Xontrib" title="xonsh.xontribs.Xontrib"><span class="pre">Xontrib</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/xonfig.html#make_xontrib"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.xonfig.make_xontrib" title="Link to this definition">¶</a></dt>
 <dd><p>Makes a message and StoreNonEmpty node for a xontrib.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.xonfig.make_xontribs_wiz">
-<span class="sig-prename descclassname"><span class="pre">xonsh.xonfig.</span></span><span class="sig-name descname"><span class="pre">make_xontribs_wiz</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/xonfig.html#make_xontribs_wiz"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.xonfig.make_xontribs_wiz" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.xonfig.</span></span><span class="sig-name descname"><span class="pre">make_xontribs_wiz</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/xonfig.html#make_xontribs_wiz"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.xonfig.make_xontribs_wiz" title="Link to this definition">¶</a></dt>
 <dd><p>Makes a xontrib wizard.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.xonfig.print_welcome_screen">
-<span class="sig-prename descclassname"><span class="pre">xonsh.xonfig.</span></span><span class="sig-name descname"><span class="pre">print_welcome_screen</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/xonfig.html#print_welcome_screen"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.xonfig.print_welcome_screen" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.xonfig.</span></span><span class="sig-name descname"><span class="pre">print_welcome_screen</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/xonfig.html#print_welcome_screen"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.xonfig.print_welcome_screen" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xonsh.xonfig.xonfig_color_completer">
-<span class="sig-prename descclassname"><span class="pre">xonsh.xonfig.</span></span><span class="sig-name descname"><span class="pre">xonfig_color_completer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">_</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">__</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/xonfig.html#xonfig_color_completer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.xonfig.xonfig_color_completer" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">xonsh.xonfig.</span></span><span class="sig-name descname"><span class="pre">xonfig_color_completer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">_</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">__</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/xonfig.html#xonfig_color_completer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.xonfig.xonfig_color_completer" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </section>
@@ -580,8 +567,6 @@ run again. If None (default), this defaults to default_file.</p>
 <li><a class="reference internal" href="#xonsh.xonfig.XonfigAlias.build"><code class="docutils literal notranslate"><span class="pre">XonfigAlias.build()</span></code></a></li>
 <li><a class="reference internal" href="#xonsh.xonfig.XonfigAlias.create_parser"><code class="docutils literal notranslate"><span class="pre">XonfigAlias.create_parser()</span></code></a></li>
 <li><a class="reference internal" href="#xonsh.xonfig.XonfigAlias.err"><code class="docutils literal notranslate"><span class="pre">XonfigAlias.err()</span></code></a></li>
-<li><a class="reference internal" href="#xonsh.xonfig.XonfigAlias.hook_post_add_argument"><code class="docutils literal notranslate"><span class="pre">XonfigAlias.hook_post_add_argument()</span></code></a></li>
-<li><a class="reference internal" href="#xonsh.xonfig.XonfigAlias.hook_pre_add_argument"><code class="docutils literal notranslate"><span class="pre">XonfigAlias.hook_pre_add_argument()</span></code></a></li>
 <li><a class="reference internal" href="#xonsh.xonfig.XonfigAlias.out"><code class="docutils literal notranslate"><span class="pre">XonfigAlias.out()</span></code></a></li>
 <li><a class="reference internal" href="#xonsh.xonfig.XonfigAlias.write_to"><code class="docutils literal notranslate"><span class="pre">XonfigAlias.write_to()</span></code></a></li>
 <li><a class="reference internal" href="#xonsh.xonfig.XonfigAlias.xonsh_complete"><code class="docutils literal notranslate"><span class="pre">XonfigAlias.xonsh_complete()</span></code></a></li>
@@ -608,8 +593,8 @@ run again. If None (default), this defaults to default_file.</p>
       
     </aside>
   </div>
-</div><script src="../../../_static/documentation_options.js?v=4befc426"></script>
-    <script src="../../../_static/doctools.js?v=888ff710"></script>
+</div><script src="../../../_static/documentation_options.js?v=ecbec2ee"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/scripts/furo.js?v=32e29ea5"></script>
     <script src="../../../_static/runthis-client.min.js?v=ad2a40d9"></script>
