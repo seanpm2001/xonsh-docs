@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Frequently Asked Questions" href="faq.html" /><link rel="prev" title="Developer’s Guide" href="devguide.html" />
 
     <link rel="shortcut icon" href="_static/magic_conch.ico"/><!-- Generated with Sphinx 7.3.7 and Furo 2024.01.29 -->
-        <title>Xonsh Change Log - xonsh 0.15.1 documentation</title>
+        <title>Xonsh Change Log - xonsh 0.16.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=fd3f3429" />
@@ -125,7 +125,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="contents.html"><div class="brand">xonsh 0.15.1 documentation</div></a>
+      <a href="contents.html"><div class="brand">xonsh 0.16.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -151,7 +151,7 @@
     <img class="sidebar-logo" src="_static/ascii_conch_part_transparent_tight.png" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">xonsh 0.15.1 documentation</span>
+  <span class="sidebar-brand-text">xonsh 0.16.0 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -356,6 +356,54 @@
         <article role="main">
           <section id="xonsh-change-log">
 <h1>Xonsh Change Log<a class="headerlink" href="#xonsh-change-log" title="Link to this heading">¶</a></h1>
+<section id="v0-16-0">
+<h2>v0.16.0<a class="headerlink" href="#v0-16-0" title="Link to this heading">¶</a></h2>
+<p><strong>Added:</strong></p>
+<ul class="simple">
+<li><p>Square brackets can now be used in command arguments without quotes (e.g. <cite>echo a[b]</cite>)</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">XONSH_BASH_PATH_OVERRIDE</span></code> option (off-by-default) to override what is
+returned by <cite>xonsh.platform.bash_command</cite>.</p></li>
+<li><p>Added PATH.prepend(path) to add path to the beginning.</p></li>
+</ul>
+<p><strong>Changed:</strong></p>
+<ul class="simple">
+<li><p>Xonsh AppImage now on Python 3.12 that works faster.</p></li>
+<li><p>Xonsh AppImage: pinned prompt-toolkit version until fix upstream issue.</p></li>
+<li><p>Builtin aliases (xontrib, history) switched to threadable mode.</p></li>
+<li><p>EnvPath methods (append, remove, add, insert) prepare the path before action.</p></li>
+<li><p>Replaced black formatter with <a class="reference external" href="https://docs.astral.sh/ruff/">ruff-format</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">source_foreign_fn</span></code> now does not run subshells in interactive mode, so
+associated RC files like <code class="docutils literal notranslate"><span class="pre">zshrc</span></code> and <code class="docutils literal notranslate"><span class="pre">bashrc</span></code> will not be auto-loaded on
+sourcing.</p></li>
+<li><p>Removed usage of deprecated <code class="docutils literal notranslate"><span class="pre">cgi</span></code> module</p></li>
+</ul>
+<p><strong>Removed:</strong></p>
+<ul class="simple">
+<li><p>Removed <code class="docutils literal notranslate"><span class="pre">ArgParserAlias.hook_pre_add_argument</span></code>, <code class="docutils literal notranslate"><span class="pre">ArgParserAlias.hook_post_add_argument</span></code>.
+Please use custom action instead to modify the argument options.</p></li>
+<li><p>Removed deprecated module <code class="docutils literal notranslate"><span class="pre">xonsh.proc</span></code></p></li>
+</ul>
+<p><strong>Fixed:</strong></p>
+<ul class="simple">
+<li><p>Fixed an issue with completions when using absolute paths to commands and having $UPDATE_COMPLETIONS_ON_KEYPRESS set to True. <a class="reference external" href="https://github.com/xonsh/xonsh/issues/5127">https://github.com/xonsh/xonsh/issues/5127</a></p></li>
+<li><p>Jobs: fixed “index out of range” exception.</p></li>
+<li><p>Expressions like <code class="docutils literal notranslate"><span class="pre">2&gt;1</span></code> are now parsed correctly as Python code instead of being treated like special io-redirection operators.</p></li>
+<li><p>Redirect tokens in quotes (e.g. “&gt;”, “2&gt;”, “2&gt;1”) are now correctly passed to commands as regular arguments.</p></li>
+<li><p>Fixed NotADirectoryError during load dircolors.</p></li>
+<li><p>Fixed a bug that caused <code class="docutils literal notranslate"><span class="pre">xonfig</span> <span class="pre">web</span></code> to overwrite its own configuration file. See <a class="reference external" href="https://github.com/xonsh/xonsh/issues/5297">https://github.com/xonsh/xonsh/issues/5297</a></p></li>
+<li><p>If an error is encountered while loading the xonshrc file, the traceback is now output as plain text rather than as a list of Tokens</p></li>
+</ul>
+<p><strong>Authors:</strong></p>
+<ul class="simple">
+<li><p>Gil Forsyth</p></li>
+<li><p>Noortheen Raja</p></li>
+<li><p>anki-code</p></li>
+<li><p>pre-commit-ci[bot]</p></li>
+<li><p>Peter Ye</p></li>
+<li><p>dependabot[bot]</p></li>
+<li><p>l-no</p></li>
+</ul>
+</section>
 <section id="v0-15-1">
 <h2>v0.15.1<a class="headerlink" href="#v0-15-1" title="Link to this heading">¶</a></h2>
 <p><strong>Fixed:</strong></p>
@@ -2761,7 +2809,8 @@ been fixed.</p></li>
 </div>
 </li>
 <li><p>See image</p>
-<a class="reference internal image-reference" href="https://raw.githubusercontent.com/ErickTucto/xontrib-base16-shell/master/docs/terminal.png"><img alt="terminal.png" src="https://raw.githubusercontent.com/ErickTucto/xontrib-base16-shell/master/docs/terminal.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/ErickTucto/xontrib-base16-shell/master/docs/terminal.png"><img alt="terminal.png" src="https://raw.githubusercontent.com/ErickTucto/xontrib-base16-shell/master/docs/terminal.png" style="width: 600px;" />
+</a>
 </li>
 </ol>
 </dd>
@@ -5370,6 +5419,7 @@ with a decoding error.</p></li>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Xonsh Change Log</a><ul>
+<li><a class="reference internal" href="#v0-16-0">v0.16.0</a></li>
 <li><a class="reference internal" href="#v0-15-1">v0.15.1</a></li>
 <li><a class="reference internal" href="#v0-15-0">v0.15.0</a></li>
 <li><a class="reference internal" href="#v0-14-4">v0.14.4</a></li>
@@ -5500,7 +5550,7 @@ with a decoding error.</p></li>
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=4befc426"></script>
+</div><script src="_static/documentation_options.js?v=7de89ed4"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=32e29ea5"></script>
