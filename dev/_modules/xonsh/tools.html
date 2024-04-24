@@ -1508,7 +1508,7 @@
 
 <div class="viewcode-block" id="print_exception">
 <a class="viewcode-back" href="../../api/_autosummary/helpers/xonsh.tools.html#xonsh.tools.print_exception">[docs]</a>
-<span class="k">def</span> <span class="nf">print_exception</span><span class="p">(</span><span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">exc_info</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">print_exception</span><span class="p">(</span><span class="n">msg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">exc_info</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">source_msg</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Print given exception (or current if None) with/without traceback and set sys.last_type, sys.last_value, sys.last_traceback accordingly.&quot;&quot;&quot;</span>
 
     <span class="c1"># is no exec_info() triple is given, use the exception beeing handled at the moment</span>
@@ -1552,6 +1552,9 @@
     <span class="c1"># convert show_trace to bool if necessary</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">is_bool</span><span class="p">(</span><span class="n">show_trace</span><span class="p">):</span>
         <span class="n">show_trace</span> <span class="o">=</span> <span class="n">to_bool</span><span class="p">(</span><span class="n">show_trace</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">source_msg</span><span class="p">:</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">source_msg</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="c1"># if the trace option has been set, print all traceback info to stderr</span>
     <span class="k">if</span> <span class="n">show_trace</span><span class="p">:</span>
         <span class="c1"># notify user about XONSH_TRACEBACK_LOGFILE if it has</span>
