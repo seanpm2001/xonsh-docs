@@ -631,6 +631,9 @@
         <span class="n">obj</span> <span class="o">=</span> <span class="n">active_task</span><span class="p">[</span><span class="s2">&quot;obj&quot;</span><span class="p">]</span>
         <span class="n">backgrounded</span> <span class="o">=</span> <span class="kc">False</span>
         <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">obj</span><span class="o">.</span><span class="n">pid</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="c1"># When the process stopped before os.waitpid it has no pid.</span>
+                <span class="k">raise</span> <span class="ne">ChildProcessError</span><span class="p">(</span><span class="s2">&quot;The process PID not found.&quot;</span><span class="p">)</span>
             <span class="n">_</span><span class="p">,</span> <span class="n">wcode</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">waitpid</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">pid</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">WUNTRACED</span><span class="p">)</span>
         <span class="k">except</span> <span class="ne">ChildProcessError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>  <span class="c1"># No child processes</span>
             <span class="k">if</span> <span class="n">return_error</span><span class="p">:</span>
