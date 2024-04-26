@@ -404,6 +404,7 @@
     <span class="n">history_tuple_to_str</span><span class="p">,</span>
     <span class="n">intensify_colors_on_win_setter</span><span class="p">,</span>
     <span class="n">is_bool</span><span class="p">,</span>
+    <span class="n">is_bool_or_int</span><span class="p">,</span>
     <span class="n">is_bool_or_none</span><span class="p">,</span>
     <span class="n">is_completion_mode</span><span class="p">,</span>
     <span class="n">is_completions_display_value</span><span class="p">,</span>
@@ -1643,9 +1644,12 @@
         <span class="s2">&quot;    - ptk style name (string) - ``$XONSH_STYLE_OVERRIDES[&#39;pygments.keyword&#39;] = &#39;#ff0000&#39;``</span><span class="se">\n\n</span><span class="s2">&quot;</span>
         <span class="s2">&quot;(The rules above are all have the same effect.)&quot;</span><span class="p">,</span>
     <span class="p">)</span>
-    <span class="n">XONSH_TRACE_SUBPROC</span> <span class="o">=</span> <span class="n">Var</span><span class="o">.</span><span class="n">with_default</span><span class="p">(</span>
-        <span class="kc">False</span><span class="p">,</span>
-        <span class="s2">&quot;Set to ``True`` to show arguments list of every executed subprocess command.&quot;</span><span class="p">,</span>
+    <span class="n">XONSH_TRACE_SUBPROC</span> <span class="o">=</span> <span class="n">Var</span><span class="p">(</span>
+        <span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">validate</span><span class="o">=</span><span class="n">is_bool_or_int</span><span class="p">,</span>
+        <span class="n">convert</span><span class="o">=</span><span class="n">to_bool_or_int</span><span class="p">,</span>
+        <span class="n">doc</span><span class="o">=</span><span class="s2">&quot;Set to ``True`` or ``1`` to show arguments list of every executed subprocess command. &quot;</span>
+        <span class="s2">&quot;Use ``2`` to have full specification.&quot;</span><span class="p">,</span>
     <span class="p">)</span>
     <span class="n">XONSH_TRACE_COMPLETIONS</span> <span class="o">=</span> <span class="n">Var</span><span class="o">.</span><span class="n">with_default</span><span class="p">(</span>
         <span class="kc">False</span><span class="p">,</span>
