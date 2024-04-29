@@ -547,6 +547,13 @@
         <span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="p">)</span>
     <span class="n">p</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
+        <span class="s2">&quot;--no-env&quot;</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Do not inherit parent environment variables.&quot;</span><span class="p">,</span>
+        <span class="n">dest</span><span class="o">=</span><span class="s2">&quot;inherit_env&quot;</span><span class="p">,</span>
+        <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store_false&quot;</span><span class="p">,</span>
+        <span class="n">default</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span>
         <span class="s2">&quot;--no-script-cache&quot;</span><span class="p">,</span>
         <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Do not cache scripts as they are run.&quot;</span><span class="p">,</span>
         <span class="n">dest</span><span class="o">=</span><span class="s2">&quot;scriptcache&quot;</span><span class="p">,</span>
@@ -703,7 +710,7 @@
         <span class="n">scriptcache</span><span class="o">=</span><span class="n">shell_kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;scriptcache&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span>
         <span class="n">cacheall</span><span class="o">=</span><span class="n">shell_kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;cacheall&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
     <span class="p">)</span>
-    <span class="n">XSH</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">ctx</span><span class="o">=</span><span class="n">ctx</span><span class="p">,</span> <span class="n">execer</span><span class="o">=</span><span class="n">execer</span><span class="p">)</span>
+    <span class="n">XSH</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">ctx</span><span class="o">=</span><span class="n">ctx</span><span class="p">,</span> <span class="n">execer</span><span class="o">=</span><span class="n">execer</span><span class="p">,</span> <span class="n">inherit_env</span><span class="o">=</span><span class="n">shell_kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;inherit_env&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">))</span>
     <span class="n">events</span><span class="o">.</span><span class="n">on_timingprobe</span><span class="o">.</span><span class="n">fire</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;post_execer_init&quot;</span><span class="p">)</span>
 
     <span class="n">install_import_hooks</span><span class="p">(</span><span class="n">execer</span><span class="p">)</span>
@@ -750,6 +757,7 @@
         <span class="n">shell_kwargs</span><span class="p">[</span><span class="s2">&quot;norc&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
     <span class="k">elif</span> <span class="n">args</span><span class="o">.</span><span class="n">rc</span><span class="p">:</span>
         <span class="n">shell_kwargs</span><span class="p">[</span><span class="s2">&quot;rc&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">rc</span>
+    <span class="n">shell_kwargs</span><span class="p">[</span><span class="s2">&quot;inherit_env&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">inherit_env</span>
     <span class="n">sys</span><span class="o">.</span><span class="n">displayhook</span> <span class="o">=</span> <span class="n">_pprint_displayhook</span>
     <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">command</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">args</span><span class="o">.</span><span class="n">mode</span> <span class="o">=</span> <span class="n">XonshMode</span><span class="o">.</span><span class="n">single_command</span>
@@ -853,6 +861,7 @@
         <span class="n">signal</span><span class="o">.</span><span class="n">signal</span><span class="p">(</span><span class="n">signal</span><span class="o">.</span><span class="n">SIGTTOU</span><span class="p">,</span> <span class="n">func_sig_ttin_ttou</span><span class="p">)</span>
 
     <span class="n">events</span><span class="o">.</span><span class="n">on_post_init</span><span class="o">.</span><span class="n">fire</span><span class="p">()</span>
+
     <span class="n">env</span> <span class="o">=</span> <span class="n">XSH</span><span class="o">.</span><span class="n">env</span>
     <span class="n">shell</span> <span class="o">=</span> <span class="n">XSH</span><span class="o">.</span><span class="n">shell</span>
     <span class="n">history</span> <span class="o">=</span> <span class="n">XSH</span><span class="o">.</span><span class="n">history</span>

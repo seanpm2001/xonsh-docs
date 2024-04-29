@@ -1015,7 +1015,7 @@
 
 <div class="viewcode-block" id="XonshSession.load">
 <a class="viewcode-back" href="../../api/_autosummary/cmd/xonsh.built_ins.html#xonsh.built_ins.XonshSession.load">[docs]</a>
-    <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">execer</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ctx</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">execer</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ctx</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">inherit_env</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Loads the session with default values.</span>
 
 <span class="sd">        Parameters</span>
@@ -1024,6 +1024,10 @@
 <span class="sd">            Xonsh execution object, may be None to start</span>
 <span class="sd">        ctx : Mapping, optional</span>
 <span class="sd">            Context to start xonsh session with.</span>
+<span class="sd">        inherit_env : bool</span>
+<span class="sd">            If ``True``: inherit environment variables from ``os.environ``.</span>
+<span class="sd">            If ``False``: use default values for environment variables and</span>
+<span class="sd">            set ``$XONSH_ENV_INHERITED = False``.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="kn">from</span> <span class="nn">xonsh.commands_cache</span> <span class="kn">import</span> <span class="n">CommandsCache</span>
         <span class="kn">from</span> <span class="nn">xonsh.environ</span> <span class="kn">import</span> <span class="n">Env</span><span class="p">,</span> <span class="n">default_env</span>
@@ -1033,7 +1037,12 @@
         <span class="k">if</span> <span class="n">ctx</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">ctx</span> <span class="o">=</span> <span class="n">ctx</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">env</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;env&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="s2">&quot;env&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span> <span class="k">else</span> <span class="n">Env</span><span class="p">(</span><span class="n">default_env</span><span class="p">())</span>
+        <span class="k">if</span> <span class="s2">&quot;env&quot;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">env</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;env&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">inherit_env</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">env</span> <span class="o">=</span> <span class="n">Env</span><span class="p">(</span><span class="n">default_env</span><span class="p">())</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">env</span> <span class="o">=</span> <span class="n">Env</span><span class="p">({</span><span class="s2">&quot;XONSH_ENV_INHERITED&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">})</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">exit</span> <span class="o">=</span> <span class="kc">False</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">stdout_uncaptured</span> <span class="o">=</span> <span class="kc">None</span>

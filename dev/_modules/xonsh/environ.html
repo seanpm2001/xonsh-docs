@@ -1356,6 +1356,12 @@
     <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">locale</span><span class="p">,</span> <span class="s2">&quot;LC_MESSAGES&quot;</span><span class="p">):</span>
         <span class="n">LC_MESSAGES</span> <span class="o">=</span> <span class="n">Var</span><span class="o">.</span><span class="n">for_locale</span><span class="p">(</span><span class="s2">&quot;LC_MESSAGES&quot;</span><span class="p">)</span>
 
+    <span class="n">PWD</span> <span class="o">=</span> <span class="n">Var</span><span class="o">.</span><span class="n">with_default</span><span class="p">(</span>
+        <span class="n">_get_cwd</span><span class="p">()</span> <span class="ow">or</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Current working directory.&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;os.getcwd()&quot;</span><span class="p">,</span>
+        <span class="n">is_configurable</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="p">)</span>
     <span class="n">OLDPWD</span> <span class="o">=</span> <span class="n">Var</span><span class="o">.</span><span class="n">with_default</span><span class="p">(</span>
         <span class="s2">&quot;.&quot;</span><span class="p">,</span>
         <span class="s2">&quot;Used to represent a previous present working directory.&quot;</span><span class="p">,</span>
