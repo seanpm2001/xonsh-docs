@@ -382,10 +382,11 @@
 <span class="nd">@lazyobject</span>
 <span class="k">def</span> <span class="nf">IMPORT_RE</span><span class="p">():</span>
     <span class="c1"># Regular expression for the python import statement</span>
+    <span class="n">suffixes</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;|&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">_suffixes</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span>
         <span class="sa">r</span><span class="s2">&quot;(?P&lt;name&gt;[^\W\d]\w*?)&quot;</span>
         <span class="sa">r</span><span class="s2">&quot;(?P&lt;package&gt;[/</span><span class="se">\\</span><span class="s2">]__init__)?&quot;</span>
-        <span class="sa">r</span><span class="s2">&quot;(?P&lt;suffix&gt;</span><span class="si">%s</span><span class="s2">)$&quot;</span> <span class="o">%</span> <span class="sa">r</span><span class="s2">&quot;|&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">_suffixes</span><span class="p">)</span>
+        <span class="sa">rf</span><span class="s2">&quot;(?P&lt;suffix&gt;</span><span class="si">{</span><span class="n">suffixes</span><span class="si">}</span><span class="s2">)$&quot;</span>
     <span class="p">)</span>
 
 
