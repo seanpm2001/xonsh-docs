@@ -642,7 +642,7 @@ CommandPipeline representing the completed command.</p>
 <dt class="sig sig-object py" id="xonsh.built_ins.subproc_captured_stdout">
 <span class="sig-prename descclassname"><span class="pre">xonsh.built_ins.</span></span><span class="sig-name descname"><span class="pre">subproc_captured_stdout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">cmds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">envs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/built_ins.html#subproc_captured_stdout"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.built_ins.subproc_captured_stdout" title="Link to this definition">¶</a></dt>
 <dd><p>Runs a subprocess, capturing the output. Returns the stdout
-that was produced as a str.</p>
+that was produced as a str or list based on <code class="docutils literal notranslate"><span class="pre">$XONSH_SUBPROC_OUTPUT_FORMAT</span></code>.</p>
 </dd></dl>
 
 <dl class="py function">

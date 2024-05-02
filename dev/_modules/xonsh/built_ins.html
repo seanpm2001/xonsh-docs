@@ -537,7 +537,7 @@
 <a class="viewcode-back" href="../../api/_autosummary/cmd/xonsh.built_ins.html#xonsh.built_ins.subproc_captured_stdout">[docs]</a>
 <span class="k">def</span> <span class="nf">subproc_captured_stdout</span><span class="p">(</span><span class="o">*</span><span class="n">cmds</span><span class="p">,</span> <span class="n">envs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Runs a subprocess, capturing the output. Returns the stdout</span>
-<span class="sd">    that was produced as a str.</span>
+<span class="sd">    that was produced as a str or list based on ``$XONSH_SUBPROC_OUTPUT_FORMAT``.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="kn">import</span> <span class="nn">xonsh.procs.specs</span>
