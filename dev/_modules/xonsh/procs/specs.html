@@ -1349,25 +1349,32 @@
 
 
 
-<span class="k">def</span> <span class="nf">_run_specs</span><span class="p">(</span><span class="n">specs</span><span class="p">,</span> <span class="n">cmds</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">_run_command_pipeline</span><span class="p">(</span><span class="n">specs</span><span class="p">,</span> <span class="n">cmds</span><span class="p">):</span>
     <span class="n">captured</span> <span class="o">=</span> <span class="n">specs</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">captured</span>
     <span class="k">if</span> <span class="n">captured</span> <span class="o">==</span> <span class="s2">&quot;hiddenobject&quot;</span><span class="p">:</span>
-        <span class="n">command</span> <span class="o">=</span> <span class="n">HiddenCommandPipeline</span><span class="p">(</span><span class="n">specs</span><span class="p">)</span>
+        <span class="n">cp</span> <span class="o">=</span> <span class="n">HiddenCommandPipeline</span><span class="p">(</span><span class="n">specs</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">command</span> <span class="o">=</span> <span class="n">CommandPipeline</span><span class="p">(</span><span class="n">specs</span><span class="p">)</span>
-    <span class="n">proc</span> <span class="o">=</span> <span class="n">command</span><span class="o">.</span><span class="n">proc</span>
-    <span class="n">background</span> <span class="o">=</span> <span class="n">command</span><span class="o">.</span><span class="n">spec</span><span class="o">.</span><span class="n">background</span>
+        <span class="n">cp</span> <span class="o">=</span> <span class="n">CommandPipeline</span><span class="p">(</span><span class="n">specs</span><span class="p">)</span>
+    <span class="n">proc</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">proc</span>
+    <span class="n">background</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">spec</span><span class="o">.</span><span class="n">background</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">is_proxy</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">specs</span><span class="p">):</span>
         <span class="n">xj</span><span class="o">.</span><span class="n">add_job</span><span class="p">(</span>
             <span class="p">{</span>
                 <span class="s2">&quot;cmds&quot;</span><span class="p">:</span> <span class="n">cmds</span><span class="p">,</span>
-                <span class="s2">&quot;pids&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">pid</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">command</span><span class="o">.</span><span class="n">procs</span><span class="p">],</span>
+                <span class="s2">&quot;pids&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">pid</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">cp</span><span class="o">.</span><span class="n">procs</span><span class="p">],</span>
                 <span class="s2">&quot;obj&quot;</span><span class="p">:</span> <span class="n">proc</span><span class="p">,</span>
                 <span class="s2">&quot;bg&quot;</span><span class="p">:</span> <span class="n">background</span><span class="p">,</span>
-                <span class="s2">&quot;pipeline&quot;</span><span class="p">:</span> <span class="n">command</span><span class="p">,</span>
-                <span class="s2">&quot;pgrp&quot;</span><span class="p">:</span> <span class="n">command</span><span class="o">.</span><span class="n">term_pgid</span><span class="p">,</span>
+                <span class="s2">&quot;pipeline&quot;</span><span class="p">:</span> <span class="n">cp</span><span class="p">,</span>
+                <span class="s2">&quot;pgrp&quot;</span><span class="p">:</span> <span class="n">cp</span><span class="o">.</span><span class="n">term_pgid</span><span class="p">,</span>
             <span class="p">}</span>
         <span class="p">)</span>
+    <span class="k">return</span> <span class="n">cp</span>
+
+
+<span class="k">def</span> <span class="nf">_run_specs</span><span class="p">(</span><span class="n">specs</span><span class="p">,</span> <span class="n">cmds</span><span class="p">):</span>
+    <span class="n">cp</span> <span class="o">=</span> <span class="n">_run_command_pipeline</span><span class="p">(</span><span class="n">specs</span><span class="p">,</span> <span class="n">cmds</span><span class="p">)</span>
+    <span class="n">proc</span><span class="p">,</span> <span class="n">captured</span><span class="p">,</span> <span class="n">background</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">proc</span><span class="p">,</span> <span class="n">specs</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">captured</span><span class="p">,</span> <span class="n">cp</span><span class="o">.</span><span class="n">spec</span><span class="o">.</span><span class="n">background</span>
+
     <span class="c1"># For some reason, some programs are in a stopped state when the flow</span>
     <span class="c1"># reaches this point, hence a SIGCONT should be sent to `proc` to make</span>
     <span class="c1"># sure that the shell doesn&#39;t hang.</span>
@@ -1376,18 +1383,18 @@
 
     <span class="c1"># now figure out what we should return</span>
     <span class="k">if</span> <span class="n">captured</span> <span class="o">==</span> <span class="s2">&quot;object&quot;</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">command</span>  <span class="c1"># object can be returned even if backgrounding</span>
+        <span class="k">return</span> <span class="n">cp</span>  <span class="c1"># object can be returned even if backgrounding</span>
     <span class="k">elif</span> <span class="n">captured</span> <span class="o">==</span> <span class="s2">&quot;hiddenobject&quot;</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">background</span><span class="p">:</span>
-            <span class="n">command</span><span class="o">.</span><span class="n">end</span><span class="p">()</span>
-        <span class="k">return</span> <span class="n">command</span>
+            <span class="n">cp</span><span class="o">.</span><span class="n">end</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">cp</span>
     <span class="k">elif</span> <span class="n">background</span><span class="p">:</span>
         <span class="k">return</span>
     <span class="k">elif</span> <span class="n">captured</span> <span class="o">==</span> <span class="s2">&quot;stdout&quot;</span><span class="p">:</span>
-        <span class="n">command</span><span class="o">.</span><span class="n">end</span><span class="p">()</span>
-        <span class="k">return</span> <span class="n">command</span><span class="o">.</span><span class="n">output</span>
+        <span class="n">cp</span><span class="o">.</span><span class="n">end</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">cp</span><span class="o">.</span><span class="n">output</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">command</span><span class="o">.</span><span class="n">end</span><span class="p">()</span>
+        <span class="n">cp</span><span class="o">.</span><span class="n">end</span><span class="p">()</span>
         <span class="k">return</span>
 </pre></div>
         </article>

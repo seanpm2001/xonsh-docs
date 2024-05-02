@@ -3655,6 +3655,23 @@
             <span class="n">p</span><span class="o">.</span><span class="n">break_</span><span class="p">()</span>
             <span class="n">p</span><span class="o">.</span><span class="n">pretty</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">inst</span><span class="p">))</span></div>
 
+
+
+<div class="viewcode-block" id="describe_waitpid_status">
+<a class="viewcode-back" href="../../api/_autosummary/helpers/xonsh.tools.html#xonsh.tools.describe_waitpid_status">[docs]</a>
+<span class="k">def</span> <span class="nf">describe_waitpid_status</span><span class="p">(</span><span class="n">status</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Describes ``pid, status = os.waitpid(pid, opt)`` status.&quot;&quot;&quot;</span>
+    <span class="n">funcs</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">WIFEXITED</span><span class="p">,</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">WEXITSTATUS</span><span class="p">,</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">WIFSIGNALED</span><span class="p">,</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">WTERMSIG</span><span class="p">,</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">WIFSTOPPED</span><span class="p">,</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">WSTOPSIG</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">funcs</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">status</span><span class="p">),</span> <span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="n">f</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span></div>
+
 </pre></div>
         </article>
       </div>

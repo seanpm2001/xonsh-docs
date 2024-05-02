@@ -501,6 +501,19 @@ handle the main thread’s job control.</p>
 suspended by ctrl-z.</p>
 </dd></dl>
 
+<dl class="py function">
+<dt class="sig sig-object py" id="xonsh.jobs.waitpid">
+<span class="sig-prename descclassname"><span class="pre">xonsh.jobs.</span></span><span class="sig-name descname"><span class="pre">waitpid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">opt</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/jobs.html#waitpid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.jobs.waitpid" title="Link to this definition">¶</a></dt>
+<dd><p>Transparent wrapper on <cite>os.waitpid</cite> to make notes about undocumented subprocess behavior.
+Basically <code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">=</span> <span class="pre">subprocess.Popen()</span></code> populates <code class="docutils literal notranslate"><span class="pre">p.returncode</span></code> after <code class="docutils literal notranslate"><span class="pre">p.wait()</span></code>, <code class="docutils literal notranslate"><span class="pre">p.poll()</span></code>
+or <code class="docutils literal notranslate"><span class="pre">p.communicate()</span></code> (<a class="reference external" href="https://docs.python.org/3/library/os.html#os.waitpid">https://docs.python.org/3/library/os.html#os.waitpid</a>).
+But if you’re using <cite>os.waitpid()</cite> BEFORE these functions you’re capturing return code
+from a signal subsystem and <code class="docutils literal notranslate"><span class="pre">p.returncode</span></code> will be <code class="docutils literal notranslate"><span class="pre">0</span></code>.
+After <code class="docutils literal notranslate"><span class="pre">os.waitid</span></code> call you need to set return code manually
+<code class="docutils literal notranslate"><span class="pre">p.returncode</span> <span class="pre">=</span> <span class="pre">-os.WTERMSIG(status)</span></code> like in Popen.
+See also <code class="docutils literal notranslate"><span class="pre">xonsh.tools.describe_waitpid_status()</span></code>.</p>
+</dd></dl>
+
 </section>
 
         </article>
@@ -579,6 +592,7 @@ suspended by ctrl-z.</p>
 <li><a class="reference internal" href="#xonsh.jobs.resume_job"><code class="docutils literal notranslate"><span class="pre">resume_job()</span></code></a></li>
 <li><a class="reference internal" href="#xonsh.jobs.use_main_jobs"><code class="docutils literal notranslate"><span class="pre">use_main_jobs()</span></code></a></li>
 <li><a class="reference internal" href="#xonsh.jobs.wait_for_active_job"><code class="docutils literal notranslate"><span class="pre">wait_for_active_job()</span></code></a></li>
+<li><a class="reference internal" href="#xonsh.jobs.waitpid"><code class="docutils literal notranslate"><span class="pre">waitpid()</span></code></a></li>
 </ul>
 </li>
 </ul>
