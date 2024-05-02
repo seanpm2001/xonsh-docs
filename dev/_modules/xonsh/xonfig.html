@@ -931,6 +931,21 @@
     <span class="n">data</span><span class="o">.</span><span class="n">extend</span><span class="p">([(</span><span class="s2">&quot;xontrib&quot;</span><span class="p">,</span> <span class="n">xontribs_loaded</span><span class="p">())])</span>
     <span class="n">data</span><span class="o">.</span><span class="n">extend</span><span class="p">([(</span><span class="s2">&quot;RC file&quot;</span><span class="p">,</span> <span class="n">XSH</span><span class="o">.</span><span class="n">rc_files</span><span class="p">)])</span>
 
+    <span class="c1"># Show sensitive env variables that could affect the shell behavior.</span>
+    <span class="n">envs</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;UPDATE_OS_ENVIRON&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;XONSH_CAPTURE_ALWAYS&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;XONSH_SUBPROC_OUTPUT_FORMAT&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;THREAD_SUBPROCS&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;ENABLE_ASYNC_PROMPT&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s2">&quot;ENABLE_COMMANDS_CACHE&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;XONSH_CACHE_EVERYTHING&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s2">&quot;XONSH_CACHE_SCRIPTS&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="n">e</span><span class="p">,</span> <span class="n">show_if</span> <span class="ow">in</span> <span class="n">envs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">val</span> <span class="o">:=</span> <span class="n">XSH</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">e</span><span class="p">))</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="p">(</span><span class="n">show_if</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">val</span> <span class="o">==</span> <span class="n">show_if</span><span class="p">):</span>
+            <span class="n">data</span><span class="o">.</span><span class="n">extend</span><span class="p">([(</span><span class="n">e</span><span class="p">,</span> <span class="n">val</span><span class="p">)])</span>
+
     <span class="n">formatter</span> <span class="o">=</span> <span class="n">_xonfig_format_json</span> <span class="k">if</span> <span class="n">to_json</span> <span class="k">else</span> <span class="n">_xonfig_format_human</span>
     <span class="n">s</span> <span class="o">=</span> <span class="n">formatter</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">s</span>
