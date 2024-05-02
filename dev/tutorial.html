@@ -778,7 +778,7 @@ want.</p>
 still query the environment with <code class="docutils literal notranslate"><span class="pre">$NAME</span></code> variables or the <code class="docutils literal notranslate"><span class="pre">${}</span></code> syntax,
 or inject Python values with the <code class="docutils literal notranslate"><span class="pre">&#64;()</span></code> operator:</p>
 <div class="highlight-xonshcon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">$</span><span class="p">(</span><span class="nb">echo</span> <span class="nv">$HOME</span><span class="p">)</span>
-<span class="go">&#39;/home/snail\n&#39;</span>
+<span class="go">&#39;/home/snail&#39;</span>
 </pre></div>
 </div>
 </section>
@@ -838,7 +838,7 @@ result is automatically converted to a string. For example,</p>
 be used to generate any of the tokens in the subprocess command list.</p>
 <div class="highlight-xonshcon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">out</span> <span class="o">=</span> <span class="k">$</span><span class="p">(</span><span class="nb">echo</span> <span class="k">@</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">y</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt;</span> <span class="n">out</span>
-<span class="go">&#39;xonsh party\n&#39;</span>
+<span class="go">&#39;xonsh party&#39;</span>
 <span class="gp">&gt;&gt;&gt;</span> <span class="k">@</span><span class="p">(</span><span class="s2">&quot;ech&quot;</span> <span class="o">+</span> <span class="s2">&quot;o&quot;</span><span class="p">)</span> <span class="s2">&quot;hey&quot;</span>
 <span class="go">hey</span>
 </pre></div>
@@ -880,11 +880,11 @@ short-hand syntax for this operation: <code class="docutils literal notranslate"
 <p>Consider the following example:</p>
 <div class="highlight-xonshcon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># this returns a string representing stdout</span>
 <span class="gp">&gt;&gt;&gt;</span> <span class="k">$</span><span class="p">(</span><span class="nb">which</span> ls<span class="p">)</span>
-<span class="go">&#39;ls --color=auto\n&#39;</span>
+<span class="go">&#39;ls --color=auto&#39;</span>
 
 <span class="gp">&gt;&gt;&gt;</span> <span class="c1"># this attempts to run the command, but as one argument</span>
-<span class="gp">&gt;&gt;&gt;</span> <span class="c1"># (looks for &#39;ls --color=auto\n&#39; with spaces and newline)</span>
-<span class="gp">&gt;&gt;&gt;</span> <span class="k">@</span><span class="p">(</span><span class="k">$</span><span class="p">(</span><span class="nb">which</span> ls<span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt;</span> <span class="c1"># (looks for &#39;ls --color=auto&#39; with spaces)</span>
+<span class="gp">&gt;&gt;&gt;</span> <span class="k">@</span><span class="p">(</span><span class="k">$</span><span class="p">(</span><span class="nb">which</span> ls<span class="p">))</span>
 <span class="go">xonsh: subprocess mode: command not found: ls --color=auto</span>
 
 <span class="gp">&gt;&gt;&gt;</span> <span class="c1"># this actually executes the intended command</span>
