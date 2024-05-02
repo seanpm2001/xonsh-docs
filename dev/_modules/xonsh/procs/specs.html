@@ -971,6 +971,7 @@
         <span class="c1"># modifications that do not alter cmds may come before creating instance</span>
         <span class="n">spec</span> <span class="o">=</span> <span class="n">kls</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="bp">cls</span><span class="o">=</span><span class="bp">cls</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="c1"># modifications that alter cmds must come after creating instance</span>
+        <span class="n">spec</span><span class="o">.</span><span class="n">resolve_args_list</span><span class="p">()</span>
         <span class="c1"># perform initial redirects</span>
         <span class="n">spec</span><span class="o">.</span><span class="n">resolve_redirects</span><span class="p">()</span>
         <span class="c1"># apply aliases</span>
@@ -981,6 +982,16 @@
         <span class="n">spec</span><span class="o">.</span><span class="n">resolve_alias_cls</span><span class="p">()</span>
         <span class="n">spec</span><span class="o">.</span><span class="n">resolve_stack</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">spec</span></div>
+
+
+<div class="viewcode-block" id="SubprocSpec.resolve_args_list">
+<a class="viewcode-back" href="../../../api/_autosummary/cmd/xonsh.procs.specs.html#xonsh.procs.specs.SubprocSpec.resolve_args_list">[docs]</a>
+    <span class="k">def</span> <span class="nf">resolve_args_list</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Weave a list of arguments into a command.&quot;&quot;&quot;</span>
+        <span class="n">resolved_cmd</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cmd</span><span class="p">:</span>
+            <span class="n">resolved_cmd</span> <span class="o">+=</span> <span class="n">c</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="k">else</span> <span class="p">[</span><span class="n">c</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cmd</span> <span class="o">=</span> <span class="n">resolved_cmd</span></div>
 
 
 <div class="viewcode-block" id="SubprocSpec.resolve_redirects">

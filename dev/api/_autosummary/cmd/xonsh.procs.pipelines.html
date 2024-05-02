@@ -399,6 +399,12 @@
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="xonsh.procs.pipelines.CommandPipeline.get_formatted_lines">
+<span class="sig-name descname"><span class="pre">get_formatted_lines</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lines</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/procs/pipelines.html#CommandPipeline.get_formatted_lines"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.procs.pipelines.CommandPipeline.get_formatted_lines" title="Link to this definition">¶</a></dt>
+<dd><p>Format output lines.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="xonsh.procs.pipelines.CommandPipeline.itercheck">
 <span class="sig-name descname"><span class="pre">itercheck</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/procs/pipelines.html#CommandPipeline.itercheck"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.procs.pipelines.CommandPipeline.itercheck" title="Link to this definition">¶</a></dt>
 <dd><p>Iterates through the command lines and throws an error if the
@@ -605,6 +611,12 @@ over, in which case it does not call iterraw().</p>
 <span class="sig-name descname"><span class="pre">end</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tee_output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.procs.pipelines.HiddenCommandPipeline.end" title="Link to this definition">¶</a></dt>
 <dd><p>End the pipeline, return the controlling terminal if needed.</p>
 <p>Main things done in self._end().</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xonsh.procs.pipelines.HiddenCommandPipeline.get_formatted_lines">
+<span class="sig-name descname"><span class="pre">get_formatted_lines</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lines</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#xonsh.procs.pipelines.HiddenCommandPipeline.get_formatted_lines" title="Link to this definition">¶</a></dt>
+<dd><p>Format output lines.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -987,6 +999,7 @@ This represents the Thread ID as reported by the kernel.</p>
 <li><a class="reference internal" href="#">xonsh.procs.pipelines</a><ul>
 <li><a class="reference internal" href="#xonsh.procs.pipelines.CommandPipeline"><code class="docutils literal notranslate"><span class="pre">CommandPipeline</span></code></a><ul>
 <li><a class="reference internal" href="#xonsh.procs.pipelines.CommandPipeline.end"><code class="docutils literal notranslate"><span class="pre">CommandPipeline.end()</span></code></a></li>
+<li><a class="reference internal" href="#xonsh.procs.pipelines.CommandPipeline.get_formatted_lines"><code class="docutils literal notranslate"><span class="pre">CommandPipeline.get_formatted_lines()</span></code></a></li>
 <li><a class="reference internal" href="#xonsh.procs.pipelines.CommandPipeline.itercheck"><code class="docutils literal notranslate"><span class="pre">CommandPipeline.itercheck()</span></code></a></li>
 <li><a class="reference internal" href="#xonsh.procs.pipelines.CommandPipeline.iterraw"><code class="docutils literal notranslate"><span class="pre">CommandPipeline.iterraw()</span></code></a></li>
 <li><a class="reference internal" href="#xonsh.procs.pipelines.CommandPipeline.resume"><code class="docutils literal notranslate"><span class="pre">CommandPipeline.resume()</span></code></a></li>
@@ -1019,6 +1032,7 @@ This represents the Thread ID as reported by the kernel.</p>
 </li>
 <li><a class="reference internal" href="#xonsh.procs.pipelines.HiddenCommandPipeline"><code class="docutils literal notranslate"><span class="pre">HiddenCommandPipeline</span></code></a><ul>
 <li><a class="reference internal" href="#xonsh.procs.pipelines.HiddenCommandPipeline.end"><code class="docutils literal notranslate"><span class="pre">HiddenCommandPipeline.end()</span></code></a></li>
+<li><a class="reference internal" href="#xonsh.procs.pipelines.HiddenCommandPipeline.get_formatted_lines"><code class="docutils literal notranslate"><span class="pre">HiddenCommandPipeline.get_formatted_lines()</span></code></a></li>
 <li><a class="reference internal" href="#xonsh.procs.pipelines.HiddenCommandPipeline.itercheck"><code class="docutils literal notranslate"><span class="pre">HiddenCommandPipeline.itercheck()</span></code></a></li>
 <li><a class="reference internal" href="#xonsh.procs.pipelines.HiddenCommandPipeline.iterraw"><code class="docutils literal notranslate"><span class="pre">HiddenCommandPipeline.iterraw()</span></code></a></li>
 <li><a class="reference internal" href="#xonsh.procs.pipelines.HiddenCommandPipeline.resume"><code class="docutils literal notranslate"><span class="pre">HiddenCommandPipeline.resume()</span></code></a></li>
