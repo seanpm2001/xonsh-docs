@@ -630,13 +630,13 @@
         <span class="c1"># Return when there are no foreground active task</span>
         <span class="k">if</span> <span class="n">active_task</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">last_task</span>
-        <span class="n">obj</span> <span class="o">=</span> <span class="n">active_task</span><span class="p">[</span><span class="s2">&quot;obj&quot;</span><span class="p">]</span>
+        <span class="n">thread</span> <span class="o">=</span> <span class="n">active_task</span><span class="p">[</span><span class="s2">&quot;obj&quot;</span><span class="p">]</span>
         <span class="n">backgrounded</span> <span class="o">=</span> <span class="kc">False</span>
         <span class="k">try</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">obj</span><span class="o">.</span><span class="n">pid</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">thread</span><span class="o">.</span><span class="n">pid</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="c1"># When the process stopped before os.waitpid it has no pid.</span>
                 <span class="k">raise</span> <span class="ne">ChildProcessError</span><span class="p">(</span><span class="s2">&quot;The process PID not found.&quot;</span><span class="p">)</span>
-            <span class="n">_</span><span class="p">,</span> <span class="n">wcode</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">waitpid</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">pid</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">WUNTRACED</span><span class="p">)</span>
+            <span class="n">_</span><span class="p">,</span> <span class="n">wcode</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">waitpid</span><span class="p">(</span><span class="n">thread</span><span class="o">.</span><span class="n">pid</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">WUNTRACED</span><span class="p">)</span>
         <span class="k">except</span> <span class="ne">ChildProcessError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>  <span class="c1"># No child processes</span>
             <span class="k">if</span> <span class="n">return_error</span><span class="p">:</span>
                 <span class="k">return</span> <span class="n">e</span>
@@ -649,11 +649,11 @@
             <span class="n">backgrounded</span> <span class="o">=</span> <span class="kc">True</span>
         <span class="k">elif</span> <span class="n">os</span><span class="o">.</span><span class="n">WIFSIGNALED</span><span class="p">(</span><span class="n">wcode</span><span class="p">):</span>
             <span class="nb">print</span><span class="p">()</span>  <span class="c1"># get a newline because ^C will have been printed</span>
-            <span class="n">obj</span><span class="o">.</span><span class="n">signal</span> <span class="o">=</span> <span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">WTERMSIG</span><span class="p">(</span><span class="n">wcode</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">WCOREDUMP</span><span class="p">(</span><span class="n">wcode</span><span class="p">))</span>
-            <span class="n">obj</span><span class="o">.</span><span class="n">returncode</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">thread</span><span class="o">.</span><span class="n">signal</span> <span class="o">=</span> <span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">WTERMSIG</span><span class="p">(</span><span class="n">wcode</span><span class="p">),</span> <span class="n">os</span><span class="o">.</span><span class="n">WCOREDUMP</span><span class="p">(</span><span class="n">wcode</span><span class="p">))</span>
+            <span class="n">thread</span><span class="o">.</span><span class="n">returncode</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">obj</span><span class="o">.</span><span class="n">returncode</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">WEXITSTATUS</span><span class="p">(</span><span class="n">wcode</span><span class="p">)</span>
-            <span class="n">obj</span><span class="o">.</span><span class="n">signal</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">thread</span><span class="o">.</span><span class="n">returncode</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">WEXITSTATUS</span><span class="p">(</span><span class="n">wcode</span><span class="p">)</span>
+            <span class="n">thread</span><span class="o">.</span><span class="n">signal</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="k">return</span> <span class="n">wait_for_active_job</span><span class="p">(</span><span class="n">last_task</span><span class="o">=</span><span class="n">active_task</span><span class="p">,</span> <span class="n">backgrounded</span><span class="o">=</span><span class="n">backgrounded</span><span class="p">)</span></div>
 
 
