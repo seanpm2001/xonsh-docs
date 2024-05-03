@@ -649,9 +649,18 @@
                     <span class="p">)</span>
                 <span class="k">break</span>
 
-        <span class="k">def</span> <span class="nf">sortkey</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
-            <span class="c1"># todo: should sort with prefix &gt; substring &gt; fuzzy</span>
-            <span class="k">return</span> <span class="n">s</span><span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;&#39;&quot;&#39;&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="n">prefix</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">completion_context</span><span class="p">:</span>
+            <span class="n">prefix</span> <span class="o">=</span> <span class="n">completion_context</span><span class="o">.</span><span class="n">command</span><span class="o">.</span><span class="n">prefix</span>
+            <span class="k">if</span> <span class="n">prefix</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;$&quot;</span><span class="p">):</span>
+                <span class="n">prefix</span> <span class="o">=</span> <span class="n">prefix</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+
+            <span class="k">def</span> <span class="nf">sortkey</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+<span class="w">                </span><span class="sd">&quot;&quot;&quot;Sort values by prefix position and then alphabetically.&quot;&quot;&quot;</span>
+                <span class="k">return</span> <span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">prefix</span><span class="o">.</span><span class="n">lower</span><span class="p">()),</span> <span class="n">s</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># Fallback sort.</span>
+            <span class="n">sortkey</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">s</span><span class="p">:</span> <span class="n">s</span><span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;&#39;&quot;&#39;&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
 
         <span class="c1"># the last completer&#39;s lprefix is returned. other lprefix values are inside the RichCompletions.</span>
         <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">completions</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">sortkey</span><span class="p">)),</span> <span class="n">lprefix</span></div>

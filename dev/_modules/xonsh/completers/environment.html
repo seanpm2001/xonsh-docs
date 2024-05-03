@@ -351,7 +351,6 @@
 <span class="kn">from</span> <span class="nn">xonsh.completers.tools</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">RichCompletion</span><span class="p">,</span>
     <span class="n">contextual_completer</span><span class="p">,</span>
-    <span class="n">get_filter_function</span><span class="p">,</span>
     <span class="n">non_exclusive_completer</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="kn">from</span> <span class="nn">xonsh.parsers.completion_context</span> <span class="kn">import</span> <span class="n">CompletionContext</span>
@@ -378,17 +377,16 @@
     <span class="n">lprefix</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
     <span class="k">if</span> <span class="n">context</span><span class="o">.</span><span class="n">command</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">context</span><span class="o">.</span><span class="n">command</span><span class="o">.</span><span class="n">is_after_closing_quote</span><span class="p">:</span>
         <span class="n">lprefix</span> <span class="o">+=</span> <span class="mi">1</span>
-    <span class="n">filter_func</span> <span class="o">=</span> <span class="n">get_filter_function</span><span class="p">()</span>
     <span class="n">env</span> <span class="o">=</span> <span class="n">XSH</span><span class="o">.</span><span class="n">env</span>
 
+    <span class="nb">vars</span> <span class="o">=</span> <span class="p">[</span><span class="n">k</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">env</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">key</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="n">k</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span>
     <span class="k">return</span> <span class="p">(</span>
         <span class="n">RichCompletion</span><span class="p">(</span>
             <span class="s2">&quot;$&quot;</span> <span class="o">+</span> <span class="n">k</span><span class="p">,</span>
-            <span class="n">display</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;$</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2"> [</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">]&quot;</span><span class="p">,</span>
+            <span class="n">display</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;$</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2"> [</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">env</span><span class="p">[</span><span class="n">k</span><span class="p">])</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">]&quot;</span><span class="p">,</span>
             <span class="n">description</span><span class="o">=</span><span class="n">env</span><span class="o">.</span><span class="n">get_docs</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="o">.</span><span class="n">doc</span><span class="p">,</span>
         <span class="p">)</span>
-        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">env</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
-        <span class="k">if</span> <span class="n">filter_func</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">vars</span>
     <span class="p">),</span> <span class="n">lprefix</span></div>
 
 </pre></div>
