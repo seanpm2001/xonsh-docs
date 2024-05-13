@@ -509,7 +509,7 @@ In either case, this is followed by: for k, v in F.items(): D[k] = v</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="xonsh.aliases.ExecAlias">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xonsh.aliases.</span></span><span class="sig-name descname"><span class="pre">ExecAlias</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'&lt;exec-alias&gt;'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/aliases.html#ExecAlias"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.aliases.ExecAlias" title="Link to this definition">¶</a></dt>
-<dd><p>Provides a callable alias for xonsh source code.</p>
+<dd><p>Provides an exec alias for xonsh source code.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
@@ -518,6 +518,22 @@ In either case, this is followed by: for k, v in F.items(): D[k] = v</p>
 </dl>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="xonsh.aliases.FuncAlias">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">xonsh.aliases.</span></span><span class="sig-name descname"><span class="pre">FuncAlias</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">func</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/aliases.html#FuncAlias"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.aliases.FuncAlias" title="Link to this definition">¶</a></dt>
+<dd><p>Provides a callable alias for xonsh commands.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="xonsh.aliases.FuncAlias.attributes_inherit">
+<span class="sig-name descname"><span class="pre">attributes_inherit</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['__xonsh_threadable__',</span> <span class="pre">'__xonsh_capturable__',</span> <span class="pre">'__doc__']</span></em><a class="headerlink" href="#xonsh.aliases.FuncAlias.attributes_inherit" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="xonsh.aliases.FuncAlias.attributes_show">
+<span class="sig-name descname"><span class="pre">attributes_show</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['__xonsh_threadable__',</span> <span class="pre">'__xonsh_capturable__']</span></em><a class="headerlink" href="#xonsh.aliases.FuncAlias.attributes_show" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="py class">
@@ -982,6 +998,11 @@ explicitly with ![exec command]. For more details, please see
 </ul>
 </li>
 <li><a class="reference internal" href="#xonsh.aliases.ExecAlias"><code class="docutils literal notranslate"><span class="pre">ExecAlias</span></code></a></li>
+<li><a class="reference internal" href="#xonsh.aliases.FuncAlias"><code class="docutils literal notranslate"><span class="pre">FuncAlias</span></code></a><ul>
+<li><a class="reference internal" href="#xonsh.aliases.FuncAlias.attributes_inherit"><code class="docutils literal notranslate"><span class="pre">FuncAlias.attributes_inherit</span></code></a></li>
+<li><a class="reference internal" href="#xonsh.aliases.FuncAlias.attributes_show"><code class="docutils literal notranslate"><span class="pre">FuncAlias.attributes_show</span></code></a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#xonsh.aliases.PartialEvalAlias0"><code class="docutils literal notranslate"><span class="pre">PartialEvalAlias0</span></code></a></li>
 <li><a class="reference internal" href="#xonsh.aliases.PartialEvalAlias1"><code class="docutils literal notranslate"><span class="pre">PartialEvalAlias1</span></code></a></li>
 <li><a class="reference internal" href="#xonsh.aliases.PartialEvalAlias2"><code class="docutils literal notranslate"><span class="pre">PartialEvalAlias2</span></code></a></li>
