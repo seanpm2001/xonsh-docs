@@ -412,6 +412,7 @@
 <span class="kn">from</span> <span class="nn">types</span> <span class="kn">import</span> <span class="n">MethodType</span>
 
 <span class="kn">from</span> <span class="nn">prompt_toolkit</span> <span class="kn">import</span> <span class="n">ANSI</span>
+<span class="kn">from</span> <span class="nn">prompt_toolkit.application.current</span> <span class="kn">import</span> <span class="n">get_app</span>
 <span class="kn">from</span> <span class="nn">prompt_toolkit.auto_suggest</span> <span class="kn">import</span> <span class="n">AutoSuggestFromHistory</span>
 <span class="kn">from</span> <span class="nn">prompt_toolkit.clipboard</span> <span class="kn">import</span> <span class="n">InMemoryClipboard</span>
 <span class="kn">from</span> <span class="nn">prompt_toolkit.enums</span> <span class="kn">import</span> <span class="n">EditingMode</span>
@@ -834,8 +835,12 @@
                     <span class="n">raw_line</span> <span class="o">=</span> <span class="n">line</span>
                     <span class="n">line</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">precmd</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
                     <span class="bp">self</span><span class="o">.</span><span class="n">default</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">raw_line</span><span class="p">)</span>
-            <span class="k">except</span> <span class="p">(</span><span class="ne">KeyboardInterrupt</span><span class="p">,</span> <span class="ne">SystemExit</span><span class="p">):</span>
+            <span class="k">except</span> <span class="p">(</span><span class="ne">KeyboardInterrupt</span><span class="p">,</span> <span class="ne">SystemExit</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">reset_buffer</span><span class="p">()</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="ne">SystemExit</span><span class="p">):</span>
+                    <span class="n">get_app</span><span class="p">()</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>  <span class="c1"># Reset TTY mouse and keys handlers.</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">restore_tty_sanity</span><span class="p">()</span>  <span class="c1"># Reset TTY SIGINT handlers.</span>
+                    <span class="k">raise</span>
             <span class="k">except</span> <span class="ne">EOFError</span><span class="p">:</span>
                 <span class="k">if</span> <span class="n">XSH</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;IGNOREEOF&quot;</span><span class="p">):</span>
                     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Use &quot;exit&quot; to leave the shell.&#39;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
@@ -1031,8 +1036,9 @@
 <a class="viewcode-back" href="../../../api/_autosummary/cmd/xonsh.ptk_shell.shell.html#xonsh.ptk_shell.shell.PromptToolkitShell.restore_tty_sanity">[docs]</a>
     <span class="k">def</span> <span class="nf">restore_tty_sanity</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;An interface for resetting the TTY stdin mode. This is highly</span>
-<span class="sd">        dependent on the shell backend. Also it is mostly optional since</span>
-<span class="sd">        it only affects ^Z backgrounding behaviour.</span>
+<span class="sd">        dependent on the shell backend.</span>
+<span class="sd">        For prompt-toolkit it allows to fix case when terminal lost</span>
+<span class="sd">        SIGINT catching and Ctrl+C is not working after abnormal exiting.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1"># PTK does not seem to need any specialization here. However,</span>
         <span class="c1"># if it does for some reason in the future...</span>

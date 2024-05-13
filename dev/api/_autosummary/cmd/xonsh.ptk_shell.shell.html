@@ -521,8 +521,9 @@ enables multiline input.</p>
 <dt class="sig sig-object py" id="xonsh.ptk_shell.shell.PromptToolkitShell.restore_tty_sanity">
 <span class="sig-name descname"><span class="pre">restore_tty_sanity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/ptk_shell/shell.html#PromptToolkitShell.restore_tty_sanity"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.ptk_shell.shell.PromptToolkitShell.restore_tty_sanity" title="Link to this definition">¶</a></dt>
 <dd><p>An interface for resetting the TTY stdin mode. This is highly
-dependent on the shell backend. Also it is mostly optional since
-it only affects ^Z backgrounding behaviour.</p>
+dependent on the shell backend.
+For prompt-toolkit it allows to fix case when terminal lost
+SIGINT catching and Ctrl+C is not working after abnormal exiting.</p>
 </dd></dl>
 
 <dl class="py method">

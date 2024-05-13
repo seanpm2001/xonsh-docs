@@ -1002,13 +1002,18 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="c1"># pass error to finally clause</span>
             <span class="n">exc_info</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">()</span>
+    <span class="k">except</span> <span class="ne">SystemExit</span><span class="p">:</span>
+        <span class="n">exc_info</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">()</span>
     <span class="k">finally</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">exc_info</span> <span class="o">!=</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">):</span>
             <span class="n">err_type</span><span class="p">,</span> <span class="n">err</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">exc_info</span>
             <span class="k">if</span> <span class="n">err_type</span> <span class="ow">is</span> <span class="ne">SystemExit</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="n">err</span>
-            <span class="n">print_exception</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">exc_info</span><span class="p">)</span>
-            <span class="n">exit_code</span> <span class="o">=</span> <span class="mi">1</span>
+                <span class="n">XSH</span><span class="o">.</span><span class="n">exit</span> <span class="o">=</span> <span class="kc">True</span>
+                <span class="n">code</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">exc_info</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;code&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="n">exit_code</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">code</span><span class="p">)</span> <span class="k">if</span> <span class="n">code</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mi">0</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">exit_code</span> <span class="o">=</span> <span class="mi">1</span>
+                <span class="n">print_exception</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">exc_info</span><span class="p">)</span>
         <span class="n">events</span><span class="o">.</span><span class="n">on_exit</span><span class="o">.</span><span class="n">fire</span><span class="p">()</span>
         <span class="n">postmain</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">exit_code</span></div>

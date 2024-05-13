@@ -460,15 +460,20 @@
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Sets a new signal handle that will automatically restore the old value</span>
 <span class="sd">    once the new handle is finished.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">oldh</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">getsignal</span><span class="p">(</span><span class="n">sig</span><span class="p">)</span>
+    <span class="n">prev_signal_handler</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">getsignal</span><span class="p">(</span><span class="n">sig</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">newh</span><span class="p">(</span><span class="n">s</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">frame</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">new_signal_handler</span><span class="p">(</span><span class="n">s</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">frame</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="n">f</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">frame</span><span class="p">)</span>
-        <span class="n">signal</span><span class="o">.</span><span class="n">signal</span><span class="p">(</span><span class="n">sig</span><span class="p">,</span> <span class="n">oldh</span><span class="p">)</span>
+        <span class="n">signal</span><span class="o">.</span><span class="n">signal</span><span class="p">(</span><span class="n">sig</span><span class="p">,</span> <span class="n">prev_signal_handler</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">sig</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            There is no immediate exiting here.</span>
+<span class="sd">            The ``sys.exit()`` function raises a ``SystemExit`` exception.</span>
+<span class="sd">            This exception must be caught and processed in the upstream code.</span>
+<span class="sd">            &quot;&quot;&quot;</span>
             <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">sig</span><span class="p">)</span>
 
-    <span class="n">signal</span><span class="o">.</span><span class="n">signal</span><span class="p">(</span><span class="n">sig</span><span class="p">,</span> <span class="n">newh</span><span class="p">)</span></div>
+    <span class="n">signal</span><span class="o">.</span><span class="n">signal</span><span class="p">(</span><span class="n">sig</span><span class="p">,</span> <span class="n">new_signal_handler</span><span class="p">)</span></div>
 
 
 

@@ -1063,11 +1063,13 @@
         <span class="k">while</span> <span class="ow">not</span> <span class="n">XSH</span><span class="o">.</span><span class="n">exit</span><span class="p">:</span>
             <span class="k">try</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">_cmdloop</span><span class="p">(</span><span class="n">intro</span><span class="o">=</span><span class="n">intro</span><span class="p">)</span>
-            <span class="k">except</span> <span class="p">(</span><span class="ne">KeyboardInterrupt</span><span class="p">,</span> <span class="ne">SystemExit</span><span class="p">):</span>
+            <span class="k">except</span> <span class="p">(</span><span class="ne">KeyboardInterrupt</span><span class="p">,</span> <span class="ne">SystemExit</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
                 <span class="nb">print</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>  <span class="c1"># Gives a newline</span>
                 <span class="n">fix_readline_state_after_ctrl_c</span><span class="p">()</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">reset_buffer</span><span class="p">()</span>
-                <span class="n">intro</span> <span class="o">=</span> <span class="kc">None</span></div>
+                <span class="n">intro</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="ne">SystemExit</span><span class="p">):</span>
+                    <span class="k">raise</span></div>
 
 
     <span class="nd">@property</span>
