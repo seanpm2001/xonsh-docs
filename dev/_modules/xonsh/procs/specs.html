@@ -1426,7 +1426,8 @@
             <span class="p">{</span>
                 <span class="s2">&quot;cmds&quot;</span><span class="p">:</span> <span class="n">cmds</span><span class="p">,</span>
                 <span class="s2">&quot;pids&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">pid</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">cp</span><span class="o">.</span><span class="n">procs</span><span class="p">],</span>
-                <span class="s2">&quot;obj&quot;</span><span class="p">:</span> <span class="n">proc</span><span class="p">,</span>
+                <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;suspended&quot;</span> <span class="k">if</span> <span class="n">cp</span><span class="o">.</span><span class="n">suspended</span> <span class="k">else</span> <span class="s2">&quot;running&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;proc&quot;</span><span class="p">:</span> <span class="n">proc</span><span class="p">,</span>
                 <span class="s2">&quot;bg&quot;</span><span class="p">:</span> <span class="n">background</span><span class="p">,</span>
                 <span class="s2">&quot;pipeline&quot;</span><span class="p">:</span> <span class="n">cp</span><span class="p">,</span>
                 <span class="s2">&quot;pgrp&quot;</span><span class="p">:</span> <span class="n">cp</span><span class="o">.</span><span class="n">term_pgid</span><span class="p">,</span>
