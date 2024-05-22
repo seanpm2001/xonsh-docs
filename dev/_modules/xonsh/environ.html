@@ -2538,7 +2538,11 @@
 <div class="viewcode-block" id="Env.detype">
 <a class="viewcode-back" href="../../api/_autosummary/cmd/xonsh.environ.html#xonsh.environ.Env.detype">[docs]</a>
     <span class="k">def</span> <span class="nf">detype</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;return a dict that can be used as ``os.environ``&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns a dict of detyped variables.</span>
+<span class="sd">        Note! If env variable wasn&#39;t explicitly set (e.g. the value has default value in ``Xettings``)</span>
+<span class="sd">        it will be not in this list.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_detyped</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_detyped</span>
         <span class="n">ctx</span> <span class="o">=</span> <span class="p">{}</span>
@@ -2554,6 +2558,27 @@
                 <span class="c1"># cannot be detyped</span>
                 <span class="k">continue</span>
             <span class="n">ctx</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">deval</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_detyped</span> <span class="o">=</span> <span class="n">ctx</span>
+        <span class="k">return</span> <span class="n">ctx</span></div>
+
+
+<div class="viewcode-block" id="Env.detype_all">
+<a class="viewcode-back" href="../../api/_autosummary/cmd/xonsh.environ.html#xonsh.environ.Env.detype_all">[docs]</a>
+    <span class="k">def</span> <span class="nf">detype_all</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># __getitem__</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Returns a dict of all available detyped env variables.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_detyped</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_detyped</span>
+        <span class="n">ctx</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">rawkeys</span><span class="p">():</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+                <span class="n">key</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+            <span class="n">val</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__getitem__</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+            <span class="n">detyper</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_detyper</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">detyper</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">val</span> <span class="o">=</span> <span class="n">detyper</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+                <span class="k">continue</span>
+            <span class="n">ctx</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_detyped</span> <span class="o">=</span> <span class="n">ctx</span>
         <span class="k">return</span> <span class="n">ctx</span></div>
 

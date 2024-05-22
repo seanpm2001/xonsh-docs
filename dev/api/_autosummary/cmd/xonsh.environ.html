@@ -853,7 +853,15 @@ default value, doc.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="xonsh.environ.Env.detype">
 <span class="sig-name descname"><span class="pre">detype</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/environ.html#Env.detype"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.environ.Env.detype" title="Link to this definition">¶</a></dt>
-<dd><p>return a dict that can be used as <code class="docutils literal notranslate"><span class="pre">os.environ</span></code></p>
+<dd><p>Returns a dict of detyped variables.
+Note! If env variable wasn’t explicitly set (e.g. the value has default value in <code class="docutils literal notranslate"><span class="pre">Xettings</span></code>)
+it will be not in this list.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="xonsh.environ.Env.detype_all">
+<span class="sig-name descname"><span class="pre">detype_all</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/xonsh/environ.html#Env.detype_all"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xonsh.environ.Env.detype_all" title="Link to this definition">¶</a></dt>
+<dd><p>Returns a dict of all available detyped env variables.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -3070,6 +3078,7 @@ of loading.</p>
 <li><a class="reference internal" href="#xonsh.environ.Env.clear"><code class="docutils literal notranslate"><span class="pre">Env.clear()</span></code></a></li>
 <li><a class="reference internal" href="#xonsh.environ.Env.deregister"><code class="docutils literal notranslate"><span class="pre">Env.deregister()</span></code></a></li>
 <li><a class="reference internal" href="#xonsh.environ.Env.detype"><code class="docutils literal notranslate"><span class="pre">Env.detype()</span></code></a></li>
+<li><a class="reference internal" href="#xonsh.environ.Env.detype_all"><code class="docutils literal notranslate"><span class="pre">Env.detype_all()</span></code></a></li>
 <li><a class="reference internal" href="#xonsh.environ.Env.get"><code class="docutils literal notranslate"><span class="pre">Env.get()</span></code></a></li>
 <li><a class="reference internal" href="#xonsh.environ.Env.get_converter"><code class="docutils literal notranslate"><span class="pre">Env.get_converter()</span></code></a></li>
 <li><a class="reference internal" href="#xonsh.environ.Env.get_default"><code class="docutils literal notranslate"><span class="pre">Env.get_default()</span></code></a></li>
