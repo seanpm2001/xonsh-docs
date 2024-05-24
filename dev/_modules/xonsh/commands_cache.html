@@ -551,6 +551,30 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">update_cache</span><span class="p">()</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cmds_cache</span>
 
+<div class="viewcode-block" id="CommandsCache.resolve_symlink">
+<a class="viewcode-back" href="../../api/_autosummary/helpers/xonsh.commands_cache.html#xonsh.commands_cache.CommandsCache.resolve_symlink">[docs]</a>
+    <span class="k">def</span> <span class="nf">resolve_symlink</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
+        <span class="n">visited</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+        <span class="n">current_path</span> <span class="o">=</span> <span class="n">path</span>
+        <span class="k">while</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">islink</span><span class="p">(</span><span class="n">current_path</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">current_path</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
+                <span class="c1"># Detected a loop while resolving symlink</span>
+                <span class="k">return</span> <span class="kc">None</span>
+            <span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">current_path</span><span class="p">)</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">current_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">readlink</span><span class="p">(</span><span class="n">current_path</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">None</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isabs</span><span class="p">(</span><span class="n">current_path</span><span class="p">):</span>
+                <span class="n">current_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">path</span><span class="p">),</span> <span class="n">current_path</span><span class="p">)</span>
+                <span class="n">current_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normpath</span><span class="p">(</span><span class="n">current_path</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">current_path</span> <span class="o">==</span> <span class="n">path</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+        <span class="k">return</span> <span class="n">current_path</span></div>
+
+
 <div class="viewcode-block" id="CommandsCache.update_cache">
 <a class="viewcode-back" href="../../api/_autosummary/helpers/xonsh.commands_cache.html#xonsh.commands_cache.CommandsCache.update_cache">[docs]</a>
     <span class="k">def</span> <span class="nf">update_cache</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -845,6 +869,12 @@
         <span class="k">if</span> <span class="n">fname</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">failure</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">fname</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">failure</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">link</span> <span class="o">:=</span> <span class="bp">self</span><span class="o">.</span><span class="n">resolve_symlink</span><span class="p">(</span><span class="n">fname</span><span class="p">))</span> <span class="ow">and</span> <span class="n">link</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;coreutils&quot;</span><span class="p">):</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            On NixOS the core tools are the symlinks to one universal ``coreutils`` binary file.</span>
+<span class="sd">            Detect it and use the default mode.</span>
+<span class="sd">            &quot;&quot;&quot;</span>
             <span class="k">return</span> <span class="n">failure</span>
 
         <span class="k">try</span><span class="p">:</span>
