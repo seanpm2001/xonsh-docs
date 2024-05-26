@@ -799,6 +799,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">is_proxy</span> <span class="o">=</span> <span class="kc">False</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">background</span> <span class="o">=</span> <span class="kc">False</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">threadable</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">force_threadable</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># Set this value to ignore threadable prediction.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">pipeline_index</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">last_in_pipeline</span> <span class="o">=</span> <span class="kc">False</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">captured_stdout</span> <span class="o">=</span> <span class="kc">None</span>
@@ -1039,7 +1040,6 @@
         <span class="n">spec</span> <span class="o">=</span> <span class="n">kls</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="bp">cls</span><span class="o">=</span><span class="bp">cls</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="c1"># modifications that alter cmds must come after creating instance</span>
         <span class="n">spec</span><span class="o">.</span><span class="n">resolve_args_list</span><span class="p">()</span>
-        <span class="c1"># perform initial redirects</span>
         <span class="n">spec</span><span class="o">.</span><span class="n">resolve_redirects</span><span class="p">()</span>
         <span class="n">spec</span><span class="o">.</span><span class="n">resolve_alias</span><span class="p">()</span>
         <span class="n">spec</span><span class="o">.</span><span class="n">resolve_binary_loc</span><span class="p">()</span>
@@ -1171,15 +1171,10 @@
 <a class="viewcode-back" href="../../../api/_autosummary/cmd/xonsh.procs.specs.html#xonsh.procs.specs.SubprocSpec.resolve_alias_cls">[docs]</a>
     <span class="k">def</span> <span class="nf">resolve_alias_cls</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Determine which proxy class to run an alias with.&quot;&quot;&quot;</span>
-        <span class="n">alias</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">alias</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="nb">callable</span><span class="p">(</span><span class="n">alias</span><span class="p">):</span>
-            <span class="k">return</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">is_proxy</span> <span class="o">=</span> <span class="kc">True</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">threadable</span> <span class="o">=</span> <span class="n">XSH</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;THREAD_SUBPROCS&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">getattr</span><span class="p">(</span>
-            <span class="n">alias</span><span class="p">,</span> <span class="s2">&quot;__xonsh_threadable__&quot;</span><span class="p">,</span> <span class="kc">True</span>
-        <span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">cls</span> <span class="o">=</span> <span class="n">ProcProxyThread</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">threadable</span> <span class="k">else</span> <span class="n">ProcProxy</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">captured</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">alias</span><span class="p">,</span> <span class="s2">&quot;__xonsh_capturable__&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">captured</span><span class="p">)</span></div>
+        <span class="k">if</span> <span class="nb">callable</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">alias</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">is_proxy</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="n">_update_proc_alias_threadable</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+            <span class="n">_update_proc_alias_captured</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="SubprocSpec.resolve_stack">
@@ -1230,32 +1225,55 @@
 
 
 <span class="k">def</span> <span class="nf">_update_last_spec</span><span class="p">(</span><span class="n">last</span><span class="p">):</span>
-    <span class="n">env</span> <span class="o">=</span> <span class="n">XSH</span><span class="o">.</span><span class="n">env</span>
-    <span class="n">captured</span> <span class="o">=</span> <span class="n">last</span><span class="o">.</span><span class="n">captured</span>
     <span class="n">last</span><span class="o">.</span><span class="n">last_in_pipeline</span> <span class="o">=</span> <span class="kc">True</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">captured</span><span class="p">:</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">last</span><span class="o">.</span><span class="n">captured</span><span class="p">:</span>
         <span class="k">return</span>
-    <span class="n">callable_alias</span> <span class="o">=</span> <span class="nb">callable</span><span class="p">(</span><span class="n">last</span><span class="o">.</span><span class="n">alias</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">callable_alias</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">last</span><span class="o">.</span><span class="n">cls</span> <span class="ow">is</span> <span class="n">ProcProxy</span> <span class="ow">and</span> <span class="n">captured</span> <span class="o">==</span> <span class="s2">&quot;hiddenobject&quot;</span><span class="p">:</span>
-            <span class="c1"># a ProcProxy run using ![] should not be captured</span>
-            <span class="k">return</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">cmds_cache</span> <span class="o">=</span> <span class="n">XSH</span><span class="o">.</span><span class="n">commands_cache</span>
-        <span class="n">thable</span> <span class="o">=</span> <span class="p">(</span>
-            <span class="n">env</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;THREAD_SUBPROCS&quot;</span><span class="p">)</span>
-            <span class="ow">and</span> <span class="p">(</span><span class="n">captured</span> <span class="o">!=</span> <span class="s2">&quot;hiddenobject&quot;</span> <span class="ow">or</span> <span class="n">env</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;XONSH_CAPTURE_ALWAYS&quot;</span><span class="p">))</span>
-            <span class="ow">and</span> <span class="n">cmds_cache</span><span class="o">.</span><span class="n">predict_threadable</span><span class="p">(</span><span class="n">last</span><span class="o">.</span><span class="n">args</span><span class="p">)</span>
-            <span class="ow">and</span> <span class="n">cmds_cache</span><span class="o">.</span><span class="n">predict_threadable</span><span class="p">(</span><span class="n">last</span><span class="o">.</span><span class="n">cmd</span><span class="p">)</span>
-        <span class="p">)</span>
-        <span class="k">if</span> <span class="n">captured</span> <span class="ow">and</span> <span class="n">thable</span><span class="p">:</span>
+
+    <span class="n">_last_spec_update_threading</span><span class="p">(</span><span class="n">last</span><span class="p">)</span>
+    <span class="n">_last_spec_update_captured</span><span class="p">(</span><span class="n">last</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_last_spec_update_threading</span><span class="p">(</span><span class="n">last</span><span class="p">:</span> <span class="n">SubprocSpec</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">callable</span><span class="p">(</span><span class="n">last</span><span class="o">.</span><span class="n">alias</span><span class="p">):</span>
+        <span class="k">return</span>
+
+    <span class="n">captured</span><span class="p">,</span> <span class="n">env</span><span class="p">,</span> <span class="n">cmds_cache</span> <span class="o">=</span> <span class="n">last</span><span class="o">.</span><span class="n">captured</span><span class="p">,</span> <span class="n">XSH</span><span class="o">.</span><span class="n">env</span><span class="p">,</span> <span class="n">XSH</span><span class="o">.</span><span class="n">commands_cache</span>
+    <span class="n">threadable</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">captured</span>
+        <span class="ow">and</span> <span class="n">env</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;THREAD_SUBPROCS&quot;</span><span class="p">)</span>
+        <span class="ow">and</span> <span class="p">(</span><span class="n">captured</span> <span class="o">!=</span> <span class="s2">&quot;hiddenobject&quot;</span> <span class="ow">or</span> <span class="n">env</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;XONSH_CAPTURE_ALWAYS&quot;</span><span class="p">))</span>
+        <span class="ow">and</span> <span class="n">cmds_cache</span><span class="o">.</span><span class="n">predict_threadable</span><span class="p">(</span><span class="n">last</span><span class="o">.</span><span class="n">args</span><span class="p">)</span>
+        <span class="ow">and</span> <span class="n">cmds_cache</span><span class="o">.</span><span class="n">predict_threadable</span><span class="p">(</span><span class="n">last</span><span class="o">.</span><span class="n">cmd</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="k">if</span> <span class="n">last</span><span class="o">.</span><span class="n">force_threadable</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">threadable</span> <span class="o">=</span> <span class="n">last</span><span class="o">.</span><span class="n">force_threadable</span>
+
+    <span class="k">if</span> <span class="n">threadable</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">last</span><span class="o">.</span><span class="n">captured</span><span class="p">:</span>
             <span class="n">last</span><span class="o">.</span><span class="n">cls</span> <span class="o">=</span> <span class="n">PopenThread</span>
-        <span class="k">elif</span> <span class="ow">not</span> <span class="n">thable</span><span class="p">:</span>
-            <span class="c1"># foreground processes should use Popen</span>
-            <span class="n">last</span><span class="o">.</span><span class="n">threadable</span> <span class="o">=</span> <span class="kc">False</span>
-            <span class="k">if</span> <span class="n">captured</span> <span class="o">==</span> <span class="s2">&quot;object&quot;</span> <span class="ow">or</span> <span class="n">captured</span> <span class="o">==</span> <span class="s2">&quot;hiddenobject&quot;</span><span class="p">:</span>
-                <span class="c1"># CommandPipeline objects should not pipe stdout, stderr</span>
-                <span class="k">return</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">last</span><span class="o">.</span><span class="n">threadable</span> <span class="o">=</span> <span class="kc">False</span>
+
+
+<span class="k">def</span> <span class="nf">_last_spec_update_captured</span><span class="p">(</span><span class="n">last</span><span class="p">:</span> <span class="n">SubprocSpec</span><span class="p">):</span>
+    <span class="n">captured</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="p">(</span><span class="n">captured</span> <span class="o">:=</span> <span class="n">last</span><span class="o">.</span><span class="n">captured</span><span class="p">)</span>
+        <span class="ow">and</span> <span class="ow">not</span> <span class="p">(</span><span class="n">captured</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;object&quot;</span><span class="p">,</span> <span class="s2">&quot;hiddenobject&quot;</span><span class="p">]</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">last</span><span class="o">.</span><span class="n">threadable</span><span class="p">)</span>
+        <span class="c1"># a ProcProxy run using ![] should not be captured</span>
+        <span class="ow">and</span> <span class="ow">not</span> <span class="p">(</span>
+            <span class="nb">callable</span><span class="p">(</span><span class="n">last</span><span class="o">.</span><span class="n">alias</span><span class="p">)</span>
+            <span class="ow">and</span> <span class="n">last</span><span class="o">.</span><span class="n">cls</span> <span class="ow">is</span> <span class="n">ProcProxy</span>
+            <span class="ow">and</span> <span class="n">captured</span> <span class="o">==</span> <span class="s2">&quot;hiddenobject&quot;</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="k">if</span> <span class="n">captured</span><span class="p">:</span>
+        <span class="n">_make_last_spec_captured</span><span class="p">(</span><span class="n">last</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_make_last_spec_captured</span><span class="p">(</span><span class="n">last</span><span class="p">:</span> <span class="n">SubprocSpec</span><span class="p">):</span>
+    <span class="n">captured</span> <span class="o">=</span> <span class="n">last</span><span class="o">.</span><span class="n">captured</span>
+    <span class="n">callable_alias</span> <span class="o">=</span> <span class="nb">callable</span><span class="p">(</span><span class="n">last</span><span class="o">.</span><span class="n">alias</span><span class="p">)</span>
     <span class="c1"># cannot used PTY pipes for aliases, for some dark reason,</span>
     <span class="c1"># and must use normal pipes instead.</span>
     <span class="n">use_tty</span> <span class="o">=</span> <span class="n">xp</span><span class="o">.</span><span class="n">ON_POSIX</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">callable_alias</span>
@@ -1314,6 +1332,46 @@
         <span class="n">last</span><span class="o">.</span><span class="n">captured_stderr</span> <span class="o">=</span> <span class="n">last</span><span class="o">.</span><span class="n">captured_stdout</span>
 
 
+<span class="k">def</span> <span class="nf">_update_proc_alias_threadable</span><span class="p">(</span><span class="n">proc</span><span class="p">):</span>
+    <span class="n">threadable</span> <span class="o">=</span> <span class="n">XSH</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;THREAD_SUBPROCS&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">getattr</span><span class="p">(</span>
+        <span class="n">proc</span><span class="o">.</span><span class="n">alias</span><span class="p">,</span> <span class="s2">&quot;__xonsh_threadable__&quot;</span><span class="p">,</span> <span class="kc">True</span>
+    <span class="p">)</span>
+    <span class="k">if</span> <span class="n">proc</span><span class="o">.</span><span class="n">force_threadable</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">threadable</span> <span class="o">=</span> <span class="n">proc</span><span class="o">.</span><span class="n">force_threadable</span>
+    <span class="n">proc</span><span class="o">.</span><span class="n">threadable</span> <span class="o">=</span> <span class="n">threadable</span>
+    <span class="n">proc</span><span class="o">.</span><span class="n">cls</span> <span class="o">=</span> <span class="n">ProcProxyThread</span> <span class="k">if</span> <span class="n">proc</span><span class="o">.</span><span class="n">threadable</span> <span class="k">else</span> <span class="n">ProcProxy</span>
+
+
+<span class="k">def</span> <span class="nf">_update_proc_alias_captured</span><span class="p">(</span><span class="n">proc</span><span class="p">):</span>
+    <span class="n">proc</span><span class="o">.</span><span class="n">captured</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">proc</span><span class="o">.</span><span class="n">alias</span><span class="p">,</span> <span class="s2">&quot;__xonsh_capturable__&quot;</span><span class="p">,</span> <span class="n">proc</span><span class="o">.</span><span class="n">captured</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_trace_specs</span><span class="p">(</span><span class="n">trace_mode</span><span class="p">,</span> <span class="n">specs</span><span class="p">,</span> <span class="n">cmds</span><span class="p">,</span> <span class="n">captured</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Show information about specs.&quot;&quot;&quot;</span>
+    <span class="n">tracer</span> <span class="o">=</span> <span class="n">XSH</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;XONSH_TRACE_SUBPROC_FUNC&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">callable</span><span class="p">(</span><span class="n">tracer</span><span class="p">):</span>
+        <span class="n">tracer</span><span class="p">(</span><span class="n">cmds</span><span class="p">,</span> <span class="n">captured</span><span class="o">=</span><span class="n">captured</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;cmds&quot;</span><span class="p">:</span> <span class="n">cmds</span><span class="p">,</span> <span class="s2">&quot;captured&quot;</span><span class="p">:</span> <span class="n">captured</span><span class="p">}</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Trace run_subproc(</span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">r</span><span class="p">)</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">trace_mode</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">specs</span><span class="p">):</span>
+                <span class="n">pcls</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">cls</span><span class="o">.</span><span class="vm">__module__</span> <span class="o">+</span> <span class="s2">&quot;.&quot;</span> <span class="o">+</span> <span class="n">s</span><span class="o">.</span><span class="n">cls</span><span class="o">.</span><span class="vm">__name__</span>
+                <span class="n">pcmd</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="vm">__name__</span><span class="p">]</span> <span class="o">+</span> <span class="n">s</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="k">if</span> <span class="nb">callable</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="k">else</span> <span class="n">s</span><span class="o">.</span><span class="n">args</span>
+                <span class="p">)</span>
+                <span class="n">p</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="s2">&quot;cmd&quot;</span><span class="p">:</span> <span class="n">pcmd</span><span class="p">,</span>
+                    <span class="s2">&quot;cls&quot;</span><span class="p">:</span> <span class="n">pcls</span><span class="p">,</span>
+                    <span class="s2">&quot;alias&quot;</span><span class="p">:</span> <span class="n">s</span><span class="o">.</span><span class="n">alias_name</span><span class="p">,</span>
+                    <span class="s2">&quot;bin&quot;</span><span class="p">:</span> <span class="n">s</span><span class="o">.</span><span class="n">binary_loc</span><span class="p">,</span>
+                    <span class="s2">&quot;threadable&quot;</span><span class="p">:</span> <span class="n">s</span><span class="o">.</span><span class="n">threadable</span><span class="p">,</span>
+                    <span class="s2">&quot;bg&quot;</span><span class="p">:</span> <span class="n">s</span><span class="o">.</span><span class="n">background</span><span class="p">,</span>
+                <span class="p">}</span>
+                <span class="n">p</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">p</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">v</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">}</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
+
+
 <div class="viewcode-block" id="cmds_to_specs">
 <a class="viewcode-back" href="../../../api/_autosummary/cmd/xonsh.procs.specs.html#xonsh.procs.specs.cmds_to_specs">[docs]</a>
 <span class="k">def</span> <span class="nf">cmds_to_specs</span><span class="p">(</span><span class="n">cmds</span><span class="p">,</span> <span class="n">captured</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">envs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -1362,8 +1420,17 @@
 
 
 
-<span class="k">def</span> <span class="nf">_should_set_title</span><span class="p">():</span>
-    <span class="k">return</span> <span class="n">XSH</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;XONSH_INTERACTIVE&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">XSH</span><span class="o">.</span><span class="n">shell</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+<span class="k">def</span> <span class="nf">_shell_set_title</span><span class="p">(</span><span class="n">cmds</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">XSH</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;XONSH_INTERACTIVE&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">XSH</span><span class="o">.</span><span class="n">shell</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="c1"># context manager updates the command information that gets</span>
+        <span class="c1"># accessed by CurrentJobField when setting the terminal&#39;s title</span>
+        <span class="k">with</span> <span class="n">XSH</span><span class="o">.</span><span class="n">env</span><span class="p">[</span><span class="s2">&quot;PROMPT_FIELDS&quot;</span><span class="p">][</span><span class="s2">&quot;current_job&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">update_current_cmds</span><span class="p">(</span><span class="n">cmds</span><span class="p">):</span>
+            <span class="c1"># remove current_job from prompt level cache</span>
+            <span class="n">XSH</span><span class="o">.</span><span class="n">env</span><span class="p">[</span><span class="s2">&quot;PROMPT_FIELDS&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">reset_key</span><span class="p">(</span><span class="s2">&quot;current_job&quot;</span><span class="p">)</span>
+            <span class="c1"># The terminal&#39;s title needs to be set before starting the</span>
+            <span class="c1"># subprocess to avoid accidentally answering interactive questions</span>
+            <span class="c1"># from commands such as `rm -i` (see #1436)</span>
+            <span class="n">XSH</span><span class="o">.</span><span class="n">shell</span><span class="o">.</span><span class="n">settitle</span><span class="p">()</span>
 
 
 <div class="viewcode-block" id="run_subproc">
@@ -1384,49 +1451,14 @@
 
     <span class="n">specs</span> <span class="o">=</span> <span class="n">cmds_to_specs</span><span class="p">(</span><span class="n">cmds</span><span class="p">,</span> <span class="n">captured</span><span class="o">=</span><span class="n">captured</span><span class="p">,</span> <span class="n">envs</span><span class="o">=</span><span class="n">envs</span><span class="p">)</span>
 
-    <span class="k">if</span> <span class="n">tr</span> <span class="o">:=</span> <span class="n">XSH</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;XONSH_TRACE_SUBPROC&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
-        <span class="n">tracer</span> <span class="o">=</span> <span class="n">XSH</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;XONSH_TRACE_SUBPROC_FUNC&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-        <span class="k">if</span> <span class="nb">callable</span><span class="p">(</span><span class="n">tracer</span><span class="p">):</span>
-            <span class="n">tracer</span><span class="p">(</span><span class="n">cmds</span><span class="p">,</span> <span class="n">captured</span><span class="o">=</span><span class="n">captured</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">r</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;cmds&quot;</span><span class="p">:</span> <span class="n">cmds</span><span class="p">,</span> <span class="s2">&quot;captured&quot;</span><span class="p">:</span> <span class="n">captured</span><span class="p">}</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Trace run_subproc(</span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">r</span><span class="p">)</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">tr</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
-                <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">specs</span><span class="p">):</span>
-                    <span class="n">pcls</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">cls</span><span class="o">.</span><span class="vm">__module__</span> <span class="o">+</span> <span class="s2">&quot;.&quot;</span> <span class="o">+</span> <span class="n">s</span><span class="o">.</span><span class="n">cls</span><span class="o">.</span><span class="vm">__name__</span>
-                    <span class="n">pcmd</span> <span class="o">=</span> <span class="p">(</span>
-                        <span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="vm">__name__</span><span class="p">]</span> <span class="o">+</span> <span class="n">s</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
-                        <span class="k">if</span> <span class="nb">callable</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-                        <span class="k">else</span> <span class="n">s</span><span class="o">.</span><span class="n">args</span>
-                    <span class="p">)</span>
-                    <span class="n">p</span> <span class="o">=</span> <span class="p">{</span>
-                        <span class="s2">&quot;cmd&quot;</span><span class="p">:</span> <span class="n">pcmd</span><span class="p">,</span>
-                        <span class="s2">&quot;cls&quot;</span><span class="p">:</span> <span class="n">pcls</span><span class="p">,</span>
-                        <span class="s2">&quot;alias&quot;</span><span class="p">:</span> <span class="n">s</span><span class="o">.</span><span class="n">alias_name</span><span class="p">,</span>
-                        <span class="s2">&quot;bin&quot;</span><span class="p">:</span> <span class="n">s</span><span class="o">.</span><span class="n">binary_loc</span><span class="p">,</span>
-                        <span class="s2">&quot;thread&quot;</span><span class="p">:</span> <span class="n">s</span><span class="o">.</span><span class="n">threadable</span><span class="p">,</span>
-                        <span class="s2">&quot;bg&quot;</span><span class="p">:</span> <span class="n">s</span><span class="o">.</span><span class="n">background</span><span class="p">,</span>
-                    <span class="p">}</span>
-                    <span class="n">p</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">p</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">v</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">}</span>
-                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">trace_mode</span> <span class="o">:=</span> <span class="n">XSH</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;XONSH_TRACE_SUBPROC&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+        <span class="n">_trace_specs</span><span class="p">(</span><span class="n">trace_mode</span><span class="p">,</span> <span class="n">specs</span><span class="p">,</span> <span class="n">cmds</span><span class="p">,</span> <span class="n">captured</span><span class="p">)</span>
 
     <span class="n">cmds</span> <span class="o">=</span> <span class="p">[</span>
         <span class="n">_flatten_cmd_redirects</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="k">else</span> <span class="n">cmd</span> <span class="k">for</span> <span class="n">cmd</span> <span class="ow">in</span> <span class="n">cmds</span>
     <span class="p">]</span>
-    <span class="k">if</span> <span class="n">_should_set_title</span><span class="p">():</span>
-        <span class="c1"># context manager updates the command information that gets</span>
-        <span class="c1"># accessed by CurrentJobField when setting the terminal&#39;s title</span>
-        <span class="k">with</span> <span class="n">XSH</span><span class="o">.</span><span class="n">env</span><span class="p">[</span><span class="s2">&quot;PROMPT_FIELDS&quot;</span><span class="p">][</span><span class="s2">&quot;current_job&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">update_current_cmds</span><span class="p">(</span><span class="n">cmds</span><span class="p">):</span>
-            <span class="c1"># remove current_job from prompt level cache</span>
-            <span class="n">XSH</span><span class="o">.</span><span class="n">env</span><span class="p">[</span><span class="s2">&quot;PROMPT_FIELDS&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">reset_key</span><span class="p">(</span><span class="s2">&quot;current_job&quot;</span><span class="p">)</span>
-            <span class="c1"># The terminal&#39;s title needs to be set before starting the</span>
-            <span class="c1"># subprocess to avoid accidentally answering interactive questions</span>
-            <span class="c1"># from commands such as `rm -i` (see #1436)</span>
-            <span class="n">XSH</span><span class="o">.</span><span class="n">shell</span><span class="o">.</span><span class="n">settitle</span><span class="p">()</span>
-            <span class="c1"># run the subprocess</span>
-            <span class="k">return</span> <span class="n">_run_specs</span><span class="p">(</span><span class="n">specs</span><span class="p">,</span> <span class="n">cmds</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">_run_specs</span><span class="p">(</span><span class="n">specs</span><span class="p">,</span> <span class="n">cmds</span><span class="p">)</span></div>
+    <span class="n">_shell_set_title</span><span class="p">(</span><span class="n">cmds</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">_run_specs</span><span class="p">(</span><span class="n">specs</span><span class="p">,</span> <span class="n">cmds</span><span class="p">)</span></div>
 
 
 
@@ -1462,15 +1494,15 @@
         <span class="n">cp</span><span class="o">.</span><span class="n">spec</span><span class="o">.</span><span class="n">background</span><span class="p">,</span>
     <span class="p">)</span>
 
-    <span class="c1"># For some reason, some programs are in a stopped state when the flow</span>
-    <span class="c1"># reaches this point, hence a SIGCONT should be sent to `proc` to make</span>
-    <span class="c1"># sure that the shell doesn&#39;t hang.</span>
-    <span class="c1"># See issue #2999 and the fix in PR #3000</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    For some reason, some programs are in a stopped state when the flow</span>
+<span class="sd">    reaches this point, hence a SIGCONT should be sent to `proc` to make</span>
+<span class="sd">    sure that the shell doesn&#39;t hang. See issue #2999 and the fix in PR #3000</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">resume_process</span><span class="p">(</span><span class="n">proc</span><span class="p">)</span>
 
-    <span class="c1"># now figure out what we should return</span>
     <span class="k">if</span> <span class="n">captured</span> <span class="o">==</span> <span class="s2">&quot;object&quot;</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">cp</span>  <span class="c1"># object can be returned even if backgrounding</span>
+        <span class="k">return</span> <span class="n">cp</span>
     <span class="k">elif</span> <span class="n">captured</span> <span class="o">==</span> <span class="s2">&quot;hiddenobject&quot;</span><span class="p">:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">background</span><span class="p">:</span>
             <span class="n">cp</span><span class="o">.</span><span class="n">end</span><span class="p">()</span>
