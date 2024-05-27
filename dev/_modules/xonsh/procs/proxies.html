@@ -425,6 +425,7 @@
 <span class="kn">import</span> <span class="nn">xonsh.platform</span> <span class="k">as</span> <span class="nn">xp</span>
 <span class="kn">import</span> <span class="nn">xonsh.tools</span> <span class="k">as</span> <span class="nn">xt</span>
 <span class="kn">from</span> <span class="nn">xonsh.built_ins</span> <span class="kn">import</span> <span class="n">XSH</span>
+<span class="kn">from</span> <span class="nn">xonsh.cli_utils</span> <span class="kn">import</span> <span class="n">run_with_partial_args</span>
 <span class="kn">from</span> <span class="nn">xonsh.procs.readers</span> <span class="kn">import</span> <span class="n">safe_fdclose</span>
 
 
@@ -953,7 +954,17 @@
                 <span class="n">xt</span><span class="o">.</span><span class="n">redirect_stderr</span><span class="p">(</span><span class="n">STDERR_DISPATCHER</span><span class="p">),</span>
                 <span class="n">XSH</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">swap</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="p">,</span> <span class="n">__ALIAS_STACK</span><span class="o">=</span><span class="n">alias_stack</span><span class="p">),</span>
             <span class="p">):</span>
-                <span class="n">r</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">,</span> <span class="n">sp_stdin</span><span class="p">,</span> <span class="n">sp_stdout</span><span class="p">,</span> <span class="n">sp_stderr</span><span class="p">,</span> <span class="n">spec</span><span class="p">,</span> <span class="n">spec</span><span class="o">.</span><span class="n">stack</span><span class="p">)</span>
+                <span class="n">r</span> <span class="o">=</span> <span class="n">run_with_partial_args</span><span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">,</span>
+                    <span class="p">{</span>
+                        <span class="s2">&quot;args&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">,</span>
+                        <span class="s2">&quot;stdin&quot;</span><span class="p">:</span> <span class="n">sp_stdin</span><span class="p">,</span>
+                        <span class="s2">&quot;stdout&quot;</span><span class="p">:</span> <span class="n">sp_stdout</span><span class="p">,</span>
+                        <span class="s2">&quot;stderr&quot;</span><span class="p">:</span> <span class="n">sp_stderr</span><span class="p">,</span>
+                        <span class="s2">&quot;spec&quot;</span><span class="p">:</span> <span class="n">spec</span><span class="p">,</span>
+                        <span class="s2">&quot;stack&quot;</span><span class="p">:</span> <span class="n">spec</span><span class="o">.</span><span class="n">stack</span><span class="p">,</span>
+                    <span class="p">},</span>
+                <span class="p">)</span>
         <span class="k">except</span> <span class="ne">SystemExit</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="n">r</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">code</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">code</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="k">else</span> <span class="nb">int</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">code</span><span class="p">))</span>
         <span class="k">except</span> <span class="ne">OSError</span><span class="p">:</span>
@@ -1269,7 +1280,17 @@
         <span class="c1"># run the actual function</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="k">with</span> <span class="n">XSH</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">swap</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="p">):</span>
-                <span class="n">r</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">,</span> <span class="n">stdin</span><span class="p">,</span> <span class="n">stdout</span><span class="p">,</span> <span class="n">stderr</span><span class="p">,</span> <span class="n">spec</span><span class="p">,</span> <span class="n">spec</span><span class="o">.</span><span class="n">stack</span><span class="p">)</span>
+                <span class="n">r</span> <span class="o">=</span> <span class="n">run_with_partial_args</span><span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="p">,</span>
+                    <span class="p">{</span>
+                        <span class="s2">&quot;args&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">,</span>
+                        <span class="s2">&quot;stdin&quot;</span><span class="p">:</span> <span class="n">stdin</span><span class="p">,</span>
+                        <span class="s2">&quot;stdout&quot;</span><span class="p">:</span> <span class="n">stdout</span><span class="p">,</span>
+                        <span class="s2">&quot;stderr&quot;</span><span class="p">:</span> <span class="n">stderr</span><span class="p">,</span>
+                        <span class="s2">&quot;spec&quot;</span><span class="p">:</span> <span class="n">spec</span><span class="p">,</span>
+                        <span class="s2">&quot;stack&quot;</span><span class="p">:</span> <span class="n">spec</span><span class="o">.</span><span class="n">stack</span><span class="p">,</span>
+                    <span class="p">},</span>
+                <span class="p">)</span>
         <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
             <span class="n">xt</span><span class="o">.</span><span class="n">print_exception</span><span class="p">(</span><span class="n">source_msg</span><span class="o">=</span><span class="s2">&quot;Exception in &quot;</span> <span class="o">+</span> <span class="n">get_proc_proxy_name</span><span class="p">(</span><span class="bp">self</span><span class="p">))</span>
             <span class="n">r</span> <span class="o">=</span> <span class="mi">1</span>
