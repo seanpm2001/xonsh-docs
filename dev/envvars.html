@@ -734,7 +734,7 @@ applicable.</p>
 <span id="id5"></span><h3>$HOSTNAME<a class="headerlink" href="#hostname" title="Link to this heading">¶</a></h3>
 <p>Automatically set to the name of the current host.</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> &lt;function GeneralSetting.&lt;lambda&gt; at 0x7fa64ec31360&gt;</p>
+<p><strong>default:</strong> &lt;function GeneralSetting.&lt;lambda&gt; at 0x7f69ea435360&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </section>
@@ -742,7 +742,7 @@ applicable.</p>
 <span id="id6"></span><h3>$HOSTTYPE<a class="headerlink" href="#hosttype" title="Link to this heading">¶</a></h3>
 <p>Automatically set to a string that fully describes the system type on which xonsh is executing.</p>
 <p><strong>configurable:</strong> True</p>
-<p><strong>default:</strong> &lt;function GeneralSetting.&lt;lambda&gt; at 0x7fa64ec313f0&gt;</p>
+<p><strong>default:</strong> &lt;function GeneralSetting.&lt;lambda&gt; at 0x7f69ea4353f0&gt;</p>
 <p><strong>store_as_str:</strong> False</p>
 <hr class="docutils" />
 </section>
@@ -873,11 +873,8 @@ this can be performed by using env, e.g.
 <span id="id22"></span><h3>$THREAD_SUBPROCS<a class="headerlink" href="#thread-subprocs" title="Link to this heading">¶</a></h3>
 <p>Note: The <code class="docutils literal notranslate"><span class="pre">$XONSH_CAPTURE_ALWAYS</span></code> variable introduces finer control and you should probably use that instead.</p>
 <p>Whether or not to try to run subrocess mode in a Python thread, when trying to capture its output. There are various trade-offs.</p>
-<dl class="simple">
-<dt>If True, xonsh is able capture &amp; store the stdin, stdout, and stderr</dt><dd><p>of threadable subprocesses.</p>
-</dd>
-</dl>
-<p>The disadvantages are listed in <code class="docutils literal notranslate"><span class="pre">$XONSH_CAPTURE_ALWAYS</span></code>.
+<p>If True, xonsh is able capture &amp; store the stdin, stdout, and stderr of threadable subprocesses.
+The disadvantages are listed in <code class="docutils literal notranslate"><span class="pre">$XONSH_CAPTURE_ALWAYS</span></code>.
 The desired effect is often up to the command, user, or use case.</p>
 <p>None values are for internal use only and are used to turn off threading when loading xonshrc files. This is done because Bash was automatically placing new xonsh instances in the background at startup when threadable subprocs were used. Please see <a class="reference external" href="https://github.com/xonsh/xonsh/pull/3705">https://github.com/xonsh/xonsh/pull/3705</a> for more information.</p>
 <p><strong>configurable:</strong> True</p>
