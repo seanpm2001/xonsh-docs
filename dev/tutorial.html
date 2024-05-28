@@ -748,22 +748,39 @@ id, the standard output and standard error streams, and information about how
 input and output were redirected.  For example:</p>
 <div class="highlight-xonshcon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">!</span><span class="p">(</span><span class="nb">ls</span> nonexistent_directory<span class="p">)</span>
 <span class="go">CommandPipeline(</span>
-<span class="go">    stdin=&lt;_io.BytesIO object at 0x7f1948182bf8&gt;,</span>
-<span class="go">    stdout=&lt;_io.BytesIO object at 0x7f1948182af0&gt;,</span>
-<span class="go">    stderr=&lt;_io.BytesIO object at 0x7f19483a6200&gt;,</span>
 <span class="go">    pid=26968,</span>
 <span class="go">    returncode=2,</span>
 <span class="go">    args=[&#39;ls&#39;, &#39;nonexistent_directory&#39;],</span>
 <span class="go">    alias=[&#39;ls&#39;, &#39;--color=auto&#39;, &#39;-v&#39;],</span>
-<span class="go">    stdin_redirect=[&#39;&lt;stdin&gt;&#39;, &#39;r&#39;],</span>
-<span class="go">    stdout_redirect=[9, &#39;wb&#39;],</span>
-<span class="go">    stderr_redirect=[11, &#39;w&#39;],</span>
 <span class="go">    timestamps=[1485235484.5016758, None],</span>
 <span class="go">    executed_cmd=[&#39;ls&#39;, &#39;--color=auto&#39;, &#39;-v&#39;, &#39;nonexistent_directory&#39;],</span>
 <span class="go">    input=None,</span>
 <span class="go">    output=,</span>
 <span class="go">    errors=None</span>
 <span class="go">)</span>
+</pre></div>
+</div>
+<p>The captured object <code class="docutils literal notranslate"><span class="pre">!()</span></code> operator allows for non-blocking execution.
+You can call a long-running command, intersperse other commands and
+read the captured output later:</p>
+<div class="highlight-xonshcon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="k">!</span><span class="p">(</span><span class="nb">echo</span> snail<span class="p">)</span>
+<span class="gp">&gt;&gt;&gt;</span> <span class="n">p</span><span class="o">.</span><span class="n">output</span>
+<span class="go">&#39;&#39;</span>
+<span class="gp">&gt;&gt;&gt;</span> <span class="n">p</span><span class="o">.</span><span class="n">end</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt;</span> <span class="n">p</span><span class="o">.</span><span class="n">output</span>
+<span class="go">&#39;snail&#39;</span>
+</pre></div>
+</div>
+<p>You can force <code class="docutils literal notranslate"><span class="pre">xonsh</span></code> to block and wait for the command to complete by asking for the return code,
+printing the object or reading the <code class="docutils literal notranslate"><span class="pre">out</span></code> attribute:</p>
+<div class="highlight-xonshcon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="k">!</span><span class="p">(</span><span class="nb">echo</span> snail<span class="p">)</span>
+<span class="gp">&gt;&gt;&gt;</span> <span class="n">p</span><span class="o">.</span><span class="n">out</span>
+<span class="go">&#39;snail&#39;</span>
+<span class="gp">&gt;&gt;&gt;</span> <span class="n">p</span> <span class="o">=</span> <span class="k">!</span><span class="p">(</span><span class="nb">echo</span> party<span class="p">)</span>
+<span class="gp">&gt;&gt;&gt;</span> <span class="n">p</span><span class="o">.</span><span class="n">rtn</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt;</span> <span class="n">p</span><span class="o">.</span><span class="n">output</span>
+<span class="go">&#39;party&#39;</span>
 </pre></div>
 </div>
 <p>This object will be “truthy” if its return code was 0, and it is equal (via
