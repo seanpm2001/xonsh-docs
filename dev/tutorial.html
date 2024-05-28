@@ -861,6 +861,20 @@ or inject Python values with the <code class="docutils literal notranslate"><spa
 </pre></div>
 </div>
 </section>
+<section id="threading">
+<h2>Threading<a class="headerlink" href="#threading" title="Link to this heading">¶</a></h2>
+<p>If you want to work more closely with captured commands, you need to know about threading.
+Xonsh has a threading prediction mechanism that allows it to understand which commands can capture everything.
+For example, the <code class="docutils literal notranslate"><span class="pre">echo</span></code> command has no interaction with the user and is capturable.
+However, some tools have mixed behavior and can be run for either interactive or non-interactive tasks.
+The best example of this is <code class="docutils literal notranslate"><span class="pre">ssh</span></code>, which allows for remote terminal sessions and executing commands.</p>
+<p>To handle different types of tasks, xonsh has the <code class="docutils literal notranslate"><span class="pre">xthread</span></code> and <code class="docutils literal notranslate"><span class="pre">xunthread</span></code> built-in aliases.
+If you need to capture the output from an interactive tool that has a capturable mode use <code class="docutils literal notranslate"><span class="pre">xthread</span></code> to run:</p>
+<div class="highlight-xonshcon notranslate"><div class="highlight"><pre><span></span><span class="o">@</span> <span class="k">!</span><span class="p">(</span><span class="nb">xthread</span> ssh host -T <span class="s1">&#39;echo remote&#39;</span><span class="p">)</span>
+<span class="go">CommandPipeline(output=&quot;remote&quot;)</span>
+</pre></div>
+</div>
+</section>
 <section id="uncaptured-subprocess-with-and">
 <h2>Uncaptured Subprocess with <code class="docutils literal notranslate"><span class="pre">$[]</span></code> and <code class="docutils literal notranslate"><span class="pre">![]</span></code><a class="headerlink" href="#uncaptured-subprocess-with-and" title="Link to this heading">¶</a></h2>
 <p>Uncaptured subprocesses are denoted with the <code class="docutils literal notranslate"><span class="pre">$[]</span></code> and <code class="docutils literal notranslate"><span class="pre">![]</span></code> operators. They are
@@ -2197,6 +2211,7 @@ On Windows, you can also type <code class="docutils literal notranslate"><span c
 <li><a class="reference internal" href="#python-mode-vs-subprocess-mode">Python-mode vs Subprocess-mode</a></li>
 <li><a class="reference internal" href="#quoting">Quoting</a></li>
 <li><a class="reference internal" href="#captured-subprocess-with-and">Captured Subprocess with <code class="docutils literal notranslate"><span class="pre">$()</span></code> and <code class="docutils literal notranslate"><span class="pre">!()</span></code></a></li>
+<li><a class="reference internal" href="#threading">Threading</a></li>
 <li><a class="reference internal" href="#uncaptured-subprocess-with-and">Uncaptured Subprocess with <code class="docutils literal notranslate"><span class="pre">$[]</span></code> and <code class="docutils literal notranslate"><span class="pre">![]</span></code></a></li>
 <li><a class="reference internal" href="#python-evaluation-with">Python Evaluation with <code class="docutils literal notranslate"><span class="pre">&#64;()</span></code></a></li>
 <li><a class="reference internal" href="#command-substitution-with">Command Substitution with <code class="docutils literal notranslate"><span class="pre">&#64;$()</span></code></a></li>

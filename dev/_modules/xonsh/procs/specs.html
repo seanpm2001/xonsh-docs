@@ -700,6 +700,60 @@
 
 
 
+<div class="viewcode-block" id="SpecModifierAlias">
+<a class="viewcode-back" href="../../../api/_autosummary/cmd/xonsh.procs.specs.html#xonsh.procs.specs.SpecModifierAlias">[docs]</a>
+<span class="k">class</span> <span class="nc">SpecModifierAlias</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Spec modifier base class.&quot;&quot;&quot;</span>
+
+    <span class="n">descr</span> <span class="o">=</span> <span class="s2">&quot;Spec modifier base class.&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">args</span><span class="p">,</span>
+        <span class="n">stdin</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">stdout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">stderr</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">spec</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">stack</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">descr</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">stdout</span><span class="p">)</span>
+
+<div class="viewcode-block" id="SpecModifierAlias.on_modifer_added">
+<a class="viewcode-back" href="../../../api/_autosummary/cmd/xonsh.procs.specs.html#xonsh.procs.specs.SpecModifierAlias.on_modifer_added">[docs]</a>
+    <span class="k">def</span> <span class="nf">on_modifer_added</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">spec</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Modify spec immediately after modifier added.&quot;&quot;&quot;</span>
+        <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="SpecModifierAlias.on_pre_run">
+<a class="viewcode-back" href="../../../api/_autosummary/cmd/xonsh.procs.specs.html#xonsh.procs.specs.SpecModifierAlias.on_pre_run">[docs]</a>
+    <span class="k">def</span> <span class="nf">on_pre_run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pipeline</span><span class="p">,</span> <span class="n">spec</span><span class="p">,</span> <span class="n">spec_num</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Modify spec before run.&quot;&quot;&quot;</span>
+        <span class="k">pass</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="SpecAttrModifierAlias">
+<a class="viewcode-back" href="../../../api/_autosummary/cmd/xonsh.procs.specs.html#xonsh.procs.specs.SpecAttrModifierAlias">[docs]</a>
+<span class="k">class</span> <span class="nc">SpecAttrModifierAlias</span><span class="p">(</span><span class="n">SpecModifierAlias</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Modifier for spec attributes.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">set_attributes</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">descr</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_attributes</span> <span class="o">=</span> <span class="n">set_attributes</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">descr</span> <span class="o">=</span> <span class="n">descr</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+
+<div class="viewcode-block" id="SpecAttrModifierAlias.on_modifer_added">
+<a class="viewcode-back" href="../../../api/_autosummary/cmd/xonsh.procs.specs.html#xonsh.procs.specs.SpecAttrModifierAlias.on_modifer_added">[docs]</a>
+    <span class="k">def</span> <span class="nf">on_modifer_added</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">spec</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_attributes</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="nb">setattr</span><span class="p">(</span><span class="n">spec</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span></div>
+</div>
+
+
+
 <div class="viewcode-block" id="SubprocSpec">
 <a class="viewcode-back" href="../../../api/_autosummary/cmd/xonsh.procs.specs.html#xonsh.procs.specs.SubprocSpec">[docs]</a>
 <span class="k">class</span> <span class="nc">SubprocSpec</span><span class="p">:</span>
@@ -805,6 +859,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">captured_stdout</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">captured_stderr</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">stack</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">spec_modifiers</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># List of SpecModifierAlias objects that applied to spec.</span>
 
     <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">s</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">+</span> <span class="s2">&quot;(&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cmd</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;, &quot;</span>
@@ -1039,6 +1094,7 @@
         <span class="c1"># modifications that do not alter cmds may come before creating instance</span>
         <span class="n">spec</span> <span class="o">=</span> <span class="n">kls</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="bp">cls</span><span class="o">=</span><span class="bp">cls</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="c1"># modifications that alter cmds must come after creating instance</span>
+        <span class="n">spec</span><span class="o">.</span><span class="n">resolve_spec_modifiers</span><span class="p">()</span>  <span class="c1"># keep this first</span>
         <span class="n">spec</span><span class="o">.</span><span class="n">resolve_args_list</span><span class="p">()</span>
         <span class="n">spec</span><span class="o">.</span><span class="n">resolve_redirects</span><span class="p">()</span>
         <span class="n">spec</span><span class="o">.</span><span class="n">resolve_alias</span><span class="p">()</span>
@@ -1048,6 +1104,31 @@
         <span class="n">spec</span><span class="o">.</span><span class="n">resolve_alias_cls</span><span class="p">()</span>
         <span class="n">spec</span><span class="o">.</span><span class="n">resolve_stack</span><span class="p">()</span>
         <span class="k">return</span> <span class="n">spec</span></div>
+
+
+<div class="viewcode-block" id="SubprocSpec.add_spec_modifier">
+<a class="viewcode-back" href="../../../api/_autosummary/cmd/xonsh.procs.specs.html#xonsh.procs.specs.SubprocSpec.add_spec_modifier">[docs]</a>
+    <span class="k">def</span> <span class="nf">add_spec_modifier</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mod</span><span class="p">:</span> <span class="n">SpecModifierAlias</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add spec modifier to the specification.&quot;&quot;&quot;</span>
+        <span class="n">mod</span><span class="o">.</span><span class="n">on_modifer_added</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">spec_modifiers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mod</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="SubprocSpec.resolve_spec_modifiers">
+<a class="viewcode-back" href="../../../api/_autosummary/cmd/xonsh.procs.specs.html#xonsh.procs.specs.SubprocSpec.resolve_spec_modifiers">[docs]</a>
+    <span class="k">def</span> <span class="nf">resolve_spec_modifiers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Apply spec modifier.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">ln</span> <span class="o">:=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cmd</span><span class="p">))</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ln</span><span class="p">):</span>
+            <span class="n">c</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cmd</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">XSH</span><span class="o">.</span><span class="n">aliases</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span>
+                <span class="n">mod</span> <span class="o">:=</span> <span class="n">XSH</span><span class="o">.</span><span class="n">aliases</span><span class="p">[</span><span class="n">c</span><span class="p">],</span> <span class="n">SpecModifierAlias</span>
+            <span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">add_spec_modifier</span><span class="p">(</span><span class="n">mod</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">break</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cmd</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cmd</span><span class="p">[</span><span class="n">i</span><span class="p">:]</span></div>
 
 
 <div class="viewcode-block" id="SubprocSpec.resolve_args_list">
@@ -1103,9 +1184,17 @@
         <span class="k">if</span> <span class="nb">callable</span><span class="p">(</span><span class="n">cmd0</span><span class="p">):</span>
             <span class="n">alias</span> <span class="o">=</span> <span class="n">cmd0</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">alias</span> <span class="o">=</span> <span class="n">XSH</span><span class="o">.</span><span class="n">aliases</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">cmd0</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+            <span class="n">spec_modifiers</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">XSH</span><span class="o">.</span><span class="n">aliases</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+                <span class="c1"># Windows tests</span>
+                <span class="n">alias</span> <span class="o">=</span> <span class="n">XSH</span><span class="o">.</span><span class="n">aliases</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">cmd0</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">alias</span> <span class="o">=</span> <span class="n">XSH</span><span class="o">.</span><span class="n">aliases</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">cmd0</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">spec_modifiers</span><span class="o">=</span><span class="n">spec_modifiers</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">alias</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">alias_name</span> <span class="o">=</span> <span class="n">cmd0</span>
+            <span class="k">if</span> <span class="n">spec_modifiers</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">mod</span> <span class="ow">in</span> <span class="n">spec_modifiers</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">add_spec_modifier</span><span class="p">(</span><span class="n">mod</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">alias</span> <span class="o">=</span> <span class="n">alias</span></div>
 
 
@@ -1192,7 +1281,8 @@
         <span class="c1"># we want to filter out one up, e.g. subproc_captured_hiddenobject()</span>
         <span class="c1"># after that the stack from the call site starts.</span>
         <span class="n">stack</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">context</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-        <span class="k">assert</span> <span class="n">stack</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;run_subproc&quot;</span><span class="p">,</span> <span class="s2">&quot;xonsh stack has changed!&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">stack</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;test_&quot;</span><span class="p">):</span>
+            <span class="k">assert</span> <span class="n">stack</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;run_subproc&quot;</span><span class="p">,</span> <span class="s2">&quot;xonsh stack has changed!&quot;</span>
         <span class="k">del</span> <span class="n">stack</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">stack</span> <span class="o">=</span> <span class="n">stack</span></div>
 </div>
