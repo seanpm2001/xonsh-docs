@@ -736,6 +736,11 @@ For example,</p>
 line characters. You can set <code class="docutils literal notranslate"><span class="pre">$XONSH_SUBPROC_OUTPUT_FORMAT</span></code> to <code class="docutils literal notranslate"><span class="pre">list_lines</span></code>
 to have a list of distinct lines in the commands like <code class="docutils literal notranslate"><span class="pre">du</span> <span class="pre">-h</span> <span class="pre">$(ls)</span></code>.</p>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can access a subprocess command you ran using <code class="docutils literal notranslate"><span class="pre">__xonsh__.last</span></code>
+e.g. to get the return code run <code class="docutils literal notranslate"><span class="pre">__xonsh__.last.rtn</span></code>.</p>
+</div>
 <p>The <code class="docutils literal notranslate"><span class="pre">!()</span></code> syntax captured more information about the command, as an instance
 of a class called <code class="docutils literal notranslate"><span class="pre">CommandPipeline</span></code>.  This object contains more information
 about the result of the given command, including the return code, the process
