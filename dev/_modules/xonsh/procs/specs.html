@@ -1174,7 +1174,7 @@
     <span class="k">def</span> <span class="nf">resolve_alias</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Sets alias in command, if applicable.&quot;&quot;&quot;</span>
         <span class="n">cmd0</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cmd</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-
+        <span class="n">spec_modifiers</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">if</span> <span class="n">cmd0</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">alias_stack</span><span class="p">:</span>
             <span class="c1"># Disabling the alias resolving to prevent infinite loop in call stack</span>
             <span class="c1"># and futher using binary_loc to resolve the alias name.</span>
@@ -1184,7 +1184,6 @@
         <span class="k">if</span> <span class="nb">callable</span><span class="p">(</span><span class="n">cmd0</span><span class="p">):</span>
             <span class="n">alias</span> <span class="o">=</span> <span class="n">cmd0</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">spec_modifiers</span> <span class="o">=</span> <span class="p">[]</span>
             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">XSH</span><span class="o">.</span><span class="n">aliases</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
                 <span class="c1"># Windows tests</span>
                 <span class="n">alias</span> <span class="o">=</span> <span class="n">XSH</span><span class="o">.</span><span class="n">aliases</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">cmd0</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
@@ -1192,10 +1191,10 @@
                 <span class="n">alias</span> <span class="o">=</span> <span class="n">XSH</span><span class="o">.</span><span class="n">aliases</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">cmd0</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">spec_modifiers</span><span class="o">=</span><span class="n">spec_modifiers</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">alias</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">alias_name</span> <span class="o">=</span> <span class="n">cmd0</span>
-            <span class="k">if</span> <span class="n">spec_modifiers</span><span class="p">:</span>
-                <span class="k">for</span> <span class="n">mod</span> <span class="ow">in</span> <span class="n">spec_modifiers</span><span class="p">:</span>
-                    <span class="bp">self</span><span class="o">.</span><span class="n">add_spec_modifier</span><span class="p">(</span><span class="n">mod</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">alias</span> <span class="o">=</span> <span class="n">alias</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">alias</span> <span class="o">=</span> <span class="n">alias</span>
+        <span class="k">if</span> <span class="n">spec_modifiers</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">mod</span> <span class="ow">in</span> <span class="n">spec_modifiers</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">add_spec_modifier</span><span class="p">(</span><span class="n">mod</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="SubprocSpec.resolve_binary_loc">
